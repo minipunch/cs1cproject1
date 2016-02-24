@@ -30,5 +30,3 @@ void date::setYear(int y) {
 }
 
 
-did this one work
-
