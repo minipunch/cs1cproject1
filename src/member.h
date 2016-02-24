@@ -17,11 +17,12 @@ class member {
 	string type;
 	double id;
 	double total;
-	date exprDate;
+	Date exprDate;
 public:
 	// constructors
 	member();
 	member(string name, double id);
+	member(string name, string type, double id, double total, Date exprDate);
 	// setters
 	void setName(string name);
 	void setType(string type);
@@ -31,9 +32,9 @@ public:
 	// getters
 	string getName() const;
 	string getType() const;
-	string getId() const;
-	string getTotal() const;
-	date getExprDate() const;
+	double  getId() const;
+	double  getTotal() const;
+	Date getExprDate() const;
 
 };
 
