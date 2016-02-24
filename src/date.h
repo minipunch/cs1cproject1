@@ -15,6 +15,4 @@ public:
 	int getYear() const;
 	void printDate() const;
 
-
-	did it work
 };
