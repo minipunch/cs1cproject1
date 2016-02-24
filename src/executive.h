@@ -7,6 +7,7 @@
 
 #ifndef EXECUTIVE_H_
 #define EXECUTIVE_H_
+#include "member.h"
 
 class executive : public member {
 	double rebateAmount;
@@ -19,8 +20,5 @@ public:
 	// getters
 	double getRebateAmount() const;
 };
-
-
-
 
 #endif /* EXECUTIVE_H_ */
