@@ -45,7 +45,7 @@ Date::Date(unsigned short month,
 		unsigned short year)
 {
 
-	if(ValidateDate(month, year, day))
+	if(ValidateDate(month, day, year))
 	{
 		dateMonth = month;
 		dateDay = day;
@@ -272,6 +272,7 @@ bool Date::ValidateMonth(unsigned short month) const
 	bool valid;
 	valid = true;
 
+
 	if(month < 1 || month > 12)
 	{
 		valid = false;
@@ -292,6 +293,7 @@ bool Date::ValidateDay(unsigned short month, unsigned short day,
 	bool valid;
 	unsigned short maxDay;
 	valid = true;
+
 
 	maxDay = GetDaysInMonth(month, year);
 
@@ -316,6 +318,7 @@ bool Date::ValidateYear(unsigned short year) const
 	tm *currentTime;
 	unsigned short currentYear;
 	valid = true;
+
 
 	now = time(NULL);
 	currentTime = localtime(&now);
