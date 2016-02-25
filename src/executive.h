@@ -19,6 +19,7 @@ public:
 	void setRebateAmount(double num);
 	// getters
 	double getRebateAmount() const;
+	double calculateRebate();
 };
 
 #endif /* EXECUTIVE_H_ */
