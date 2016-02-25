@@ -21,3 +21,8 @@ double executive::getRebateAmount() const
 {
 	return this->rebateAmount;
 }
+
+double executive::calculateRebate()
+{
+	return (this->getTotal * 3.5);
+}
