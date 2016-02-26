@@ -3,7 +3,7 @@
 member::member() : name("Default Name"), type("Member"), id(-200), total(-200)
 {
 }
-
+member::~member(){}
 member::member(string newName, double newId) : name(newName), type("Member"), id(newId), total(0)
 {
 }

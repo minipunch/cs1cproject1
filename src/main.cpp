@@ -1,11 +1,12 @@
 #include <iostream>
 #include "executive.h"
+#include "Store.h"
 using namespace std;
 
 int main() {
 
 	// stupid test program - 2/25/16 10:50 pm
-
+	Store store;
 	member josh;
 	executive phil;
 

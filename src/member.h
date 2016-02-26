@@ -7,9 +7,11 @@
 
 #ifndef MEMBER_H_
 #define MEMBER_H_
-
+#include "itemnames.h"
 #include <string>
 #include "date.h"
+#include <deque>
+#include<algorithm>
 using namespace std;
 
 class member {
@@ -21,6 +23,7 @@ class member {
 public:
 	// constructors
 	member();
+	virtual ~member();
 	member(string name, double id);
 	member(string name, string type, double id, double total, Date exprDate);
 	// setters
@@ -39,7 +42,21 @@ public:
 	void printMember() const;
 
 };
-
+struct memberSort{
+	int property;
+	memberSort(int property) {this->property = property;}
+	 bool operator()(const member *m1, const member *m2) const {
+		if(property == NAME)
+		{
+			return m1->getName() < m2->getName();
+		}
+		else
+		{
+			return m1->getId() < m2->getId();
+		}
+		//data operator overloading
+	}
+};
 
 
 

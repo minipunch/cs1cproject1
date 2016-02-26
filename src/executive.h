@@ -10,11 +10,13 @@
 #include "member.h"
 
 class executive : public member {
+private:
 	double rebateAmount;
 public:
 	// constructors
 	executive();
-	executive(double num);
+	virtual ~executive();
+	executive(double newRebate);
 	// setters
 	void setRebateAmount(double num);
 	// getters
