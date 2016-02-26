@@ -1,21 +1,11 @@
 #include  "member.h"
 
-member::member()
+member::member() : name("Default Name"), type("Member"), id(-200), total(-200)
 {
-	name  = 'N';
-	type  = 'N';
-	id    = 00000;
-	total = 0;
-	Date();
 }
 
-member::member(string newName, double newId)
+member::member(string newName, double newId) : name(newName), type("Member"), id(newId), total(0)
 {
-	this->id = newId;
-	this->name = newName;
-	type  = 'N';
-	total = 0;
-	Date();
 }
 
 member::member(string newName, string newType, double newId, double newTotal, Date newExprDate)
@@ -49,7 +39,7 @@ void member::setTotal(double newTotal)
 
 void member::setExprDate(int newMonth, int newDay, int newYear)
 {
-	exprDate.SetDate(newMonth, newDay, newYear);
+	this->exprDate.SetDate(newMonth, newDay, newYear);
 }
 
 string member::getName() const
@@ -75,4 +65,12 @@ double member::getTotal() const
 Date member::getExprDate() const
 {
 	return this->exprDate;
+}
+
+void member::printMember() const {
+	cout << this->name << endl;
+	cout << this->type << endl;
+	cout << this->id << endl;
+	cout << this->total << endl;
+	cout << exprDate.DisplayDate();
 }

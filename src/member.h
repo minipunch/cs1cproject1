@@ -35,6 +35,8 @@ public:
 	double  getId() const;
 	double  getTotal() const;
 	Date getExprDate() const;
+	//miscellaneous
+	void printMember() const;
 
 };
 

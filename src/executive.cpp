@@ -1,15 +1,11 @@
 #include "executive.h"
 
-executive::executive()
+executive::executive(): rebateAmount(0)
 {
-	member();
-	rebateAmount = 0;
 }
 
-executive::executive(double newNum)
+executive::executive(double newNum) : rebateAmount(newNum)
 {
-	member();
-	this->rebateAmount = newNum;
 }
 
 void executive::setRebateAmount(double num)
@@ -24,5 +20,10 @@ double executive::getRebateAmount() const
 
 double executive::calculateRebate() const
 {
-	return (this->getTotal * 3.5);
+	return (this->getTotal() * 3.5);
+}
+
+void executive::printExecutive() const {
+	printMember();
+	cout << "Rebate Amount: " << this->rebateAmount;
 }

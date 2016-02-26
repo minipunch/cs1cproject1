@@ -21,6 +21,7 @@ public:
 	double getRebateAmount() const;
 	// miscellaneous
 	double calculateRebate() const;
+	void printExecutive() const;
 };
 
 #endif /* EXECUTIVE_H_ */
