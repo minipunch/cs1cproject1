@@ -1,3 +1,5 @@
+** DOWNLOAD THE QT APPLICATION FROM THE '/DIST' FOLDER **
+
 Hello group,
 
 This is the first file in our github-hosted project repository. Enjoy the powers of THE GIT.
