@@ -32,3 +32,42 @@ Date Store::ConvertDate(string dateIn)
 	return temp;
 
 }
+
+void Store::readIn()
+{
+	ifstream inFile;
+	inFile.open("members.txt");
+	string name;
+	string type;
+	double idNum;
+	string date;
+	member *memPtr;
+	executive *exPtr;
+	Date temp;
+
+	while(inFile)
+	{
+		getline(inFile, name);
+		inFile >> idNum;
+		inFile.ignore(1000, '\n');
+		getline(inFile, type);
+		getline(inFile, date);
+
+		temp = Store::ConvertDate(date);
+		if(type == "Executive"){
+			exPtr = new executive;
+
+		}
+		else {
+			memPtr = new member;
+		}
+
+
+
+
+//		cout << name << endl;
+//		cout << type << endl;
+//		cout << idNum << endl;
+//		cout << date << endl;
+	}
+}

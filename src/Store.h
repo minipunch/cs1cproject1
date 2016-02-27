@@ -9,6 +9,7 @@
 #define STORE_H_
 #include "executive.h"
 #include <fstream>
+
 class Store {
 
 private:
@@ -25,6 +26,7 @@ public:
 	int search(string name);
 	int search(int num);
 	int search(Date dateSearch);
+    string  PrintMember() const;
 };
 
 #endif /* STORE_H_ */

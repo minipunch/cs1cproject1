@@ -12,6 +12,7 @@
 #include "date.h"
 #include <deque>
 #include<algorithm>
+#include <sstream>
 using namespace std;
 
 class member {
@@ -27,11 +28,12 @@ public:
 	member(string name, double id);
 	member(string name, string type, double id, double total, Date exprDate);
 	// setters
+	void setAll(string name, string type, double id, double total, Date exprDate);
 	void setName(string name);
 	void setType(string type);
 	void setId(double id);
 	void setTotal(double total);
-	void setExprDate(int month, int day, int year);
+	void setExprDate(Date exprDate);
 	// getters
 	string getName() const;
 	string getType() const;
@@ -39,7 +41,7 @@ public:
 	double  getTotal() const;
 	Date getExprDate() const;
 	//miscellaneous
-	void printMember() const;
+	string printMember() const;
 
 };
 struct memberSort{

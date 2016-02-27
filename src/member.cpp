@@ -16,7 +16,14 @@ member::member(string newName, string newType, double newId, double newTotal, Da
 	this->total = newTotal;
 	this->exprDate = newExprDate;
 }
-
+void member::setAll(string name, string type, double id, double total, Date exprDate)
+{
+	this->id = id;
+		this->type = type;
+		this->name = name;
+		this->total = total;
+		this->exprDate = exprDate;
+}
 void member::setName(string newName)
 {
 	this->name = newName;
@@ -37,9 +44,9 @@ void member::setTotal(double newTotal)
 	this->total = newTotal;
 }
 
-void member::setExprDate(int newMonth, int newDay, int newYear)
+void member::setExprDate(Date exprDate)
 {
-	this->exprDate.SetDate(newMonth, newDay, newYear);
+	this->exprDate = exprDate;
 }
 
 string member::getName() const
@@ -67,10 +74,13 @@ Date member::getExprDate() const
 	return this->exprDate;
 }
 
-void member::printMember() const {
-	cout << this->name << endl;
-	cout << this->type << endl;
-	cout << this->id << endl;
-	cout << this->total << endl;
-	cout << exprDate.DisplayDate();
+string member::printMember() const {
+
+	stringstream output;
+	output << this->name << endl;
+	output << this->type << endl;
+	output << this->id << endl;
+	output << this->total << endl;
+	output << exprDate.DisplayDate();
+	return output.str();
 }
