@@ -26,7 +26,9 @@ public:
 	int search(string name);
 	int search(int num);
 	int search(Date dateSearch);
-    string  PrintMember() const;
+	int getMemCount() const;
+
+    string  PrintMember(int index) const;
 };
 
 #endif /* STORE_H_ */

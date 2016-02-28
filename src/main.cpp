@@ -3,7 +3,10 @@
 #include "Store.h"
 
 using namespace std;
-
+/*
+ * READ THIS!
+ * This main is for testing only, it will not look like this in the qt project
+ */
 int main() {
 
 	// stupid test program - 2/25/16 10:50 pm
@@ -23,10 +26,12 @@ int main() {
 
 
 
+store.readIn();
 
+for(int i = 0; i < store.getMemCount(); i++){
+	cout << store.PrintMember(i);
+}
 
-	josh.setAll("Josh", "Regular", 12345, 69000, poop, .035);
-	cout << josh.printMember();
 
 
 

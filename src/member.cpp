@@ -81,6 +81,6 @@ string member::printMember() const {
 	output << this->type << endl;
 	output << this->id << endl;
 	output << this->total << endl;
-	output << exprDate.DisplayDate();
+	output << exprDate.DisplayDate() << endl;
 	return output.str();
 }

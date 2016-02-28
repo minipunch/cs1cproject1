@@ -30,7 +30,6 @@ Date Store::ConvertDate(string dateIn)
 	unsigned int year = atoi(pt3.c_str());
 	temp.SetDate(month, day, year);
 	return temp;
-
 }
 
 void Store::readIn()
@@ -40,34 +39,53 @@ void Store::readIn()
 	string name;
 	string type;
 	double idNum;
-	string date;
+	string dateTemp;
 	member *memPtr;
 	executive *exPtr;
-	Date temp;
+	Date date;
 
+	//read from the input file
 	while(inFile)
 	{
 		getline(inFile, name);
 		inFile >> idNum;
 		inFile.ignore(1000, '\n');
 		getline(inFile, type);
-		getline(inFile, date);
+		getline(inFile, dateTemp);
 
-		temp = Store::ConvertDate(date);
+		date = Store::ConvertDate(dateTemp);
 		if(type == "Executive"){
 			exPtr = new executive;
-
+			exPtr->setAll(name, type, idNum, 0, date, .035);
+			memPtr = exPtr;
 		}
 		else {
 			memPtr = new member;
+			memPtr->setAll(name, type, idNum, 0, date);
 		}
-
-
-
-
-//		cout << name << endl;
-//		cout << type << endl;
-//		cout << idNum << endl;
-//		cout << date << endl;
+		Store::addMember(memPtr);
 	}
+
+
+}
+
+
+void Store::addMember(member *newMem)
+{
+	members.push_back(newMem);
+}
+
+int Store::getMemCount() const
+{
+	return members.size();
+}
+
+string Store::PrintMember(int index) const
+{
+	stringstream output;
+
+		output << members.at(index)->printMember();
+		return output.str();
+
+	//output << member.at
 }
