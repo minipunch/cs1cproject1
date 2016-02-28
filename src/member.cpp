@@ -19,10 +19,10 @@ member::member(string newName, string newType, double newId, double newTotal, Da
 void member::setAll(string name, string type, double id, double total, Date exprDate)
 {
 	this->id = id;
-		this->type = type;
-		this->name = name;
-		this->total = total;
-		this->exprDate = exprDate;
+	this->type = type;
+	this->name = name;
+	this->total = total;
+	this->exprDate = exprDate;
 }
 void member::setName(string newName)
 {

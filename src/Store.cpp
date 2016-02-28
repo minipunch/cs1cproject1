@@ -45,14 +45,15 @@ void Store::readIn()
 	Date date;
 
 	//read from the input file
-	while(inFile)
+	while(!inFile.eof())
 	{
 		getline(inFile, name);
 		inFile >> idNum;
 		inFile.ignore(1000, '\n');
 		getline(inFile, type);
 		getline(inFile, dateTemp);
-
+//		cout << "reading in " << name << endl;
+//		cin.ignore(1000, '\n');
 		date = Store::ConvertDate(dateTemp);
 		if(type == "Executive"){
 			exPtr = new executive;
@@ -65,10 +66,8 @@ void Store::readIn()
 		}
 		Store::addMember(memPtr);
 	}
-
-
+	Store::sorting(NAME);
 }
-
 
 void Store::addMember(member *newMem)
 {
@@ -88,4 +87,9 @@ string Store::PrintMember(int index) const
 		return output.str();
 
 	//output << member.at
+}
+
+void Store::sorting(int property)
+{
+	sort(members.begin(), members.end(), memberSort(property));
 }
