@@ -7,13 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-
-    for(int x = 0; x < 15; ++x)
-    {
-        member *temp = new member;
-        memDeq.push_back(*temp);
-    }
+    ui->setupUi(this);  
+    bulkClub.readIn();
 }
 
 MainWindow::~MainWindow()
@@ -24,21 +19,24 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_9_clicked()
 {
 
+    string tempStr;
+    QString qTemp;
+    tempStr = bulkClub.getMemberName(1);
+    qTemp = QString::fromStdString(tempStr);
 
-    for(int x = 0; x < 15; ++x)
-    {
-        ui->listWidget->addItem(QString::fromStdString(memDeq.at(x).getName()));
-    }
+    //ui->listWidget->addItem(qTemp);
 
-    // old test stuff below
-    //josh.setName("Bill Gates");
-   //ui->label_2->setText(QString::fromStdString(josh.getName()));
+    ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(0)));
 }
 
 void MainWindow::setDate()
 {
     Date today;
     ui->label_2->setText(QString::fromStdString("Date: " + today.DisplayDate()));
+}
+
+Store MainWindow::getStore() {
+    return this->bulkClub;
 }
 
 

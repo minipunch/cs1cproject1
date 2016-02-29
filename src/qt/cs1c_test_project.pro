@@ -16,11 +16,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     date.cpp \
     executive.cpp \
-    member.cpp
+    member.cpp \
+    Item.cpp \
+    Store.cpp
 
 HEADERS  += mainwindow.h \
     date.h \
     executive.h \
-    member.h
+    member.h \
+    Item.h \
+    itemnames.h \
+    Store.h
 
 FORMS    += mainwindow.ui

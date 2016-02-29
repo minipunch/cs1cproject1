@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "member.h"
+#include "Store.h"
 #include <deque>
 
 namespace Ui {
@@ -18,13 +18,14 @@ public:
     ~MainWindow();
     void setDate();
     void displayMembers(member mem);
+    Store getStore();
 
 private slots:
     void on_pushButton_9_clicked();
 
 private:
     Ui::MainWindow *ui;
-    deque<member> memDeq;
+    Store bulkClub;
 };
 
 #endif // MAINWINDOW_H
