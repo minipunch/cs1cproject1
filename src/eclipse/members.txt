@@ -1,0 +1,48 @@
+Fred Frugal
+67899
+Executive
+12/15/2015
+Betty Buysalot
+12899
+Executive
+09/22/2015
+Larry Largefamily
+88888
+Regular
+10/01/2015
+Sally Shopper
+12345
+Regular
+11/01/2015
+Linda Livesalone
+35647
+Regular
+12/15/2015
+Sam Single
+31311
+Executive
+12/05/2015
+Mary IsHappy
+96309
+Executive
+12/05/2015
+Kathy Havealotsofkids
+12121
+Regular
+12/30/2015
+Vern Video 
+77777
+Executive
+11/15/2015
+Benjamin Business
+16161
+Regular
+11/20/2015
+Tasha the Cat
+61616
+Regular
+03/20/2015
+Sue Shoparound
+56723
+Executive
+03/21/2015

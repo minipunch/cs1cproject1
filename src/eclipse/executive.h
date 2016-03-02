@@ -7,20 +7,24 @@
 
 #ifndef EXECUTIVE_H_
 #define EXECUTIVE_H_
+
 #include "member.h"
 
 class executive : public member {
-	double rebateAmount;
+private:
+	float rebateAmount;
 public:
 	// constructors
 	executive();
-	executive(double num);
+	virtual ~executive();
+	executive(float newRebate);
 	// setters
-	void setRebateAmount(double num);
+	void setRebateAmount(float num);
+	void setAll(string name, string type, double id, double total, Date exprDate, float rebate);
 	// getters
-	double getRebateAmount() const;
+	float getRebateAmount() const;
 	// miscellaneous
-	double calculateRebate() const;
+	float calculateRebate() const;
 	void printExecutive() const;
 };
 
