@@ -41,80 +41,21 @@ Date Store::ConvertDate(string dateIn)
 void Store::readIn()
 {
 
-    member *memPtr = NULL;
-    member *exPtr = NULL;
-    Date date;
-
-    exPtr = new member;
-    exPtr->setAll("Nick", "regular", 12345, 0, date);
-
-     memPtr = new member;
-     memPtr->setAll("Josh", "Regular", 12346, 0, date);
 
 
-    Store::addMember(memPtr);
-    Store::addMember(exPtr);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    QFile file("C:\\Users\\minipunch1\\Desktop\\Saddleback C++\\CS1C\\csc1c_project_qt\\members.txt");
-//    if(!file.open(QIODevice::ReadOnly))
-//        QMessageBox::information(0,"Member Read Error",file.errorString());
-
-//    QTextStream in(&file);
-
-//    QString name;
-//    string nameStr;
-//    QString type;
-//    string typeStr;
-//    double idNum;
-//    QString idNumStr;
-//    QString dateTemp;
 //    member *memPtr = NULL;
-//    executive *exPtr = NULL;
+//    member *exPtr = NULL;
 //    Date date;
 
+//    exPtr = new member;
+//    exPtr->setAll("Nick", "regular", 12345, 0, date);
 
-//    while(!in.atEnd())
-//    {
-//        name = in.readLine();
-//        type = in.readLine();
-//        idNumStr = in.readLine();
-//        dateTemp = in.readLine();
-
-//        idNum = idNumStr.toDouble();
-//        nameStr = name.toStdString();
-//        typeStr = type.toStdString();
+//     memPtr = new member;
+//     memPtr->setAll("Josh", "Regular", 12346, 0, date);
 
 
-//        if(type == "Executive")
-//        {
-//            exPtr = new executive;
-//            exPtr->setAll(nameStr, typeStr, idNum, 0, date, .035);
-//            memPtr = exPtr;
-//        }
-//        else
-//        {
-//            memPtr = new member;
-//            memPtr->setAll(nameStr, typeStr, idNum, 0, date);
-//        }
-
-//        Store::addMember(memPtr);
-
-//    }
+//    Store::addMember(memPtr);
+//    Store::addMember(exPtr);
 
 
 
@@ -126,14 +67,55 @@ void Store::readIn()
 
 
 
+    QFile file("C:\\Users\\Nick\\OneDrive\\CS1C\\Qt Projects\\qt\\members.txt");
+    if(!file.open(QIODevice::ReadOnly))
+        QMessageBox::information(0,"Member Read Error",file.errorString());
+
+    QTextStream in(&file);
+
+    QString name;
+    string nameStr;
+    QString type;
+    string typeStr;
+    double idNum;
+    QString idNumStr;
+    QString dateTemp;
+    string dateStr;
+    member *memPtr = NULL;
+    executive *exPtr = NULL;
+    Date date;
 
 
+    while(!in.atEnd())
+    {
+        name = in.readLine();
+        idNumStr = in.readLine();
+        type = in.readLine();
+        dateTemp = in.readLine();
+
+        idNum = idNumStr.toDouble();
+        nameStr = name.toStdString();
+        typeStr = type.toStdString();
+        dateStr = dateTemp.toStdString();
 
 
+     date = Store::ConvertDate(dateStr);
+        if(type == "Executive")
+        {
+            exPtr = new executive;
+            exPtr->setAll(nameStr, typeStr, idNum, 0, date, .035);
+            memPtr = exPtr;
+        }
+        else
+        {
+            memPtr = new member;
+            memPtr->setAll(nameStr, typeStr, idNum, 0, date);
+        }
 
-
-
-
+        Store::addMember(memPtr);
+    }
+     Store::sorting(NAME);
+//
 
 //	ifstream inFile;
 //	inFile.open("members.txt");
@@ -168,7 +150,7 @@ void Store::readIn()
 //		Store::addMember(memPtr);
 //	}
 //    inFile.close();
-//	Store::sorting(NAME);
+
 }
 
 void Store::addMember(member *newMem)

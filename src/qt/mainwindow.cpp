@@ -19,14 +19,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_9_clicked()
 {
 
-    string tempStr;
-    QString qTemp;
-    tempStr = bulkClub.getMemberName(1);
-    qTemp = QString::fromStdString(tempStr);
 
-    //ui->listWidget->addItem(qTemp);
+    for(int i = 0; i < bulkClub.getMemCount(); i++)
+    {
+    ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
+    }
 
-    ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(0)));
+   // ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(1)));
 }
 
 void MainWindow::setDate()
