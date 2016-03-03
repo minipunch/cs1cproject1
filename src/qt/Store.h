@@ -10,15 +10,24 @@
 #include "executive.h"
 #include "itemnames.h"
 #include <fstream>
+#include <QFileDialog>
+#include "Item.h"
 
 class Store {
 
 private:
-	//add list of items purchased @ store
+    // TODO: add list of items purchased at the store
 	deque<member*> members;
+    deque<Item*> mem;
+    string filename;
 public:
+    // constructors
 	Store();
 	~Store();
+    // setters
+    void setFilename(string fname);
+    // getters
+    // miscellaneous
 	void addMember(member *newMem);
 	void removeMember(int index);
 	void sorting(int property);
@@ -30,7 +39,6 @@ public:
 	int getMemCount() const;
     member* getMember(int x) const;
     string getMemberName(int x) const;
-
     string  PrintMember(int index) const;
 };
 

@@ -1,0 +1,11 @@
+class Member {
+	string name;
+	int number;
+	string type;
+	Date expr;
+	double total;
+public:
+	member();
+	member(string name);
+	string getName() const;
+};

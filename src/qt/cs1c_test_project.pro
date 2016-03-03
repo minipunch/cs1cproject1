@@ -26,6 +26,7 @@ HEADERS  += mainwindow.h \
     member.h \
     Item.h \
     itemnames.h \
-    Store.h
+    Store.h \
+    header.h
 
 FORMS    += mainwindow.ui

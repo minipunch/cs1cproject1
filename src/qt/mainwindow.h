@@ -19,13 +19,16 @@ public:
     void setDate();
     void displayMembers(member mem);
     Store getStore();
+    string getFilename() const;
 
 private slots:
     void on_pushButton_9_clicked();
+    void on_pushButton_10_clicked();
 
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
+    string filename;
 };
 
 #endif // MAINWINDOW_H

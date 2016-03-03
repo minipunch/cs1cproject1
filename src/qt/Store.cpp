@@ -40,34 +40,8 @@ Date Store::ConvertDate(string dateIn)
 
 void Store::readIn()
 {
-
-
-
-//    member *memPtr = NULL;
-//    member *exPtr = NULL;
-//    Date date;
-
-//    exPtr = new member;
-//    exPtr->setAll("Nick", "regular", 12345, 0, date);
-
-//     memPtr = new member;
-//     memPtr->setAll("Josh", "Regular", 12346, 0, date);
-
-
-//    Store::addMember(memPtr);
-//    Store::addMember(exPtr);
-
-
-
-
-
-
-
-
-
-
-
-    QFile file("C:\\Users\\Nick\\OneDrive\\CS1C\\Qt Projects\\qt\\members.txt");
+    QString fName = QString::fromStdString(this->filename);
+    QFile file(fName);
     if(!file.open(QIODevice::ReadOnly))
         QMessageBox::information(0,"Member Read Error",file.errorString());
 
@@ -115,42 +89,6 @@ void Store::readIn()
         Store::addMember(memPtr);
     }
      Store::sorting(NAME);
-//
-
-//	ifstream inFile;
-//	inFile.open("members.txt");
-//	string name;
-//	string type;
-//	double idNum;
-//	string dateTemp;
-//	member *memPtr;
-//	executive *exPtr;
-//    Date date;
-
-//	//read from the input file
-//    while(inFile)
-//	{
-//		getline(inFile, name);
-//        inFile >> idNum;
-//        inFile.ignore(1000, '\n');
-//        getline(inFile, type);
-//		getline(inFile, dateTemp);
-//		cout << "reading in " << name << endl;
-//		cin.ignore(1000, '\n');
-//        //date = Store::ConvertDate(dateTemp);
-//		if(type == "Executive"){
-//			exPtr = new executive;
-//			exPtr->setAll(name, type, idNum, 0, date, .035);
-//			memPtr = exPtr;
-//		}
-//		else {
-//			memPtr = new member;
-//			memPtr->setAll(name, type, idNum, 0, date);
-//		}
-//		Store::addMember(memPtr);
-//	}
-//    inFile.close();
-
 }
 
 void Store::addMember(member *newMem)
@@ -169,8 +107,6 @@ string Store::PrintMember(int index) const
 
 		output << members.at(index)->printMember();
 		return output.str();
-
-	//output << member.at
 }
 
 void Store::sorting(int property)
@@ -191,4 +127,8 @@ string Store::getMemberName(int x) const {
     temp = tempMem->getName();
 
     return temp;
+}
+
+void Store::setFilename(string fname) {
+    this->filename = fname;
 }

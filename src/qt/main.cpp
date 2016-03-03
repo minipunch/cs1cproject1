@@ -5,6 +5,7 @@
 
 int main(int argc, char *argv[])
 {
+   // string fileNizzame;
     QApplication a(argc, argv);
 
     MainWindow testapp;
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
 
     // display current date
     testapp.setDate();
+
 
     return a.exec();
 }
