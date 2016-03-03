@@ -40,6 +40,7 @@ Date Store::ConvertDate(string dateIn)
 
 void Store::readIn()
 {
+    this->members.clear();
     QString fName = QString::fromStdString(this->filename);
     QFile file(fName);
     if(!file.open(QIODevice::ReadOnly))
