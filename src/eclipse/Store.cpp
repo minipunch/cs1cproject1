@@ -32,7 +32,8 @@ Date Store::ConvertDate(string dateIn)
 	return temp;
 }
 
-void Store::readIn()
+
+void Store::readInMembers()
 {
 	ifstream inFile;
 	inFile.open("members.txt");
@@ -45,6 +46,8 @@ void Store::readIn()
 	Date date;
 
 	//read from the input file
+	//for eclipse only!!!!!!
+	//must be rebuilt for qt
 	while(!inFile.eof())
 	{
 		getline(inFile, name);
@@ -52,8 +55,6 @@ void Store::readIn()
 		inFile.ignore(1000, '\n');
 		getline(inFile, type);
 		getline(inFile, dateTemp);
-//		cout << "reading in " << name << endl;
-//		cin.ignore(1000, '\n');
 		date = Store::ConvertDate(dateTemp);
 		if(type == "Executive"){
 			exPtr = new executive;
@@ -70,6 +71,12 @@ void Store::readIn()
 		exPtr = NULL;
 	}
 	Store::sorting(NAME);
+}
+
+void Store::readInPurch()
+{
+	//Needs to be rebuilt for qt!!!!!!!!!!!!
+	ifstream inFile;
 }
 
 void Store::addMember(member *newMem)

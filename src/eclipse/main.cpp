@@ -9,28 +9,13 @@ using namespace std;
  */
 int main() {
 
-	// stupid test program - 2/25/16 10:50 pm
-	Store store;
-	executive josh;
-//	executive phil;
-
-//	josh.setExprDate(3,3,2015);
-//	josh.printMember();
-//	phil.setRebateAmount(200);
-//	phil.printExecutive();
-//
-	Date poop;
-//	string test = "02/06/2015";
-//	poop = store.ConvertDate(test);
-//	cout << poop.DisplayDate();
+	Date temp;
+	Item *test;
+	test = new Item;
 
 
-
-store.readIn();
-
-for(int i = 0; i < store.getMemCount(); i++){
-	cout << store.PrintMember(i);
-}
+	test->SetAll("Dvd", 13.37, 5, temp, 12345);
+	cout << test->printItem();
 
 
 

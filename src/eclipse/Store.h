@@ -9,27 +9,33 @@
 #define STORE_H_
 #include "executive.h"
 #include "itemnames.h"
+#include "Item.h"
 #include <fstream>
 
 class Store {
 
 private:
-	//add list of items purchased @ store
+	//list of all members registered at a store
 	deque<member*> members;
+	//list of all items bought at this store
+	deque<Item*> items;
 public:
 	Store();
 	~Store();
 	void addMember(member *newMem);
+	void addItem(Item *newItem);
 	void removeMember(int index);
 	void sorting(int property);
-	void readIn();
+	void readInMembers();
+	void readInPurch();
 	Date ConvertDate(string dateIn);
 	int search(string name);
 	int search(int num);
 	int search(Date dateSearch);
 	int getMemCount() const;
-
+	int getItemCount() const;
     string  PrintMember(int index) const;
+    string PrintItem(int index) const;
 };
 
 #endif /* STORE_H_ */
