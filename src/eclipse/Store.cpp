@@ -72,7 +72,36 @@ void Store::readInMembers()
 	}
 	Store::sorting(NAME);
 }
+void Store::readItems()
+	Store hi;
+	ifstream inFile;
+	inFile.open("day1.txt");
+	string name;
+	float price = 0;
+	int quantity = 0;
+	double idNum = 0;
+	string dateTemp;
+	Item *iPtr;
+	Date date;
 
+	//INCOMPLETE AND EXAMPLE
+	while (!inFile.eof()) {
+		getline(inFile, dateTemp);
+		date = ConvertDate(dateTemp);
+		inFile >> idNum;
+		inFile.ignore(1000, '\n');
+		getline(inFile, name);
+		inFile >> price;
+		inFile >> quantity;
+		inFile.ignore(1000, '\n');
+		iPtr = new Item;
+
+		iPtr->SetAll(name, price, quantity, date, idNum);
+
+		hi.addItem(iPtr);
+		iPtr = NULL;
+	}
+}
 void Store::readInPurch()
 {
 	//Needs to be rebuilt for qt!!!!!!!!!!!!
