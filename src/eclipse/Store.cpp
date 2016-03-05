@@ -113,6 +113,10 @@ void Store::addMember(member *newMem)
 	members.push_back(newMem);
 }
 
+void Store:: addItem(Item *i){
+	items.push_back(i);
+}
+
 int Store::getMemCount() const
 {
 	return members.size();
