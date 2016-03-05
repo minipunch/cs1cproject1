@@ -40,7 +40,7 @@ public:
 	Date GetDate()   const;
 	int GetQty() const;
 	string printItem() const;
-
+	void readItems();
 };
 
 struct ItemSort
