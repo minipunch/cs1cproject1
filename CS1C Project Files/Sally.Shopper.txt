@@ -1,0 +1,72 @@
+Sally Shopper 12345
+Regular
+
+Day 1:
+	1 Gallon Milk
+	88 @ $6.09 = $535.92
+
+	Seinfeld Collection
+	50 @ $39.55 = $1977.50
+
+	Epson Printer
+	20 @ $59.59 = $1191.80
+
+	Tax   = $305.68
+	Total = $4010.90
+
+Day 2:
+	FarberWareCookware Set
+	20 @ $289.59 = $5791.80
+
+	Legal Pads
+	10 @ $5.85 = $58.50
+
+	Tax   = $482.65
+	Total = $6332.95
+
+Day 3:
+	1 Gallon Milk
+	15 @ $6.09 = $91.35
+
+	Assorted Muffins
+	1 @ $5.49 = $5.49
+
+	Tax   = $7.99
+	Total = $104.83
+
+Day 4:
+	1 Gallon Milk
+	3 @ $6.09 = $18.27
+
+	Assorted Muffins
+	14 @ $5.49 = $76.86
+
+	All Laundry Detergent
+	1 @ $7.59 = $7.59
+
+	Disney DVD Collection 2
+	1 @ $59.59 = $59.59
+
+	Tax   = $13.39
+	Total = $175.70
+
+Day 5:
+	Runaway Jury
+	2 @ $18.55 = $37.10
+
+	Fresh Mozzarella
+	2 @ $8.25 = $16.50
+
+	Vine Ripe Tomatoes
+	2 @ $6.59 = $13.18
+
+	Sprite
+	20 @ $6.35 = $127.00
+
+	Propel Fitness Water
+	3 @ $12.10 = $36.30
+
+	Tax   = $18.98
+	Total = $249.06
+
+Total = $10873.44

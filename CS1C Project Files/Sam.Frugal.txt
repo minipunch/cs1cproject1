@@ -1,0 +1,44 @@
+Sam Frugal 67899
+Executive
+
+Day 1:
+	Rye Bread
+	90 @ $5.39 = $485.10
+
+	The Alamo
+	6 @ $19.55 = $117.30
+
+	Most Basic DVD Player
+	1 @ $59.59 = $59.59
+
+	Instant Coffee
+	5 @ $6.35 = $31.75
+
+	Tax   = $57.24
+	Total = $750.97
+
+
+Day 2:
+	Ponds Lotionn
+	1 @ $5.39 = $5.39
+
+	Tax   = $0.44
+	Total = $5.83
+
+
+Day 3:
+	None
+
+
+Day 4:
+	Bkfst Cereal Variety Pack
+	4 @ $6.89 = $27.56
+
+	Tax   = $2.27
+	Total = $29.83
+
+
+Day 5:
+	None
+
+Total = $786.63

@@ -1,0 +1,38 @@
+Larry Largeextendedfamily 88888
+Regular
+
+Day 1:
+	Epson Printer Cart.
+	5 @ $32.10 = $160.50
+
+	Tax   = $13.24
+	Total = $173.74
+
+Day 2:
+	None
+
+Day 3:
+	Home On The Range
+	1 @ $19.58 = $19.58
+
+	A Bug's life
+	1 @ $9.55 = $9.55
+
+	Tax   = $2.40
+	Total = $31.53
+
+Day 4:
+	Foster Farms Whole Chicken
+	1 @ $10.35 = $10.35
+
+	Tax   = $0.85
+	Total = $11.20
+
+Day 5:
+	Seredipity
+	4 @ $16.55 = $66.20
+
+	Tax   = $5.46
+        Total = $71.66
+
+Total = $288.13

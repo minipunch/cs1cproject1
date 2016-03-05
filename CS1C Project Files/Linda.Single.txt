@@ -1,0 +1,27 @@
+Linda Single 35647
+Regular
+
+Day 1:
+	None
+
+Day 2:
+	Hamburger
+	1 @ $6.85 = $6.85
+
+	Tax   = $0.57
+	Total = $7.42
+
+Day 3:
+	Pringles
+	8 @ $6.59 = $52.72
+
+	Tax   = $4.35
+	Total = $57.07
+
+Day 4:
+	None
+
+Day 5:
+	None
+
+Total = $64.49

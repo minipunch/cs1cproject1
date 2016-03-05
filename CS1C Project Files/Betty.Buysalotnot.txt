@@ -1,0 +1,36 @@
+Betty Buysalotnot 12899
+Executive
+
+Day 1:
+	Ground Beef
+	1 @ $6.46 = $6.46
+
+	Pork Tenderloin
+	2 @ $16.85 = $33.70
+
+	Shrek 2
+	1 @ $19.55 = $19.55
+
+	Paper Shredder
+	1 @ $199.59 = $199.59
+
+	Tax   = $21.39
+	Total = $280.69
+
+Day 2:
+	None
+
+Day 3:
+	None
+
+Day 4:
+	Pepsi
+	8 @ $6.35 = $50.80
+
+	Tax   = $4.19
+	Total = $54.99
+
+Day 5:
+	None
+
+Total = $335.68
