@@ -36,6 +36,7 @@ public:
 	int getItemCount() const;
     string  PrintMember(int index) const;
     string PrintItem(int index) const;
+    void readItems();
 };
 
 #endif /* STORE_H_ */
