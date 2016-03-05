@@ -37,6 +37,7 @@ public:
     string  PrintMember(int index) const;
     string PrintItem(int index) const;
     void readItems();
+    void addItem(Item *i)
 };
 
 #endif /* STORE_H_ */
