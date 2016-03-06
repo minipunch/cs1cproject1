@@ -43,6 +43,8 @@ public:
 	Date getExprDate() const;
 	//miscellaneous
 	string printMember() const;
+	void addTT(float a);
+	void addTTW(float a);
 
 };
 struct memberSort{

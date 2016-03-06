@@ -87,3 +87,10 @@ string member::printMember() const {
 	output << exprDate.DisplayDate() << endl;
 	return output.str();
 }
+
+void member::addTT(float a){
+	this->total += a;
+}
+void member::addTTW(float a){
+	this->totalwTax += a;
+}

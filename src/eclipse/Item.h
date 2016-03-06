@@ -42,6 +42,10 @@ public:
 	Date GetDate()   const;
 	int GetQty() const;
 	string printItem() const;
+	float getTotwTax() const;
+	float getTotCost() const;
+
+
 };
 
 struct ItemSort

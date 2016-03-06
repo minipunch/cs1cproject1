@@ -109,16 +109,11 @@ void Store::readItems()
 	Store::sortingItems(NAME);
 }
 
-
+//MEMBER FUNCTIONS
 void Store::addMember(member *newMem)
 {
 	members.push_back(newMem);
 }
-
-void Store::addItem(Item *newItem){
-	items.push_back(newItem);
-}
-
 int Store::getMemCount() const
 {
 	return members.size();
@@ -150,7 +145,49 @@ void Store::sortingMems(int property)
 {
 	sort(members.begin(), members.end(), memberSort(property));
 }
+string Store::getMemName(int index){
+	return members.at(index)->getName();
+}
+string  Store::getMemType(int index){
+	return members.at(index)->getType();
+}
+double  Store::getMemID(int index){
+	return members.at(index)->getId();
+}
+Date  Store::getMemExp(int index){
+	return members.at(index)->getExprDate();
+}
+
+//ITEM FUNCTIONS
+string Store::getiName(int index) const{
+	return items.at(index)->GetName();
+}
+double Store::getiID(int index) const{
+	return items.at(index)->GetId();
+}
+int Store::getiQuan(int index) const{
+	return items.at(index)->GetQty();
+}
+Date Store::getiDate(int index) const{
+	return items.at(index)->GetDate();
+}
+float Store::getiPrice(int index) const{
+	return items.at(index)->GetPrice();
+}
+float Store::getTotCost(int index) const{
+	return items.at(index)->getTotCost();
+}
+float Store::getTotwTax(int index) const{
+	return items.at(index)->getTotwTax();
+}
 void Store::sortingItems(int property)
 {
 	sort(items.begin(), items.end(), ItemSort(property));
+}
+int Store::getItemCount() const
+{
+	return items.size();
+}
+void Store::addItem(Item *newItem){
+	items.push_back(newItem);
 }

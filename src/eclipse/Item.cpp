@@ -83,6 +83,13 @@ void Item::CalcTotwTax()
 	this->totwTax = this->totCost +(this->totCost * .0825);
 }
 
+float Item::getTotwTax()const{
+	return this->totwTax;
+}
+float Item::getTotCost()const{
+	return this->totCost;
+}
+
 string Item::printItem() const
 {
 	stringstream output;
@@ -94,5 +101,4 @@ string Item::printItem() const
 	output << fixed << setprecision(2) << this->totwTax << endl;
 	output << this->purchDate.DisplayDate() << endl;
 	return output.str();
-
 }
