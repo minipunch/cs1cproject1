@@ -114,16 +114,15 @@ void Store::addMember(member *newMem)
 {
 	members.push_back(newMem);
 }
+
+void Store::removeMember(int index ){
+	deque<member*>::iterator iter = members.begin() + index;
+	members.erase(iter);
+}
 int Store::getMemCount() const
 {
 	return members.size();
 }
-
-int Store::getItemCount() const
-{
-	return items.size();
-}
-
 string Store::PrintMember(int index) const
 {
 	stringstream output;

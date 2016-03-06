@@ -52,7 +52,6 @@ public:
 	void readInMembers();
 	void removeMember(int index);
 	void sortingMems(int property);
-	void delMember(member *mem);
 };
 
 #endif /* STORE_H_ */
