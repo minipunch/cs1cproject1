@@ -25,7 +25,8 @@ public:
 	void addMember(member *newMem);
 	void addItem(Item *newItem);
 	void removeMember(int index);
-	void sorting(int property);
+	void sortingMems(int property);
+	void sortingItems(int property);
 	void readInMembers();
 
 	Date ConvertDate(string dateIn);

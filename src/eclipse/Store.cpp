@@ -58,19 +58,19 @@ void Store::readInMembers()
 		date = Store::ConvertDate(dateTemp);
 		if(type == "Executive"){
 			exPtr = new executive;
-			exPtr->setAll(name, type, idNum, 0, date, .035);
+			exPtr->setAll(name, type, idNum, date, .035);
 			memPtr = exPtr;
 		}
 		else {
 			memPtr = new member;
-			memPtr->setAll(name, type, idNum, 0, date);
+			memPtr->setAll(name, type, idNum, date);
 		}
 		Store::addMember(memPtr);
 
 		memPtr = NULL;
 		exPtr = NULL;
 	}
-	Store::sorting(NAME);
+	Store::sortingMems(NAME);
 }
 void Store::readItems()
 {
@@ -106,6 +106,7 @@ void Store::readItems()
 		Store::addItem(iPtr);
 		//iPtr = NULL;
 	}
+	Store::sortingItems(NAME);
 }
 
 
@@ -145,7 +146,11 @@ string Store::PrintItem(int index) const
 	return output.str();
 }
 
-void Store::sorting(int property)
+void Store::sortingMems(int property)
 {
 	sort(members.begin(), members.end(), memberSort(property));
+}
+void Store::sortingItems(int property)
+{
+	sort(items.begin(), items.end(), ItemSort(property));
 }

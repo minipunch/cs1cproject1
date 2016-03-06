@@ -1,10 +1,10 @@
 #include  "member.h"
 
-member::member() : name("Default Name"), type("Member"), id(-200), total(-200)
+member::member() : name("Default Name"), type("Member"), id(-200), total(-200), totalwTax(-200)
 {
 }
 member::~member(){}
-member::member(string newName, double newId) : name(newName), type("Member"), id(newId), total(0)
+member::member(string newName, double newId) : name(newName), type("Member"), id(newId), total(0), totalwTax(0)
 {
 }
 
@@ -14,15 +14,18 @@ member::member(string newName, string newType, double newId, double newTotal, Da
 	this->type = newType;
 	this->name = newName;
 	this->total = newTotal;
+	totalwTax = 0; // place holder
 	this->exprDate = newExprDate;
 }
-void member::setAll(string name, string type, double id, double total, Date exprDate)
+void member::setAll(string name, string type, double id, Date exprDate)
 {
 	this->id = id;
 	this->type = type;
 	this->name = name;
-	this->total = total;
 	this->exprDate = exprDate;
+
+	total = 0;
+	totalwTax = 0;
 }
 void member::setName(string newName)
 {
@@ -80,7 +83,7 @@ string member::printMember() const {
 	output << this->name << endl;
 	output << this->type << endl;
 	output << this->id << endl;
-	output << this->total << endl;
+	output << this->totalwTax << endl;
 	output << exprDate.DisplayDate() << endl;
 	return output.str();
 }

@@ -13,6 +13,7 @@ Item::Item() {
 	this->quantity = 0;
 	this->price = 0;
 	this->totCost = 0;
+	this->totwTax = 0;
 
 }
 
@@ -28,7 +29,7 @@ void Item::SetAll(string name, float price, int quantity, Date date, double id)
 	this->purchDate = date;
 	this->id = id;
 	Item::CalcTotCost();
-
+	Item::CalcTotwTax();
 }
 
 void Item::SetId(double id)
@@ -77,15 +78,20 @@ void Item::CalcTotCost()
 this->totCost = this->price * this->quantity;
 }
 
+void Item::CalcTotwTax()
+{
+	this->totwTax = this->totCost +(this->totCost * .0825);
+}
 
 string Item::printItem() const
 {
 	stringstream output;
 	output << this->name << endl;
-	output << this->price << endl;
-	output << this->id << endl;
+	output << fixed << setprecision(2) <<this->price << endl;
+	output << fixed << setprecision(0) <<this->id << endl;
 	output << this->quantity << endl;
-	output << this->totCost << endl;
+	output << fixed << setprecision(2) << this->totCost << endl;
+	output << fixed << setprecision(2) << this->totwTax << endl;
 	output << this->purchDate.DisplayDate() << endl;
 	return output.str();
 

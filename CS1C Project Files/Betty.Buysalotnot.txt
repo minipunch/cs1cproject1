@@ -34,3 +34,6 @@ Day 5:
 	None
 
 Total = $335.68
+
+
+total pre tax: 

@@ -20,10 +20,12 @@ private:
 	double id;
 	int quantity;
 	Date purchDate;
-	float totCost;
+	float totCost; //w/o tax
+	float totwTax; // w/ tax
 
 protected:
 	void CalcTotCost();
+	void CalcTotwTax();
 public:
 	Item();
 	~Item();
@@ -51,9 +53,13 @@ struct ItemSort
 			{
 				return i1->GetName() < i2->GetName();
 			}
-			else
+			else if(property == ID)
 			{
 				return i1->GetId() < i2->GetId();
+			}
+			else
+			{
+				return i1->GetPrice() < i2->GetPrice();
 			}
 			//data operator overloading
 		}
