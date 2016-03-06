@@ -15,7 +15,7 @@ Store::Store() {
 }
 
 Store::~Store() {
-	cout << "test" << endl;
+	//cout << "test" << endl;
 	// TODO Auto-generated destructor stub
 }
 
@@ -73,13 +73,13 @@ void Store::readInMembers()
 	Store::sorting(NAME);
 }
 void Store::readItems()
-	Store hi;
+{
 	ifstream inFile;
 	inFile.open("day1.txt");
 	string name;
-	float price = 0;
-	int quantity = 0;
-	double idNum = 0;
+	float price;
+	int quantity;
+	double idNum;
 	string dateTemp;
 	Item *iPtr;
 	Date date;
@@ -87,39 +87,45 @@ void Store::readItems()
 	//INCOMPLETE AND EXAMPLE
 	while (!inFile.eof()) {
 		getline(inFile, dateTemp);
+		//cout << dateTemp << endl;
 		date = ConvertDate(dateTemp);
 		inFile >> idNum;
+		//cout << idNum << endl;
 		inFile.ignore(1000, '\n');
 		getline(inFile, name);
+	//	cout << name << endl;
 		inFile >> price;
+		//cout << price << endl;
 		inFile >> quantity;
+		//cout << quantity << endl;
 		inFile.ignore(1000, '\n');
 		iPtr = new Item;
-
+	//	cin.ignore(1000, '\n');
 		iPtr->SetAll(name, price, quantity, date, idNum);
 
-		hi.addItem(iPtr);
-		iPtr = NULL;
+		Store::addItem(iPtr);
+		//iPtr = NULL;
 	}
 }
-void Store::readInPurch()
-{
-	//Needs to be rebuilt for qt!!!!!!!!!!!!
-	ifstream inFile;
-}
+
 
 void Store::addMember(member *newMem)
 {
 	members.push_back(newMem);
 }
 
-void Store:: addItem(Item *i){
-	items.push_back(i);
+void Store::addItem(Item *newItem){
+	items.push_back(newItem);
 }
 
 int Store::getMemCount() const
 {
 	return members.size();
+}
+
+int Store::getItemCount() const
+{
+	return items.size();
 }
 
 string Store::PrintMember(int index) const
@@ -130,6 +136,13 @@ string Store::PrintMember(int index) const
 		return output.str();
 
 	//output << member.at
+}
+
+string Store::PrintItem(int index) const
+{
+	stringstream output;
+	output << items.at(index)->printItem();
+	return output.str();
 }
 
 void Store::sorting(int property)

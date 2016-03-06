@@ -27,7 +27,7 @@ public:
 	void removeMember(int index);
 	void sorting(int property);
 	void readInMembers();
-	void readInPurch();
+
 	Date ConvertDate(string dateIn);
 	int search(string name);
 	int search(int num);
@@ -37,7 +37,7 @@ public:
     string  PrintMember(int index) const;
     string PrintItem(int index) const;
     void readItems();
-    void addItem(Item *i)
+
 };
 
 #endif /* STORE_H_ */

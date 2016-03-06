@@ -9,13 +9,19 @@ using namespace std;
  */
 int main() {
 
-	Date temp;
-	Item *test;
-	test = new Item;
+	Store test;
 
 
-	test->SetAll("Dvd", 13.37, 5, temp, 12345);
-	cout << test->printItem();
+	test.readItems();
+
+	cout << test.getItemCount();
+	cin.ignore(1000, '\n');
+
+	for(int i= 0; i < test.getItemCount(); i++ ){
+
+		cout << test.PrintItem(i) << endl;
+	}
+
 
 
 
