@@ -132,14 +132,6 @@ string Store::PrintMember(int index) const
 
 	//output << member.at
 }
-
-string Store::PrintItem(int index) const
-{
-	stringstream output;
-	output << items.at(index)->printItem();
-	return output.str();
-}
-
 void Store::sortingMems(int property)
 {
 	sort(members.begin(), members.end(), memberSort(property));
@@ -156,6 +148,25 @@ double  Store::getMemID(int index){
 Date  Store::getMemExp(int index){
 	return members.at(index)->getExprDate();
 }
+
+int Store::searchMem(double id)
+{
+	int index = 0;
+	bool found = false;
+
+while(!found || index < Store::getMemCount())
+{
+	if(id == members.at(index)->getId())
+	{
+		found = true;
+	}
+	index ++;
+}
+
+return index;
+}
+
+
 
 //ITEM FUNCTIONS
 string Store::getiName(int index) const{
@@ -189,4 +200,10 @@ int Store::getItemCount() const
 }
 void Store::addItem(Item *newItem){
 	items.push_back(newItem);
+}
+string Store::PrintItem(int index) const
+{
+	stringstream output;
+	output << items.at(index)->printItem();
+	return output.str();
 }
