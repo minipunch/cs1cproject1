@@ -83,6 +83,7 @@ void Store::readItems()
 	string dateTemp;
 	Item *iPtr;
 	Date date;
+	unsigned int index= 0;
 
 	//INCOMPLETE AND EXAMPLE
 	while (!inFile.eof()) {
@@ -102,11 +103,17 @@ void Store::readItems()
 		iPtr = new Item;
 	//	cin.ignore(1000, '\n');
 		iPtr->SetAll(name, price, quantity, date, idNum);
+		index = Store::searchMem(idNum);
+		if(index < members.size())
+		{
+			members.at(index)->addTTW(iPtr->getTotwTax());
+		}
 
 		Store::addItem(iPtr);
 		//iPtr = NULL;
+		//index++;
 	}
-	Store::sortingItems(NAME);
+	//Store::sortingItems(NAME);
 }
 
 //MEMBER FUNCTIONS
@@ -151,16 +158,22 @@ Date  Store::getMemExp(int index){
 
 int Store::searchMem(double id)
 {
-	int index = 0;
+	unsigned int index = 0;
 	bool found = false;
-
-while(!found || index < Store::getMemCount())
+//cout << "here";
+while(!found && index < members.size())
 {
 	if(id == members.at(index)->getId())
 	{
 		found = true;
 	}
-	index ++;
+	else
+	{
+		index ++;
+	}
+
+	//cout << "Enters loop" << endl;
+
 }
 
 return index;

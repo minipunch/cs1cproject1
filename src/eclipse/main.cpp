@@ -29,16 +29,17 @@ int main() {
 //	 cout << i << endl;
 
 	test.readInMembers();
+	test.readItems();
 	//test.sortingItems(PRICE);
 	//cout << test.getItemCount();
 	//cin.ignore(1000, '\n');
-	cout << test.getMemName(1);
 
 
-//	for(int i= 0; i < test.getItemCount(); i++ ){
-//
-//		cout << test.PrintItem(i) << endl;
-//	}
+
+	for(int i= 0; i < test.getMemCount(); i++ ){
+
+		cout << test.PrintMember(i) << endl;
+	}
 
 
 
