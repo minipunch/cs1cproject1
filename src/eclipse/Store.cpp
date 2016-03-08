@@ -106,12 +106,12 @@ void Store::readItems()
 		index = Store::searchMem(idNum);
 		if(index < members.size())
 		{
+			members.at(index)->addTT(iPtr->getTotCost());
 			members.at(index)->addTTW(iPtr->getTotwTax());
 		}
 
 		Store::addItem(iPtr);
-		//iPtr = NULL;
-		//index++;
+
 	}
 	//Store::sortingItems(NAME);
 }
