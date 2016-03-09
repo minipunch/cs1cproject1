@@ -126,19 +126,25 @@ void Store::readItems()
      {
          //read ins
         dateTemp = in.readLine();
-        idTemp = in.readLine();
+//        idTemp = in.readLine();
+        in >> idNum;
+        in.skipWhiteSpace();
         nameTemp = in.readLine();
-        quanTemp = in.readLine();
+        in >> price;
+        in.skipWhiteSpace();
+        in >> quantity;
+               in.skipWhiteSpace();
+//        quanTemp = in.readLine();
         dateStr = dateTemp.toStdString();
         date = Store::ConvertDate(dateStr);
         name = nameTemp.toStdString();
-        temp = quanTemp.toStdString();
-        idStr = idTemp.toStdString();
-        prStr = temp.substr(0,5);
-        quanStr = temp.substr(5,6);
-        idNum = ::atof(idStr.c_str());
-        price = ::atof(prStr.c_str());
-        quantity = ::atoi(quanStr.c_str());
+//        temp = quanTemp.toStdString();
+//        idStr = idTemp.toStdString();
+//        prStr = temp.substr(0,5);
+//        quanStr = temp.substr(5,6);
+//        idNum = ::atof(idStr.c_str());
+//        price = ::atof(prStr.c_str());
+//        quantity = ::atoi(quanStr.c_str());
 
 
     iPtr = new Item;
