@@ -10,9 +10,9 @@ executive::executive(float newNum) : rebateAmount(newNum)
 {
 }
 
-void executive::setAll(string name, string type, double id, double total, Date exprDate, float rebate)
+void executive::setAll(string name, string type, double id, Date exprDate, float rebate)
 {
-	member::setAll(name, type, id, total, exprDate);
+	member::setAll(name, type, id, exprDate);
 	this->rebateAmount = rebate;
 }
 void executive::setRebateAmount(float newRebate)

@@ -20,7 +20,7 @@ public:
 	executive(float newRebate);
 	// setters
 	void setRebateAmount(float num);
-	void setAll(string name, string type, double id, double total, Date exprDate, float rebate);
+	void setAll(string name, string type, double id, Date exprDate, float rebate);
 	// getters
 	float getRebateAmount() const;
 	// miscellaneous

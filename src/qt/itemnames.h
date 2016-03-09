@@ -11,5 +11,7 @@
 const int ID = 0;
 const int NAME = 1;
 const int DATE   = 2;
+const int PRICE = 3;
+const int QTY = 4;
 
 #endif // ITEMNAMES_H
