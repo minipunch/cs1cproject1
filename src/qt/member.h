@@ -20,15 +20,16 @@ class member {
 	string type;
 	double id;
 	double total;
+	double totalwTax;
 	Date exprDate;
 public:
 	// constructors
 	member();
-    virtual ~member();
+	virtual ~member();
 	member(string name, double id);
 	member(string name, string type, double id, double total, Date exprDate);
 	// setters
-	void setAll(string name, string type, double id, double total, Date exprDate);
+	void setAll(string name, string type, double id , Date exprDate);
 	void setName(string name);
 	void setType(string type);
 	void setId(double id);
@@ -42,6 +43,8 @@ public:
 	Date getExprDate() const;
 	//miscellaneous
 	string printMember() const;
+	void addTT(float a);
+	void addTTW(float a);
 
 };
 struct memberSort{

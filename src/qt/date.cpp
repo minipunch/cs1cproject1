@@ -351,3 +351,18 @@ bool Date::ValidateDate(unsigned short month, unsigned short day,
 			ValidateDay(month, day, year) &&
 			ValidateYear(year));
 }
+
+ bool operator == (Date & d1, Date & d2)
+{
+	bool isEqual = false;
+
+	if(d1.dateDay == d2.dateDay &&
+			d1.dateMonth == d2.dateMonth &&
+			d1.dateYear == d2.dateYear)
+	{
+		isEqual = true;
+	}
+
+	return isEqual;
+}
+

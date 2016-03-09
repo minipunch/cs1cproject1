@@ -11,6 +11,7 @@ int main() {
 
 	Store test;
 	Date random;
+
 	//Item * item;
 ///	item = new Item;
 	//item->SetAll("MIlk", 6.09, 88, random, 89076);
@@ -27,15 +28,17 @@ int main() {
 //	 i = i - (i * .0825);
 //	 cout << i << endl;
 
+	test.readInMembers();
 	test.readItems();
-	test.sortingItems(PRICE);
+	//test.sortingItems(PRICE);
 	//cout << test.getItemCount();
 	//cin.ignore(1000, '\n');
 
 
-	for(int i= 0; i < test.getItemCount(); i++ ){
 
-		cout << test.PrintItem(i) << endl;
+	for(int i= 0; i < test.getMemCount(); i++ ){
+
+		cout << test.PrintMember(i) << endl;
 	}
 
 

@@ -32,19 +32,23 @@ void MainWindow::on_pushButton_9_clicked()
     }
     else
     {
-        for(int i = 0; i < bulkClub.getMemCount(); i++)
-        {
-        ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
-        }
-    }
 
-   // ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(1)));
+            for(int i = 0; i < bulkClub.getMemCount(); i++)
+            {
+            ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
+            }
+
+
+
+    //ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(1)));
+
 }
-
+}
 void MainWindow::setDate()
 {
-    Date today;
-    ui->label_2->setText(QString::fromStdString("Date: " + today.DisplayDate()));
+    //    Date today;
+    //    ui->label_2->setText(QString::fromStdString("Date: " + today.DisplayDate()));
+    //
 }
 
 Store MainWindow::getStore() {
@@ -63,7 +67,7 @@ void MainWindow::on_pushButton_10_clicked()
     this->filename = filenameQ.toStdString();
     this->bulkClub.setFilename(filenameQ.toStdString());
 
-    this->bulkClub.readIn();
+    this->bulkClub.readInMembers();
 }
 
 string MainWindow::getFilename() const {

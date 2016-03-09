@@ -58,6 +58,7 @@ public:
 	unsigned short GetDay()   const;
 
 	string DisplayDate() const;
+	friend bool operator == (Date & d1, Date & d2);
 
 private:
 

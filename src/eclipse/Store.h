@@ -23,9 +23,10 @@ public:
 	Store();
 	~Store();
 	Date ConvertDate(string dateIn);
-	int search(string name);
-	int search(int num);
-	int search(Date dateSearch);
+
+	int searchMem(string name);
+	int searchMem(double id);
+	int searchMem(Date dateSearch);
 
 	//Item Functions
 	void addItem(Item *newItem);

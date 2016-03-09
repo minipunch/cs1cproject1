@@ -83,6 +83,7 @@ void Store::readItems()
 	string dateTemp;
 	Item *iPtr;
 	Date date;
+	unsigned int index= 0;
 
 	//INCOMPLETE AND EXAMPLE
 	while (!inFile.eof()) {
@@ -102,11 +103,18 @@ void Store::readItems()
 		iPtr = new Item;
 	//	cin.ignore(1000, '\n');
 		iPtr->SetAll(name, price, quantity, date, idNum);
+		
+		index = Store::searchMem(idNum);
+		if(index < members.size())
+		{
+			members.at(index)->addTT(iPtr->getTotCost());
+			members.at(index)->addTTW(iPtr->getTotwTax());
+		}
 
 		Store::addItem(iPtr);
-		//iPtr = NULL;
+
 	}
-	Store::sortingItems(NAME);
+	//Store::sortingItems(NAME);
 }
 
 //MEMBER FUNCTIONS
@@ -133,13 +141,6 @@ string Store::PrintMember(int index) const
 	//output << member.at
 }
 
-string Store::PrintItem(int index) const
-{
-	stringstream output;
-	output << items.at(index)->printItem();
-	return output.str();
-}
-
 void Store::sortingMems(int property)
 {
 	sort(members.begin(), members.end(), memberSort(property));
@@ -155,6 +156,29 @@ double  Store::getMemID(int index){
 }
 Date  Store::getMemExp(int index){
 	return members.at(index)->getExprDate();
+}
+
+int Store::searchMem(double id)
+{
+	unsigned int index = 0;
+	bool found = false;
+//cout << "here";
+while(!found && index < members.size())
+{
+	if(id == members.at(index)->getId())
+	{
+		found = true;
+	}
+	else
+	{
+		index ++;
+	}
+
+	//cout << "Enters loop" << endl;
+
+}
+
+return index;
 }
 
 //ITEM FUNCTIONS
@@ -189,4 +213,11 @@ int Store::getItemCount() const
 }
 void Store::addItem(Item *newItem){
 	items.push_back(newItem);
+}
+
+string Store::PrintItem(int index) const
+{
+	stringstream output;
+	output << items.at(index)->printItem();
+	return output.str();
 }

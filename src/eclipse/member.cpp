@@ -82,8 +82,8 @@ string member::printMember() const {
 	stringstream output;
 	output << this->name << endl;
 	output << this->type << endl;
-	output << this->id << endl;
-	output << this->totalwTax << endl;
+	output << fixed << setprecision(0) << this->id << endl;
+	output <<  fixed << setprecision(2) <<this->totalwTax << endl;
 	output << exprDate.DisplayDate() << endl;
 	return output.str();
 }
