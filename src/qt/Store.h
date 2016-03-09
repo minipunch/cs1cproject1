@@ -20,6 +20,7 @@ private:
 	//list of all items bought at this store
 	deque<Item*> items;
     string filename;
+    string filenameI;
 public:
 	Store();
 	~Store();
@@ -28,7 +29,9 @@ public:
 	int searchMem(double id);
 	int searchMem(Date dateSearch);
 
+    //misc
     void setFilename(string fname);
+    void setFilenameI(string fname);
 	//Item Functions
 	void addItem(Item *newItem);
 	int getItemCount() const;

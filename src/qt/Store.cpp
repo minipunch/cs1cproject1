@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include<QByteArray>
 Store::Store() {
 
 
@@ -92,46 +93,78 @@ void Store::readInMembers()
 }
 void Store::readItems()
 {
-	ifstream inFile;
-	inFile.open("day1.txt");
-	string name;
-	float price;
-	int quantity;
-	double idNum;
-	string dateTemp;
-	Item *iPtr;
-	Date date;
-	unsigned int index= 0;
+    QString fNameI = QString::fromStdString(this->filenameI);
+    QFile file(fNameI);
+    if(!file.open(QIODevice::ReadOnly))
+                QMessageBox::information(0,"Purchases Read Error",file.errorString());
 
-	//INCOMPLETE AND EXAMPLE
-	while (!inFile.eof()) {
-		getline(inFile, dateTemp);
-		//cout << dateTemp << endl;
-		date = ConvertDate(dateTemp);
-		inFile >> idNum;
-		//cout << idNum << endl;
-		inFile.ignore(1000, '\n');
-		getline(inFile, name);
-	//	cout << name << endl;
-		inFile >> price;
-		//cout << price << endl;
-		inFile >> quantity;
-		//cout << quantity << endl;
-		inFile.ignore(1000, '\n');
-		iPtr = new Item;
-	//	cin.ignore(1000, '\n');
-		iPtr->SetAll(name, price, quantity, date, idNum);
-		index = Store::searchMem(idNum);
-		if(index < members.size())
-		{
-			members.at(index)->addTT(iPtr->getTotCost());
-			members.at(index)->addTTW(iPtr->getTotwTax());
-		}
+    QString quanTemp;
+    QString prTemp;
+    QString idTemp;
+    QString dateTemp;
+    QString nameTemp;
 
-		Store::addItem(iPtr);
 
-	}
-	//Store::sortingItems(NAME);
+    string name;
+    float price;
+    string temp;
+    string prStr;
+    string idStr;
+    string quanStr;
+    int quantity;
+    double idNum;
+    string dateStr;
+    Item *iPtr = NULL;
+    Date date;
+    unsigned int index= 0;
+
+
+
+     QTextStream in(&file);
+
+   while(!in.atEnd())
+     {
+         //read ins
+        dateTemp = in.readLine();
+//        idTemp = in.readLine();
+        in >> idNum;
+        in.skipWhiteSpace();
+        nameTemp = in.readLine();
+        in >> price;
+        in.skipWhiteSpace();
+        in >> quantity;
+               in.skipWhiteSpace();
+//        quanTemp = in.readLine();
+        dateStr = dateTemp.toStdString();
+        date = Store::ConvertDate(dateStr);
+        name = nameTemp.toStdString();
+//        temp = quanTemp.toStdString();
+//        idStr = idTemp.toStdString();
+//        prStr = temp.substr(0,5);
+//        quanStr = temp.substr(5,6);
+//        idNum = ::atof(idStr.c_str());
+//        price = ::atof(prStr.c_str());
+//        quantity = ::atoi(quanStr.c_str());
+
+
+    iPtr = new Item;
+
+       iPtr->SetAll(name, price, quantity, date, idNum);
+        //iPtr->SetAll("Milk",13.37, 69, date, 12345 );
+        //index = Store::searchMem(idNum);
+//        if(index < members.size())
+//        {
+//            //members.at(index)->addTT(iPtr->getTotCost());
+//            //members.at(index)->addTTW(iPtr->getTotwTax());
+//        }
+
+        Store::addItem(iPtr);
+
+
+     }
+
+
+
 }
 
 //MEMBER FUNCTIONS
@@ -240,4 +273,8 @@ string Store::PrintItem(int index) const
 }
 void Store::setFilename(string fname) {
     this->filename = fname;
+}
+void Store::setFilenameI(string fname)
+{
+    this->filenameI = fname;
 }
