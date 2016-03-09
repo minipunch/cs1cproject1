@@ -42,10 +42,11 @@ public:
 	double  getTotal() const;
 	Date getExprDate() const;
 	//miscellaneous
-	string printMember() const;
+	string printMember() ;
 	void addTT(float a);
 	void addTTW(float a);
-
+protected:
+	string doubleToString(double num);
 };
 struct memberSort{
 	int property;

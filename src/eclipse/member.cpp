@@ -77,14 +77,15 @@ Date member::getExprDate() const
 	return this->exprDate;
 }
 
-string member::printMember() const {
+string member::printMember(){
 
 	stringstream output;
-	output << this->name << endl;
-	output << this->type << endl;
-	output << fixed << setprecision(0) << this->id << endl;
-	output <<  fixed << setprecision(2) <<this->totalwTax << endl;
-	output << exprDate.DisplayDate() << endl;
+	output << left << "|" << setw(30) << this->name << "|   ";
+	output << setw(8) << fixed << setprecision(0) << this->id << "|  ";
+	output << setw(10) << this->type << "|   ";
+	output << setw(14) << exprDate.DisplayDate() << "| ";
+	output << right << setw(10) << /*doubleToString(this->total)*/ "12345.67" << "|";
+	output << right << setw(12) << doubleToString(this->totalwTax) << "|";
 	return output.str();
 }
 
@@ -93,4 +94,10 @@ void member::addTT(float a){
 }
 void member::addTTW(float a){
 	this->totalwTax += a;
+}
+
+string member::doubleToString(double num){
+	stringstream numString;
+	numString << "$" << fixed << setprecision(2) << num;
+	return numString.str();
 }

@@ -34,13 +34,16 @@ int main() {
 	//cout << test.getItemCount();
 	//cin.ignore(1000, '\n');
 
+	cout << "****************************************************************************************************" << endl;
+	cout << "|              Name            | ID Number | Membership | Expiration Date |   Total   | Total + Tax|" << endl;
+	cout << "****************************************************************************************************" << endl;
 
-
-	for(int i= 0; i < test.getMemCount(); i++ ){
-
+	for(int i= 0; i < test.getMemCount(); i++ )
+	{
 		cout << test.PrintMember(i) << endl;
 	}
 
+	cout << "****************************************************************************************************" << endl;
 
 
 

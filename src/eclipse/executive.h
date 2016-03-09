@@ -25,7 +25,7 @@ public:
 	float getRebateAmount() const;
 	// miscellaneous
 	float calculateRebate() const;
-	void printExecutive() const;
+	void printExecutive();
 };
 
 #endif /* EXECUTIVE_H_ */

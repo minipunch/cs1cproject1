@@ -31,7 +31,7 @@ float executive::calculateRebate() const
 	return (this->getTotal() * 3.5);
 }
 
-void executive::printExecutive() const {
+void executive::printExecutive(){
 	member::printMember();
 	cout << "Rebate Amount: " << this->rebateAmount;
 }
