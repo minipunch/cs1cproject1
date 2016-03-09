@@ -25,10 +25,15 @@ private slots:
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_11_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
     string filename;
+    string filenameI;
 };
 
 #endif // MAINWINDOW_H
