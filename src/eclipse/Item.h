@@ -41,9 +41,10 @@ public:
 	string GetName() const;
 	Date GetDate()   const;
 	int GetQty() const;
-	string printItem() const;
+	string printItem();
 	float getTotwTax() const;
 	float getTotCost() const;
+	string floatToString(float num);
 
 
 };

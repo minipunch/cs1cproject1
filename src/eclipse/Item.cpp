@@ -90,15 +90,28 @@ float Item::getTotCost()const{
 	return this->totCost;
 }
 
-string Item::printItem() const
+string Item::printItem()
 {
 	stringstream output;
-	output << this->name << endl;
-	output << fixed << setprecision(2) <<this->price << endl;
-	output << fixed << setprecision(0) <<this->id << endl;
-	output << this->quantity << endl;
-	output << fixed << setprecision(2) << this->totCost << endl;
-	output << fixed << setprecision(2) << this->totwTax << endl;
-	output << this->purchDate.DisplayDate() << endl;
+	string formattedNum;
+
+	output << "| " << left << setw(26) << this->name;
+	formattedNum = floatToString(price);
+	output << "|" << right << setw(9) << formattedNum;
+	output << " |   " << fixed << setprecision(0) <<this->id;
+	output << "   |" << setw(10) << this->quantity;
+	formattedNum = floatToString(totCost);
+	output << "        |" << setw(9) << fixed << setprecision(2) << formattedNum;
+	formattedNum = floatToString(totwTax);
+	output << " |" << setw(12) << fixed << setprecision(2) << formattedNum;
+	output << " |  " << this->purchDate.DisplayDate() << "   |" << endl;
 	return output.str();
+}
+
+string Item::floatToString(float num)
+{
+	stringstream numString;
+
+	numString << "$" <<  fixed << setprecision(2) << num;
+	return numString.str();
 }
