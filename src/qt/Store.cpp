@@ -126,7 +126,7 @@ void Store::readItems()
      {
          //read ins
         dateTemp = in.readLine();
-//        idTemp = in.readLine();
+
         in >> idNum;
         in.skipWhiteSpace();
         nameTemp = in.readLine();
@@ -134,36 +134,27 @@ void Store::readItems()
         in.skipWhiteSpace();
         in >> quantity;
                in.skipWhiteSpace();
-//        quanTemp = in.readLine();
+
         dateStr = dateTemp.toStdString();
         date = Store::ConvertDate(dateStr);
         name = nameTemp.toStdString();
-//        temp = quanTemp.toStdString();
-//        idStr = idTemp.toStdString();
-//        prStr = temp.substr(0,5);
-//        quanStr = temp.substr(5,6);
-//        idNum = ::atof(idStr.c_str());
-//        price = ::atof(prStr.c_str());
-//        quantity = ::atoi(quanStr.c_str());
+//
 
 
     iPtr = new Item;
 
        iPtr->SetAll(name, price, quantity, date, idNum);
-        //iPtr->SetAll("Milk",13.37, 69, date, 12345 );
-        //index = Store::searchMem(idNum);
-//        if(index < members.size())
-//        {
-//            //members.at(index)->addTT(iPtr->getTotCost());
-//            //members.at(index)->addTTW(iPtr->getTotwTax());
-//        }
+
+        index = Store::searchMem(idNum);
+        if(index < members.size())
+        {
+            members.at(index)->addTT(iPtr->getTotCost());
+            members.at(index)->addTTW(iPtr->getTotwTax());
+        }
 
         Store::addItem(iPtr);
 
-
      }
-
-
 
 }
 
