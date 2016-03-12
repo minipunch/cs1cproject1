@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     Item.cpp \
     member.cpp \
     Store.cpp \
-    dialog.cpp
+    dialog.cpp \
+    deletewindow.cpp
 
 HEADERS  += mainwindow.h \
     date.h \
@@ -29,10 +30,12 @@ HEADERS  += mainwindow.h \
     itemnames.h \
     member.h \
     Store.h \
-    dialog.h
+    dialog.h \
+    deletewindow.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    dialog.ui \
+    deletewindow.ui
 
 DISTFILES += \
     day1.txt \

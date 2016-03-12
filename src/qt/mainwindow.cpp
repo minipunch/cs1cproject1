@@ -23,15 +23,6 @@ void MainWindow::on_pushButton_9_clicked()
 {
     ui->listWidget->clear();
 
-
-//    if(this->filename == "Empty")
-//    {
-//        QMessageBox::information(this,tr("Error!"),"You must first import a member file before printing it.");
-//    }
-//    else if(this->filename == "")
-//    {
-//        QMessageBox::information(this,tr("Error!"),"You must first import a member file before printing it.");
-//    }
     if(bulkClub.getMemCount() != 0)
     {
         for(int i = 0; i < bulkClub.getMemCount(); i++)
@@ -78,7 +69,7 @@ string MainWindow::getFilename() const {
     return this->filename;
 }
 
-//print items
+// PRINT ITEMS
 void MainWindow::on_pushButton_8_clicked()
 {
     ui->listWidget->clear();
@@ -101,7 +92,7 @@ void MainWindow::on_pushButton_8_clicked()
 
 }
 }
-//import day file
+// SELECT AND IMPORT MEMBER FILE
 void MainWindow::on_pushButton_11_clicked()
 {
     if(bulkClub.getMemCount() !=0)
@@ -122,6 +113,8 @@ void MainWindow::on_pushButton_11_clicked()
         QMessageBox::information(this,tr("Error!"),"Member database empty, please import a member list first.");
     }
 }
+
+// ADD A NEW MEMBER
 void MainWindow::on_addmem_clicked()
 {
 
@@ -140,15 +133,28 @@ void MainWindow::on_addmem_clicked()
 
 }
 
+// SAVE MEMBER FILE
 void MainWindow::on_pushButton_12_clicked()
 {
     if(bulkClub.getMemCount() !=0)
     {
         bulkClub.saveMembers();
-        QMessageBox::information(this,tr("List Saved!"),"Your members list has been saved to the file.");
+        QMessageBox::information(this,tr("List Saved!"),"Your members list has been saved.");
     }
     else
     {
-         QMessageBox::information(this,tr("Error!"),"Member database empty, please import a member list first.");
+         QMessageBox::information(this,tr("Error!"),"Member database empty. Please import a member list first.");
     }
+}
+
+// DELETE A MEMBER
+void MainWindow::on_pushButton_7_clicked()
+{
+    deleteMember.exec();
+
+    // grab proper index location to delete from the <deque> of member pointers.
+    int deleteIndex = bulkClub.getMemberIndex(deleteMember.getDeleteMemberName());
+
+    // Delete member at index
+    bulkClub.removeMember(deleteIndex);
 }

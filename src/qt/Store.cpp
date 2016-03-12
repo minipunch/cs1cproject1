@@ -183,7 +183,7 @@ void Store::addMember(member *newMem)
 
 void Store::removeMember(int index ){
 	deque<member*>::iterator iter = members.begin() + index;
-	members.erase(iter);
+    members.erase(iter-1);
 }
 int Store::getMemCount() const
 {
@@ -203,7 +203,8 @@ void Store::sortingMems(int property)
 	sort(members.begin(), members.end(), memberSort(property));
 }
 string Store::getMemName(int index){
-	return members.at(index)->getName();
+    member tempMem = *(members.at(index));
+    return tempMem.getName();
 }
 string  Store::getMemType(int index){
 	return members.at(index)->getType();
@@ -238,6 +239,23 @@ while(!found && index < members.size())
 return index;
 }
 
+int Store::getMemberIndex(string name) const
+// ... pass in a member name to return  proper index for given name
+{
+    int index = 0;
+    member temp;
+    bool found = false;
+    while(found == false && index != members.size())
+    {
+        temp = *(members.at(index));
+        if(name == temp.getName())
+        {
+            found = true;
+        }
+        index++;
+    }
+    return index;
+}
 
 
 //ITEM FUNCTIONS

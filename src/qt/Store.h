@@ -49,6 +49,7 @@ public:
 	float getiPrice(int index) const;
 
 	//Member Functions
+    int getMemberIndex(string name) const;
 	void addMember(member *newMem);
     string getMemName(int index);
     string getMemType(int index);
