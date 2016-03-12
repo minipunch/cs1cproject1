@@ -21,6 +21,8 @@ private:
 	deque<Item*> items;
     string filename;
     string filenameI;
+
+    string filenameIS;
 public:
 	Store();
 	~Store();
@@ -55,6 +57,7 @@ public:
     string  PrintMember(int index) const;
 	int getMemCount() const;
 	void readInMembers();
+    void saveMembers();
 	void removeMember(int index);
 	void sortingMems(int property);
 };

@@ -23,6 +23,7 @@ void MainWindow::on_pushButton_9_clicked()
 {
     ui->listWidget->clear();
 
+
 //    if(this->filename == "Empty")
 //    {
 //        QMessageBox::information(this,tr("Error!"),"You must first import a member file before printing it.");
@@ -38,13 +39,12 @@ void MainWindow::on_pushButton_9_clicked()
         ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
         }
 
+
     }
     else
     {
 
         QMessageBox::information(this,tr("Error!"),"You must first import a member file before printing it.");
-
-
 }
 }
 void MainWindow::setDate()
@@ -121,10 +121,7 @@ void MainWindow::on_pushButton_11_clicked()
     {
         QMessageBox::information(this,tr("Error!"),"Member database empty, please import a member list first.");
     }
-
-
 }
-
 void MainWindow::on_addmem_clicked()
 {
 
@@ -141,4 +138,17 @@ void MainWindow::on_addmem_clicked()
     }
     bulkClub.sortingMems(NAME);
 
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    if(bulkClub.getMemCount() !=0)
+    {
+        bulkClub.saveMembers();
+        QMessageBox::information(this,tr("List Saved!"),"Your members list has been saved to the file.");
+    }
+    else
+    {
+         QMessageBox::information(this,tr("Error!"),"Member database empty, please import a member list first.");
+    }
 }

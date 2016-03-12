@@ -88,6 +88,18 @@ string member::printMember() const {
 	return output.str();
 }
 
+string member::saveMember() const
+{
+    stringstream output;
+    output << this->name << endl;
+    output << this->id << endl;
+    output << this->type << endl;
+    output <<this->exprDate.DisplayDate() << endl;
+
+
+    return output.str();
+}
+
 void member::addTT(float a){
 	this->total += a;
 }

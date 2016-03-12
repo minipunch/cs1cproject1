@@ -41,13 +41,13 @@ Date Store::ConvertDate(string dateIn)
 void Store::readInMembers()
 {
     this->members.clear();
-        QString fName = QString::fromStdString(this->filename);
-        QFile file(fName);
-        if(!file.open(QIODevice::ReadOnly))
-            QMessageBox::information(0,"Member Read Error",file.errorString());
 
-        QTextStream in(&file);
+    QString fName = QString::fromStdString(this->filename);
+    QFile file(fName);
+    if(!file.open(QIODevice::ReadOnly))
+        QMessageBox::information(0,"Member Read Error",file.errorString());
 
+    QTextStream in(&file);
         QString name;
         string nameStr;
         QString type;
@@ -90,7 +90,24 @@ void Store::readInMembers()
             Store::addMember(memPtr);
         }
          Store::sortingMems(NAME);
+         file.close();
 }
+
+void Store::saveMembers()
+{
+    QString fName = QString::fromStdString(this->filename);
+    QFile file(fName);
+    //file.open(QIODevice::ReadWrite | QIODevice::Text);
+    if(!file.open(QIODevice::WriteOnly| QIODevice::Text))
+        QMessageBox::information(0,"Member Read Error",file.errorString());
+    QTextStream out(&file);
+    for(unsigned int i = 0; i < members.size(); i++)
+    {
+        out.operator <<(QString::fromStdString(members.at(i)->saveMember()));
+    }
+
+}
+
 void Store::readItems()
 {
     QString fNameI = QString::fromStdString(this->filenameI);
@@ -155,7 +172,7 @@ void Store::readItems()
         Store::addItem(iPtr);
 
      }
-
+    file.close();
 }
 
 //MEMBER FUNCTIONS

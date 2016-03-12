@@ -43,6 +43,7 @@ public:
 	Date getExprDate() const;
 	//miscellaneous
 	string printMember() const;
+    string saveMember() const;
 	void addTT(float a);
 	void addTTW(float a);
 

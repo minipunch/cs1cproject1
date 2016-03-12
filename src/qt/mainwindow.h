@@ -32,6 +32,8 @@ private slots:
 
     void on_addmem_clicked();
 
+    void on_pushButton_12_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
