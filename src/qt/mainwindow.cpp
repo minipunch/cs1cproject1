@@ -27,7 +27,7 @@ void MainWindow::on_pushButton_9_clicked()
     {
         for(int i = 0; i < bulkClub.getMemCount(); i++)
         {
-        ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
+            ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
         }
 
 
@@ -36,7 +36,7 @@ void MainWindow::on_pushButton_9_clicked()
     {
 
         QMessageBox::information(this,tr("Error!"),"You must first import a member file before printing it.");
-}
+    }
 }
 void MainWindow::setDate()
 {
@@ -85,12 +85,12 @@ void MainWindow::on_pushButton_8_clicked()
     else
     {
 
-            for(int i = 0; i < bulkClub.getItemCount(); i++)
-            {
+        for(int i = 0; i < bulkClub.getItemCount(); i++)
+        {
             ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
-            }
+        }
 
-}
+    }
 }
 // SELECT AND IMPORT MEMBER FILE
 void MainWindow::on_pushButton_11_clicked()
@@ -127,7 +127,7 @@ void MainWindow::on_addmem_clicked()
     }
     else
     {
-         QMessageBox::information(this,tr("Action Cancelled!"),"No Members added.");
+        QMessageBox::information(this,tr("Action Cancelled!"),"No Members added.");
     }
     bulkClub.sortingMems(NAME);
 
@@ -143,18 +143,44 @@ void MainWindow::on_pushButton_12_clicked()
     }
     else
     {
-         QMessageBox::information(this,tr("Error!"),"Member database empty. Please import a member list first.");
+        QMessageBox::information(this,tr("Error!"),"Member database empty. Please import a member list first.");
     }
 }
 
 // DELETE A MEMBER
 void MainWindow::on_pushButton_7_clicked()
 {
-    deleteMember.exec();
 
-    // grab proper index location to delete from the <deque> of member pointers.
-    int deleteIndex = bulkClub.getMemberIndex(deleteMember.getDeleteMemberName());
+    if(bulkClub.getMemCount() !=0)
+    {
+        deleteMember.exec();
+        string nameDel = deleteMember.getDeleteMemberName();
+        if(nameDel == "None")
+        {
+            QMessageBox::information(this,tr("Error!"),"Delete Cancelled");
+        }
+        else
+        {
+            // grab proper index location to delete from the <deque> of member pointers.
+            int deleteIndex = bulkClub.getMemberIndex(nameDel);
 
-    // Delete member at index
-    bulkClub.removeMember(deleteIndex);
+            if(deleteIndex < bulkClub.getMemCount())
+            {
+                QMessageBox::information(this,tr("Done."),"Member has been removed");
+                bulkClub.removeMember(deleteIndex);
+
+            }
+            else
+            {
+                QMessageBox::information(this,tr("Error!"),"Member not found within the database");
+            }
+
+        }
+    }
+    else
+    {
+        QMessageBox::information(this,tr("Error!"),"Member database empty. No members to Delete.");
+    }
+
+
 }

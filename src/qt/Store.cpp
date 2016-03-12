@@ -183,7 +183,7 @@ void Store::addMember(member *newMem)
 
 void Store::removeMember(int index ){
 	deque<member*>::iterator iter = members.begin() + index;
-    members.erase(iter-1);
+    members.erase(iter);
 }
 int Store::getMemCount() const
 {
@@ -220,7 +220,7 @@ int Store::searchMem(double id)
 {
 	unsigned int index = 0;
 	bool found = false;
-//cout << "here";
+
 while(!found && index < members.size())
 {
 	if(id == members.at(index)->getId())
@@ -232,7 +232,7 @@ while(!found && index < members.size())
 		index ++;
 	}
 
-	//cout << "Enters loop" << endl;
+
 
 }
 
@@ -242,17 +242,21 @@ return index;
 int Store::getMemberIndex(string name) const
 // ... pass in a member name to return  proper index for given name
 {
-    int index = 0;
-    member temp;
+    unsigned int index = 0;
+
     bool found = false;
-    while(found == false && index != members.size())
+    while(found == false && index < members.size())
     {
-        temp = *(members.at(index));
-        if(name == temp.getName())
+
+        if(name == members.at(index)->getName())
         {
             found = true;
         }
-        index++;
+        else
+        {
+            index++;
+        }
+
     }
     return index;
 }

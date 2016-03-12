@@ -57,6 +57,7 @@ void Dialog::on_buttonBox_rejected()
 {
 
     newMem = NULL;
+    this->close();
 }
 
 void Dialog::on_checkBox_toggled(bool checked)

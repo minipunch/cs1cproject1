@@ -102,3 +102,13 @@ string Item::printItem() const
 	output << this->purchDate.DisplayDate() << endl;
 	return output.str();
 }
+
+string Item::saveItem() const
+{
+    stringstream output;
+    output << this->purchDate.DisplayDate() << endl;
+    output << this->id << endl;
+    output << this->name << endl;
+
+    return output.str();
+}

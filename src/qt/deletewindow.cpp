@@ -5,6 +5,7 @@ DeleteWindow::DeleteWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DeleteWindow)
 {
+    deleteMemberName = "None";
     ui->setupUi(this);
 }
 
@@ -31,5 +32,6 @@ string DeleteWindow::getDeleteMemberName() {
 // CANCEL BUTTON
 void DeleteWindow::on_buttonBox_rejected()
 {
+    deleteMemberName = "None";
     this->close();
 }

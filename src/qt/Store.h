@@ -29,7 +29,7 @@ public:
 	Date ConvertDate(string dateIn);
 	int searchMem(string name);
 	int searchMem(double id);
-	int searchMem(Date dateSearch);
+    //int searchMem(Date dateSearch);
 
     //misc
     void setFilename(string fname);
@@ -39,6 +39,7 @@ public:
 	int getItemCount() const;
     string PrintItem(int index) const;
     void readItems();
+    void saveItems();
     float getTotwTax(int index) const;
 	float getTotCost(int index) const;
 	void sortingItems(int property);
