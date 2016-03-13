@@ -24,8 +24,10 @@ public:
 	// getters
 	float getRebateAmount() const;
 	// miscellaneous
-	float calculateRebate() const;
+    void calculateRebate() ;
 	void printExecutive() const;
+    virtual string printRebate();
+    virtual void renew();
 };
 
 #endif /* EXECUTIVE_H_ */

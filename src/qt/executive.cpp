@@ -25,13 +25,28 @@ float executive::getRebateAmount() const
 	return this->rebateAmount;
 }
 
-float executive::calculateRebate() const
+void executive::calculateRebate()
 {
-	//this will change
-	return (this->getTotal() * 3.5);
+
+    rebateAmount = member::getTotal() + (member::getTotal() * .035);
 }
 
 void executive::printExecutive() const {
 	member::printMember();
 	cout << "Rebate Amount: " << this->rebateAmount;
+}
+
+string executive::printRebate()
+{
+
+    stringstream output;
+    executive::calculateRebate();
+    output << this->rebateAmount << endl;
+    return output.str();
+
+}
+void executive::renew()
+{
+   member::addTT(125.00);
+   member::addTTW(125.00);
 }

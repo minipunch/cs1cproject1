@@ -205,7 +205,7 @@ void MainWindow::on_pushButton_13_clicked()
          QMessageBox::information(this,tr("Error!"),"No Items to save.");
     }
 }
-
+//number 7
 void MainWindow::on_pushButton_6_clicked()
 {
    if(bulkClub.getMemCount() !=0)
@@ -217,28 +217,36 @@ void MainWindow::on_pushButton_6_clicked()
            string name;
            purchList.exec();
            QString temp = purchList.getString();
-           QString temp2 = temp.left(1);
-           if(temp2 == "1" || temp2 == "2" || temp2 == "3" || temp2 == "4" || temp2 == "5" || temp2 == "6" || temp2 == "7" || temp2 == "8" || temp2 == "9")
+           if(temp == "None")
            {
-                 id = temp.toDouble();
-
+                QMessageBox::information(this,tr("Error!"),"Action Cancelled");
            }
            else
            {
-                name = temp.toStdString();
-                index = bulkClub.getMemberIndex(name);
-                id = bulkClub.getMemID(index);
-
-           }
-
-
-           ui->listWidget->clear();
-           for( int i = 0; i < bulkClub.getItemCount(); i++)
-           {
-               if(bulkClub.getiID(i) == id)
+               QString temp2 = temp.left(1);
+               if(temp2 == "1" || temp2 == "2" || temp2 == "3" || temp2 == "4"
+               || temp2 == "5" || temp2 == "6" || temp2 == "7" || temp2 == "8" || temp2 == "9")
                {
-                    ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+                     id = temp.toDouble();
+
                }
+               else
+               {
+                    name = temp.toStdString();
+                    index = bulkClub.getMemberIndex(name);
+                    id = bulkClub.getMemID(index);
+
+               }
+
+               ui->listWidget->clear();
+               for( int i = 0; i < bulkClub.getItemCount(); i++)
+               {
+                   if(bulkClub.getiID(i) == id)
+                   {
+                        ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+                   }
+               }
+
            }
 
        }

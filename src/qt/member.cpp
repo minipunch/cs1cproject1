@@ -106,3 +106,15 @@ void member::addTT(float a){
 void member::addTTW(float a){
 	this->totalwTax += a;
 }
+string member::printRebate()
+{
+    stringstream output;
+    return output.str();
+
+}
+
+void member::renew()
+{
+    total += 45.00;
+    totalwTax += 45.00;
+}

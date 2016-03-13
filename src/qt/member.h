@@ -46,7 +46,8 @@ public:
     string saveMember() const;
 	void addTT(float a);
 	void addTTW(float a);
-
+    virtual void renew();
+    virtual string printRebate();
 };
 struct memberSort{
 	int property;
