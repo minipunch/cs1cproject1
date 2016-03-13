@@ -73,6 +73,9 @@ string MainWindow::getFilename() const {
 void MainWindow::on_pushButton_8_clicked()
 {
     ui->listWidget->clear();
+    double tot;
+    double totW;
+    bulkClub.sortingItems(ID);
 
     if(this->filenameI == "Empty")
     {
@@ -88,7 +91,14 @@ void MainWindow::on_pushButton_8_clicked()
         for(int i = 0; i < bulkClub.getItemCount(); i++)
         {
             ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+            tot = tot + bulkClub.getTotCost(i);
+            totW = totW + bulkClub.getTotwTax(i);
         }
+
+       // ui->listWidget->addItem (("Costs"));
+        ui->listWidget->addItem("Total Cost(Pre-tax)   : $" + QString::number(tot, 'f', 2));
+        ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(totW, 'f', 2));
+
 
     }
 }
