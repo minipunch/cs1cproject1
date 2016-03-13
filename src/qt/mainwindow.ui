@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1013</width>
-    <height>574</height>
+    <height>663</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -111,7 +111,7 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Find a Member</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -185,7 +185,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>90</y>
+      <y>70</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -198,9 +198,9 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>120</y>
+      <y>90</y>
       <width>741</width>
-      <height>351</height>
+      <height>381</height>
      </rect>
     </property>
    </widget>

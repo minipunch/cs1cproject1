@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     member.cpp \
     Store.cpp \
     dialog.cpp \
-    deletewindow.cpp
+    deletewindow.cpp \
+    mempurchlist.cpp
 
 HEADERS  += mainwindow.h \
     date.h \
@@ -31,11 +32,13 @@ HEADERS  += mainwindow.h \
     member.h \
     Store.h \
     dialog.h \
-    deletewindow.h
+    deletewindow.h \
+    mempurchlist.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
-    deletewindow.ui
+    deletewindow.ui \
+    mempurchlist.ui
 
 DISTFILES += \
     day1.txt \

@@ -6,6 +6,7 @@
 #include <deque>
 #include "dialog.h"
 #include "deletewindow.h"
+#include "mempurchlist.h"
 #include "itemnames.h"
 namespace Ui {
 class MainWindow;
@@ -39,6 +40,8 @@ private slots:
 
     void on_pushButton_13_clicked();
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
@@ -47,6 +50,7 @@ private:
     string filenameIS;
     Dialog newMem;
     DeleteWindow deleteMember;
+    mempurchList purchList;
 };
 
 #endif // MAINWINDOW_H
