@@ -271,3 +271,28 @@ void MainWindow::on_pushButton_6_clicked()
          QMessageBox::information(this,tr("Error!"),"Member database empty");
    }
 }
+
+void MainWindow::on_pushButton_15_clicked()
+{
+
+    if(bulkClub.getMemCount() != 0)
+    {
+        itemAdd.exec();
+            Item *addPtr = itemAdd.GetItem();
+            if(addPtr != NULL)
+            {
+                bulkClub.addItem(addPtr);
+            }
+            else
+            {
+                QMessageBox::information(this,tr("Action Cancelled!"),"No Items added.");
+            }
+            bulkClub.sortingItems(NAME);
+    }
+    else
+    {
+        QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
+    }
+
+
+}
