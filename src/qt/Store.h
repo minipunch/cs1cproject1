@@ -34,6 +34,7 @@ public:
     //misc
     void setFilename(string fname);
     void setFilenameI(string fname);
+    void setFilenameIS(string fname);
 	//Item Functions
 	void addItem(Item *newItem);
 	int getItemCount() const;

@@ -97,7 +97,7 @@ void Store::saveMembers()
 {
     QString fName = QString::fromStdString(this->filename);
     QFile file(fName);
-    //file.open(QIODevice::ReadWrite | QIODevice::Text);
+
     if(!file.open(QIODevice::WriteOnly| QIODevice::Text))
         QMessageBox::information(0,"Member Read Error",file.errorString());
     QTextStream out(&file);
@@ -105,7 +105,21 @@ void Store::saveMembers()
     {
         out.operator <<(QString::fromStdString(members.at(i)->saveMember()));
     }
+    file.close();
 
+}
+void Store::saveItems()
+{
+    QString fName = QString::fromStdString(this->filenameIS);
+    QFile file(fName);
+    if(!file.open(QIODevice::WriteOnly| QIODevice::Text))
+            QMessageBox::information(0,"Item Write Error",file.errorString());
+        QTextStream out(&file);
+        for(unsigned int i = 0; i < items.size(); i++)
+        {
+            out.operator <<(QString::fromStdString(items.at(i)->saveItem()));
+        }
+        file.close();
 }
 
 void Store::readItems()
@@ -307,4 +321,8 @@ void Store::setFilename(string fname) {
 void Store::setFilenameI(string fname)
 {
     this->filenameI = fname;
+}
+void Store::setFilenameIS(string fname)
+{
+    this->filenameIS = fname;
 }

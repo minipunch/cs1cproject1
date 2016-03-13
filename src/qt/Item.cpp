@@ -109,6 +109,7 @@ string Item::saveItem() const
     output << this->purchDate.DisplayDate() << endl;
     output << this->id << endl;
     output << this->name << endl;
+    output << left << setw(8) << this->price << this->quantity << endl;
 
     return output.str();
 }

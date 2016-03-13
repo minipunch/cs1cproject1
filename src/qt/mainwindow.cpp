@@ -92,7 +92,7 @@ void MainWindow::on_pushButton_8_clicked()
 
     }
 }
-// SELECT AND IMPORT MEMBER FILE
+// SELECT AND IMPORT ITEM FILE
 void MainWindow::on_pushButton_11_clicked()
 {
     if(bulkClub.getMemCount() !=0)
@@ -183,4 +183,25 @@ void MainWindow::on_pushButton_7_clicked()
     }
 
 
+}
+//save purchases
+void MainWindow::on_pushButton_13_clicked()
+{
+
+    if(bulkClub.getItemCount() !=0)
+    {
+        QString filenameQ = QFileDialog::getOpenFileName(
+                    this,
+                    tr("Import a purchase file"),
+                    "C://",
+                    "Text File (*.txt)"
+                    );
+        this->filenameIS = filenameQ.toStdString();
+        this->bulkClub.setFilenameIS(filenameQ.toStdString());
+        this->bulkClub.saveItems();
+    }
+    else
+    {
+         QMessageBox::information(this,tr("Error!"),"No Items to save.");
+    }
 }
