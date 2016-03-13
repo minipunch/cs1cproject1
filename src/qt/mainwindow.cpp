@@ -95,7 +95,7 @@ void MainWindow::on_pushButton_8_clicked()
             totW = totW + bulkClub.getTotwTax(i);
         }
 
-       // ui->listWidget->addItem (("Costs"));
+
         ui->listWidget->addItem("Total Cost(Pre-tax)   : $" + QString::number(tot, 'f', 2));
         ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(totW, 'f', 2));
 

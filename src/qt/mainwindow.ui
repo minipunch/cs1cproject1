@@ -22,7 +22,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>120</y>
+      <y>110</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -38,7 +38,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>160</y>
+      <y>480</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -47,14 +47,14 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>ALL PURCHASES</string>
+     <string>FIND AN ITEM</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>200</y>
+      <y>190</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -63,14 +63,14 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>ITEM STATS</string>
     </property>
    </widget>
    <widget class="QPushButton" name="addmem">
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>400</y>
+      <y>310</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -86,7 +86,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>240</y>
+      <y>230</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -95,14 +95,14 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>SHOW REBATES</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>280</y>
+      <y>520</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -111,14 +111,14 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>Find a Member</string>
+     <string>FIND A MEMBER</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>440</y>
+      <y>350</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -134,7 +134,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>320</y>
+      <y>150</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -150,7 +150,7 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>800</x>
-      <y>360</y>
+      <y>70</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -165,8 +165,8 @@ background-color: rgb(27, 194, 161);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>10</y>
+      <x>320</x>
+      <y>-10</y>
       <width>311</width>
       <height>71</height>
      </rect>
@@ -184,8 +184,8 @@ background-color: rgb(27, 194, 161);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>70</y>
+      <x>40</x>
+      <y>50</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -198,43 +198,17 @@ background-color: rgb(27, 194, 161);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>90</y>
+      <y>70</y>
       <width>741</width>
-      <height>381</height>
+      <height>481</height>
      </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>480</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Member File:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>480</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Member File:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>480</y>
+      <x>430</x>
+      <y>580</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -246,8 +220,8 @@ background-color: rgb(27, 194, 161);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>33</x>
-      <y>480</y>
+      <x>30</x>
+      <y>560</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -259,8 +233,8 @@ background-color: rgb(27, 194, 161);</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>117</x>
-      <y>480</y>
+      <x>120</x>
+      <y>560</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -272,9 +246,9 @@ background-color: rgb(27, 194, 161);</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>500</y>
-      <width>256</width>
+      <x>20</x>
+      <y>580</y>
+      <width>351</width>
       <height>25</height>
      </rect>
     </property>
@@ -300,6 +274,16 @@ background-color: rgb(27, 194, 161);</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>SavePurchases</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pushButton_12">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
@@ -311,11 +295,27 @@ background-color: rgb(27, 194, 161);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_13">
+   <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>500</y>
+      <x>710</x>
+      <y>590</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_14">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>270</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -324,7 +324,39 @@ background-color: rgb(27, 194, 161);</string>
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>SavePurchases</string>
+     <string>SEE EXPIRATIONS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_15">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>390</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>ADD ITEM</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_16">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>440</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>DELETE  ITEM</string>
     </property>
    </widget>
   </widget>
