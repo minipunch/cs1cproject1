@@ -471,44 +471,46 @@ void MainWindow::on_pushButton_clicked()
     int reg = 0;
 
     //this crashes
-//    for (int i = 0; i < bulkClub.getItemCount(); i++){
+    for (int i = 0; i < bulkClub.getItemCount(); i++){
 //        names.push_back(bulkClub.getName(i));
-//        d2 = bulkClub.getiDate(i);
-//        if(d2 == d){
-//            string memName = bulkClub.getMemName(i);
-//            ui->listWidget->addItem(QString::fromStdString(bulkClub.getiName(i)));
-//            ui->listWidget->addItem(QString::number(bulkClub.getiQuan(i)));
-//            if(names.empty() == false){
-//                for(int z = 0; z < names.size(); z++){
-//                    if(names.at(z) == memName){
-//                        nameDup++;
-//                    }
-//                }
-//                if(nameDup == 0){
-//                    names.push_back(memName);
-//                }
-//                else{
-//                    nameDup = 0;
-//                }
-//            }
-//            else{
-//                names.push_back(memName);
-//            }
+        d2 = bulkClub.getiDate(i);
+        if(d2 == d){
+            double memID = bulkClub.getiID(i);
+            string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
+            ui->listWidget->addItem(QString::fromStdString(bulkClub.getiName(i)));
+            ui->listWidget->addItem("Quantity: " + QString::number(bulkClub.getiQuan(i)));
+            if(names.empty() == false){
+                for(int z = 0; z < names.size(); z++){
+                    if(names.at(z) == memName){
+                        nameDup++;
+                    }
+                }
+                if(nameDup == 0){
+                    names.push_back(memName);
+                }
+                else{
+                    nameDup = 0;
+                }
+            }
+            else{
+                names.push_back(memName);
+            }
 
-//        }
-//    }
-//    for(int i = 0; i < names.size(); i++){
-//        if(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))) == "Executive"){
-//            exec++;
-//        }
-//        else{
-//            reg++;
-//        }
-//    }
-//    for(int i = 0; i < names.size();i++){
-//        ui->listWidget->addItem(QString::fromStdString(names.at(i)));
-//    }
-//    ui->listWidget->addItem("Executive: "+ QString::number(exec));
+        }
+    }
+    for(int i = 0; i < names.size(); i++){
+        if(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))) == "Executive"){
+            ui->listWidget->addItem(QString::fromStdString(names.at(i))+ "\nType: Executive");
+            exec++;
+        }
+        else{
+            ui->listWidget->addItem(QString::fromStdString(names.at(i))+ "\nType: Regular");
+            reg++;
+        }
+    }
+    ui->listWidget->addItem("Executive: "+ QString::number(exec));
+    ui->listWidget->addItem("Regular: "+ QString::number(reg));
+
 
 
 }
