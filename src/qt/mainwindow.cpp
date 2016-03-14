@@ -30,7 +30,6 @@ void MainWindow::on_pushButton_9_clicked()
             ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintMember(i)));
         }
 
-
     }
     else
     {
@@ -227,6 +226,7 @@ void MainWindow::on_pushButton_6_clicked()
            string name;
            purchList.exec();
            QString temp = purchList.getString();
+           bulkClub.sortingItems(NAME);
            if(temp == "None")
            {
                 QMessageBox::information(this,tr("Error!"),"Action Cancelled");
@@ -239,30 +239,45 @@ void MainWindow::on_pushButton_6_clicked()
                {
                      id = temp.toDouble();
 
+
+                     ui->listWidget->clear();
+                     for( int i = 0; i < bulkClub.getItemCount(); i++)
+                     {
+                         if(bulkClub.getiID(i) == id)
+                         {
+                              ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+                         }
+                     }
                }
                else
                {
                     name = temp.toStdString();
                     index = bulkClub.getMemberIndex(name);
-                    id = bulkClub.getMemID(index);
+                    if(index < bulkClub.getMemCount())
+                    {
+                         id = bulkClub.getMemID(index);
+                         ui->listWidget->clear();
+                         for( int i = 0; i < bulkClub.getItemCount(); i++)
+                         {
+                             if(bulkClub.getiID(i) == id)
+                             {
+                                  ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+                             }
+                         }
 
-               }
+                    }
+                    else
+                    {
+                         QMessageBox::information(this,tr("Error!"),"Person not found. ");
+                    }
 
-               ui->listWidget->clear();
-               for( int i = 0; i < bulkClub.getItemCount(); i++)
-               {
-                   if(bulkClub.getiID(i) == id)
-                   {
-                        ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
-                   }
                }
 
            }
-
        }
        else
        {
-             QMessageBox::information(this,tr("Error!"),"Member database empty");
+             QMessageBox::information(this,tr("Error!"),"No Items to show!");
        }
 
    }
@@ -293,6 +308,4 @@ void MainWindow::on_pushButton_15_clicked()
     {
         QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
     }
-
-
 }
