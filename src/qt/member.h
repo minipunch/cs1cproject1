@@ -34,12 +34,14 @@ public:
 	void setType(string type);
 	void setId(double id);
 	void setTotal(double total);
+    void setTotalwTax(double total);
 	void setExprDate(Date exprDate);
 	// getters
 	string getName() const;
 	string getType() const;
 	double  getId() const;
 	double  getTotal() const;
+    double  getTotalwTax() const;
 	Date getExprDate() const;
 	//miscellaneous
 	string printMember() const;

@@ -47,6 +47,10 @@ void member::setTotal(double newTotal)
 	this->total = newTotal;
 }
 
+void member::setTotalwTax(double total){
+    this->totalwTax = total;
+}
+
 void member::setExprDate(Date exprDate)
 {
 	this->exprDate = exprDate;
@@ -70,6 +74,11 @@ double member::getId() const
 double member::getTotal() const
 {
 	return this->total;
+}
+
+double member ::getTotalwTax() const
+{
+    return this->totalwTax;
 }
 
 Date member::getExprDate() const
