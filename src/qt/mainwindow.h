@@ -10,6 +10,7 @@
 #include "itemnames.h"
 #include "additem.h"
 #include "deleteitem.h"
+#include "report.h"
 #include "itemname.h"
 namespace Ui {
 class MainWindow;
@@ -28,6 +29,7 @@ public:
     string getFilename() const;
 
 private slots:
+    void on_pushButton_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
 

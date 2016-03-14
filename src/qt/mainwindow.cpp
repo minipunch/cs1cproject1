@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "date.h"
+#include "date.cpp"
 #include "member.h"
 #include <QMessageBox>
 #include <QFileDialog>
@@ -457,20 +457,27 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     Date d;
+    Date d2;
     rep.exec();
+
+        ui->listWidget->clear();
 //    deque <Item*> stuff;
     d = rep.getDate();
+    ui->listWidget->addItem(QString::fromStdString(d.DisplayDate()));
+
     deque<string> names;
     int nameDup = 0;
     int exec = 0;
     int reg = 0;
 
-    for (int i = 0; i < bulkClub.getItemCount(); i++){
+    //this crashes
+//    for (int i = 0; i < bulkClub.getItemCount(); i++){
 //        names.push_back(bulkClub.getName(i));
-        if(bulkClub.getiDate(i) == d){
-            string memName = bulkClub.getMemName(i);
-            ui->listWidget->addItem(QString::fromStdString(bulkClub.getiName(i)));
-            ui->listWidget->addItem(QString::number(bulkClub.getiQuan(i)));
+//        d2 = bulkClub.getiDate(i);
+//        if(d2 == d){
+//            string memName = bulkClub.getMemName(i);
+//            ui->listWidget->addItem(QString::fromStdString(bulkClub.getiName(i)));
+//            ui->listWidget->addItem(QString::number(bulkClub.getiQuan(i)));
 //            if(names.empty() == false){
 //                for(int z = 0; z < names.size(); z++){
 //                    if(names.at(z) == memName){
@@ -488,8 +495,8 @@ void MainWindow::on_pushButton_clicked()
 //                names.push_back(memName);
 //            }
 
-        }
-    }
+//        }
+//    }
 //    for(int i = 0; i < names.size(); i++){
 //        if(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))) == "Executive"){
 //            exec++;

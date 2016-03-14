@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     mempurchlist.cpp \
     additem.cpp \
     deleteitem.cpp \
-    itemname.cpp
+    itemname.cpp \
+    report.cpp
     report.cpp
 
 HEADERS  += mainwindow.h \
@@ -40,7 +41,8 @@ HEADERS  += mainwindow.h \
     mempurchlist.h \
     additem.h \
     deleteitem.h \
-    itemname.h
+    itemname.h \
+    report.h
     report.h
 
 FORMS    += mainwindow.ui \
@@ -49,7 +51,8 @@ FORMS    += mainwindow.ui \
     mempurchlist.ui \
     additem.ui \
     deleteitem.ui \
-    itemname.ui
+    itemname.ui \
+    report.ui
     report.ui
 
 DISTFILES += \
