@@ -25,6 +25,7 @@ SOURCES += main.cpp\
     additem.cpp \
     deleteitem.cpp \
     itemname.cpp
+    report.cpp
 
 HEADERS  += mainwindow.h \
     date.h \
@@ -40,6 +41,7 @@ HEADERS  += mainwindow.h \
     additem.h \
     deleteitem.h \
     itemname.h
+    report.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
@@ -48,6 +50,7 @@ FORMS    += mainwindow.ui \
     additem.ui \
     deleteitem.ui \
     itemname.ui
+    report.ui
 
 DISTFILES += \
     day1.txt \
