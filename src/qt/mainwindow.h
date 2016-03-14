@@ -67,6 +67,7 @@ private:
     AddItem itemAdd;
     deleteitem itemDel;
     ItemName item;
+    Report rep;
 };
 
 #endif // MAINWINDOW_H
