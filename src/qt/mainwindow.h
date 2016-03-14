@@ -9,6 +9,7 @@
 #include "mempurchlist.h"
 #include "itemnames.h"
 #include "additem.h"
+#include "deleteitem.h"
 namespace Ui {
 class MainWindow;
 }
@@ -45,6 +46,8 @@ private slots:
 
     void on_pushButton_15_clicked();
 
+    void on_pushButton_16_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
@@ -55,6 +58,7 @@ private:
     DeleteWindow deleteMember;
     mempurchList purchList;
     AddItem itemAdd;
+    deleteitem itemDel;
 };
 
 #endif // MAINWINDOW_H

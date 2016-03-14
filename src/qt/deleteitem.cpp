@@ -28,6 +28,6 @@ string deleteitem::delItem(){
 
 void deleteitem::on_buttonBox_rejected()
 {
-    dName = "";
+    dName = "NONE";
     this->close();
 }

@@ -309,27 +309,28 @@ void MainWindow::on_pushButton_15_clicked()
         QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
     }
 }
+
+
 void MainWindow::on_pushButton_16_clicked()
 {
     string name;
 
-    if(bulkClub.getMemCount() != 0)
-    {
-        itemDel.exec();
-            name = itemDel.delItem();
-            if(name != "NULL""")
-            {
-                bulkClub.delItem(name);
-            }
-            else
-            {
-                QMessageBox::information(this,tr("Action Cancelled!"),"Item name not found.");
-            }
-            bulkClub.sortingItems(NAME);
-    }
-    else
-    {
-        QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
-    }
-
+        if(bulkClub.getMemCount() != 0)
+        {
+            itemDel.exec();
+                name = itemDel.delItem();
+                if(name != "NONE")
+                {
+                    bulkClub.delItem(name);
+                }
+                else
+                {
+                    QMessageBox::information(this,tr("Action Cancelled!"),"Item name not found/not specified.");
+                }
+                bulkClub.sortingItems(NAME);
+        }
+        else
+        {
+            QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
+        }
 }

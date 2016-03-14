@@ -47,10 +47,6 @@ void member::setTotal(double newTotal)
 	this->total = newTotal;
 }
 
-void member::setTotalwTax(double total){
-    this->totalwTax = total;
-}
-
 void member::setExprDate(Date exprDate)
 {
 	this->exprDate = exprDate;
@@ -126,4 +122,8 @@ void member::renew()
 {
     total += 45.00;
     totalwTax += 45.00;
+}
+
+void member::setTotalwTax(double total){
+    this->totalwTax = total;
 }

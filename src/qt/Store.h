@@ -35,14 +35,12 @@ public:
     void setFilename(string fname);
     void setFilenameI(string fname);
     void setFilenameIS(string fname);
-
 	//Item Functions
 	void addItem(Item *newItem);
 	int getItemCount() const;
     string PrintItem(int index) const;
     void readItems();
     void saveItems();
-    void delItem(string name);
     float getTotwTax(int index) const;
 	float getTotCost(int index) const;
 	void sortingItems(int property);
@@ -51,7 +49,7 @@ public:
 	int getiQuan(int index) const;
 	Date getiDate(int index) const;
 	float getiPrice(int index) const;
-
+    void delItem(string name);
 	//Member Functions
     int getMemberIndex(string name) const;
 	void addMember(member *newMem);

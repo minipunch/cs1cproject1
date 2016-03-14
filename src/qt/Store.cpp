@@ -326,6 +326,7 @@ void Store::setFilenameIS(string fname)
 {
     this->filenameIS = fname;
 }
+
 void Store::delItem(string name){
     deque<Item*>::iterator iter;
     float refund;
