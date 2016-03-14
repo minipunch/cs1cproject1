@@ -51,6 +51,8 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;

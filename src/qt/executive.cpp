@@ -28,7 +28,7 @@ float executive::getRebateAmount() const
 void executive::calculateRebate()
 {
 
-    rebateAmount = member::getTotal() + (member::getTotal() * .035);
+    rebateAmount = (member::getTotal() * .035);
 }
 
 void executive::printExecutive() const {
@@ -38,10 +38,9 @@ void executive::printExecutive() const {
 
 string executive::printRebate()
 {
-
     stringstream output;
     executive::calculateRebate();
-    output << this->rebateAmount << endl;
+    output << setprecision(2) << fixed << this->rebateAmount << endl;
     return output.str();
 
 }

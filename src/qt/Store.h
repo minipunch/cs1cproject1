@@ -64,7 +64,8 @@ public:
 	void readInMembers();
     void saveMembers();
 	void removeMember(int index);
-	void sortingMems(int property);
+    void sortingMems(int property);
+    string getRebate(int index);
 };
 
 #endif /* STORE_H_ */

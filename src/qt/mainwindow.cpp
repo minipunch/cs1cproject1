@@ -369,3 +369,15 @@ void MainWindow::on_pushButton_2_clicked()
         QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
     }
 }
+void MainWindow::on_pushButton_5_clicked()
+{
+    ui->listWidget->clear();
+    for(int count = 0; count < bulkClub.getMemCount();count++)
+    {
+        if(bulkClub.getMemType(count) == "Executive"){
+            ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(count)));
+            ui->listWidget->addItem("Rebate: " + QString::fromStdString(bulkClub.getRebate(count)));
+        }
+    }
+    bulkClub.sortingMems(ID);
+}

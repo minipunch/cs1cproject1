@@ -275,6 +275,12 @@ int Store::getMemberIndex(string name) const
     return index;
 }
 
+string Store::getRebate(int index){
+    if(members.at(index)->getType() == "Executive"){
+        return members.at(index)->printRebate();
+     }
+}
+
 
 //ITEM FUNCTIONS
 string Store::getiName(int index) const{
