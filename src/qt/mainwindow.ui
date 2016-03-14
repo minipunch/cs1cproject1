@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1206</width>
-    <height>789</height>
+    <width>920</width>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,8 +21,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>130</y>
+      <x>750</x>
+      <y>70</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -37,8 +37,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>570</y>
+      <x>750</x>
+      <y>510</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -53,8 +53,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>450</y>
+      <x>750</x>
+      <y>390</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -69,8 +69,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="addmem">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>250</y>
+      <x>750</x>
+      <y>190</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -85,8 +85,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>330</y>
+      <x>750</x>
+      <y>270</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -101,8 +101,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>210</y>
+      <x>750</x>
+      <y>150</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -117,8 +117,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>290</y>
+      <x>750</x>
+      <y>230</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -133,8 +133,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>410</y>
+      <x>750</x>
+      <y>350</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -149,8 +149,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>170</y>
+      <x>750</x>
+      <y>110</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -165,7 +165,7 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>50</x>
       <y>0</y>
       <width>311</width>
       <height>71</height>
@@ -187,10 +187,10 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>971</width>
-      <height>561</height>
+      <x>20</x>
+      <y>70</y>
+      <width>721</width>
+      <height>481</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -200,8 +200,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>670</y>
+      <x>40</x>
+      <y>560</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -216,8 +216,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>670</y>
+      <x>130</x>
+      <y>560</y>
       <width>71</width>
       <height>16</height>
      </rect>
@@ -232,8 +232,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>690</y>
+      <x>30</x>
+      <y>580</y>
       <width>351</width>
       <height>25</height>
      </rect>
@@ -284,8 +284,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>370</y>
+      <x>750</x>
+      <y>310</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -300,8 +300,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_15">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>490</y>
+      <x>750</x>
+      <y>430</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -316,8 +316,8 @@ background-color: rgb(221, 221, 221);</string>
    <widget class="QPushButton" name="pushButton_16">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>530</y>
+      <x>750</x>
+      <y>470</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -329,6 +329,7 @@ background-color: rgb(221, 221, 221);</string>
      <string>DELETE  ITEM</string>
     </property>
    </widget>
+   <zorder>label</zorder>
    <zorder>listWidget</zorder>
    <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
@@ -339,7 +340,6 @@ background-color: rgb(221, 221, 221);</string>
    <zorder>pushButton_7</zorder>
    <zorder>pushButton_8</zorder>
    <zorder>pushButton_9</zorder>
-   <zorder>label</zorder>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
    <zorder>layoutWidget</zorder>
@@ -353,7 +353,7 @@ background-color: rgb(221, 221, 221);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1206</width>
+     <width>920</width>
      <height>21</height>
     </rect>
    </property>
