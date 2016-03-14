@@ -214,7 +214,7 @@ void MainWindow::on_pushButton_13_clicked()
          QMessageBox::information(this,tr("Error!"),"No Items to save.");
     }
 }
-//number 7
+//number 9
 void MainWindow::on_pushButton_6_clicked()
 {
    if(bulkClub.getMemCount() !=0)
@@ -233,21 +233,33 @@ void MainWindow::on_pushButton_6_clicked()
            }
            else
            {
+
                QString temp2 = temp.left(1);
                if(temp2 == "1" || temp2 == "2" || temp2 == "3" || temp2 == "4"
                || temp2 == "5" || temp2 == "6" || temp2 == "7" || temp2 == "8" || temp2 == "9")
                {
                      id = temp.toDouble();
+                     index = bulkClub.searchMem(id);
+                    if(index < bulkClub.getMemCount())
+                    {
+                        ui->listWidget->clear();
+                        ui->listWidget->addItem("Purchases for: " + QString::fromStdString(bulkClub.getMemName(index)));
+                        for( int i = 0; i < bulkClub.getItemCount(); i++)
+                        {
+                            if(bulkClub.getiID(i) == id)
+                            {
+                                 ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
+                            }
 
+                        }
+                        ui->listWidget->addItem("Total Cost(Pre-tax)   : $" + QString::number(bulkClub.getMemTot(index)));
+                        ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(bulkClub.getMemTotWTax(index)));
+                    }
+                    else
+                    {
+                         QMessageBox::information(this,tr("Error!"),"Person not found. ");
+                    }
 
-                     ui->listWidget->clear();
-                     for( int i = 0; i < bulkClub.getItemCount(); i++)
-                     {
-                         if(bulkClub.getiID(i) == id)
-                         {
-                              ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
-                         }
-                     }
                }
                else
                {
@@ -257,6 +269,7 @@ void MainWindow::on_pushButton_6_clicked()
                     {
                          id = bulkClub.getMemID(index);
                          ui->listWidget->clear();
+                          ui->listWidget->addItem("Purchases for: " + QString::fromStdString(bulkClub.getMemName(index)));
                          for( int i = 0; i < bulkClub.getItemCount(); i++)
                          {
                              if(bulkClub.getiID(i) == id)
@@ -264,8 +277,11 @@ void MainWindow::on_pushButton_6_clicked()
                                   ui->listWidget->addItem(QString::fromStdString(bulkClub.PrintItem(i)));
                              }
                          }
+                         ui->listWidget->addItem(  "Total Cost(Pre-tax)   : $" + QString::number(bulkClub.getMemTot(index)));
+                         ui->listWidget->addItem( "Total Cost(Post-tax) : $" + QString::number (bulkClub.getMemTotWTax(index)));
 
                     }
+
                     else
                     {
                          QMessageBox::information(this,tr("Error!"),"Person not found. ");

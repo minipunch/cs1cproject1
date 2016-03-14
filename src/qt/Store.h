@@ -57,6 +57,8 @@ public:
     string getMemType(int index);
     double getMemID(int index);
     Date getMemExp(int index);
+    float getMemTot(int index);
+    float getMemTotWTax(int index);
     string  PrintMember(int index) const;
 	int getMemCount() const;
 	void readInMembers();
