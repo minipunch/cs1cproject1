@@ -381,3 +381,90 @@ void MainWindow::on_pushButton_5_clicked()
     }
     bulkClub.sortingMems(ID);
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    int totalRevenue = 0;
+    int totalQuantity = 0;
+    bool theSame = true;
+
+    ui->listWidget->clear();
+    bulkClub.sortingItems(NAME);
+
+
+    if(bulkClub.getItemCount() != 0)
+    // ... make sure user has input a purchase file before scanning through list
+    {
+        for(int x = 0; x < bulkClub.getItemCount() - 1; ++x)
+        {
+            // for each item
+            totalRevenue = 0;
+            totalQuantity = 0;
+            theSame = true;
+
+            // print item name
+            ui->listWidget->addItem("Information on item: " +QString::fromStdString(bulkClub.getiName(x)));
+
+            if(x < bulkClub.getItemCount() - 1)
+            // ... if not at the last item in the list ...
+            {
+                while((bulkClub.getiName(x) == bulkClub.getiName(x+1)) && theSame == true)
+                // ... for each item WITH THE SAME NAME (duplicates)
+                {
+
+                    if(bulkClub.getiName(x)!= bulkClub.getiName(x+1))
+                    {
+                        theSame = false;
+                    }
+
+                    totalQuantity += bulkClub.getiQuan(x);
+                    totalRevenue  += bulkClub.getTotwTax(x);
+
+                    x++;
+
+                }
+                totalQuantity += bulkClub.getiQuan(x);
+                totalRevenue  += bulkClub.getTotwTax(x);
+            }
+            // Quantity for each item
+            ui->listWidget->addItem("Quantity: " + QString::number(totalQuantity));
+            // Total revenue for each item
+            ui->listWidget->addItem("Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+        }
+
+        // ghetto solution to the diet coke problem
+        totalQuantity = 0;
+        totalRevenue = 0;
+
+        totalQuantity += bulkClub.getiQuan(bulkClub.getItemCount() - 1);
+        totalRevenue  += bulkClub.getTotwTax(bulkClub.getItemCount() - 1);
+
+        // print item name
+        ui->listWidget->addItem("Information on item: " +QString::fromStdString(bulkClub.getiName(bulkClub.getItemCount() - 1)));
+        // Quantity for each item
+        ui->listWidget->addItem("Quantity: " + QString::number(totalQuantity));
+        // Total revenue for each item
+        ui->listWidget->addItem("Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+        ui->listWidget->addItem(" ");
+    }
+    else {
+      QMessageBox::information(this,tr("No purchase file seleceted!"),"Please import one or more purchase files in order to continue.");
+    }
+
+
+
+}
+
+
+//        if(bulkClub.getiName(x) != bulkClub.getiName(x+1))
+//        {
+//            for(int i = 0; i < (x+1); i++){
+//             if(bulkClub.getiName(i) == bulkClub.getiName(x)){
+//                 totalRevenue += bulkClub.getTotwTax(i);
+//                 totalQuantity += bulkClub.getiQuan(i);
+//                }
+//             }
+//            ui->listWidget->addItem("Information on item: " +QString::fromStdString(bulkClub.getiName(x)));
+//            ui->listWidget->addItem("Quantity   : " + QString::number(totalQuantity));
+//            ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(totalRevenue, 'f', 2));
+//        }
