@@ -24,7 +24,7 @@ void AddItem::on_buttonBox_accepted()
     QString dayTemp = ui->DayEdit->text();
     QString yearTemp = ui->YearEdit->text();
 
-
+    dItem = new Item;
     string nameStr = name.toStdString();
     float p = price.toFloat();
     double ID = id.toDouble();
