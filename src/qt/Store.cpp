@@ -332,13 +332,13 @@ void Store::delItem(string name){
     float refund;
     float rev;
     double id;
-    for(unsigned int i = 0; i < items.size(); i++)
+    for(int i = 0; i < items.size(); i++)
     {
         if(items.at(i)->GetName() == name){
             rev = items.at(i)->getTotwTax();
             refund = items.at(i)->getTotCost();
             id = items.at(i)->GetId();
-            for(unsigned int z = 0; z < members.size(); z++){
+            for(int z = 0; z < members.size(); z++){
                 if(members.at(z)->getId() == id){
                     float temp;
                     temp = members.at(z)->getTotal() - refund;
@@ -351,14 +351,4 @@ void Store::delItem(string name){
             items.erase(iter);
         }
     }
-}
-
-float Store::getMemTot(int index)
-{
-    return this-> members.at(index)->getTotal();
-}
-
-float Store::getMemTotWTax(int index)
-{
-    return this->members.at(index)->getTotalwTax();
 }

@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     deletewindow.cpp \
     mempurchlist.cpp \
     additem.cpp \
-    deleteitem.cpp
+    deleteitem.cpp \
+    itemname.cpp
 
 HEADERS  += mainwindow.h \
     date.h \
@@ -37,14 +38,16 @@ HEADERS  += mainwindow.h \
     deletewindow.h \
     mempurchlist.h \
     additem.h \
-    deleteitem.h
+    deleteitem.h \
+    itemname.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
     deletewindow.ui \
     mempurchlist.ui \
     additem.ui \
-    deleteitem.ui
+    deleteitem.ui \
+    itemname.ui
 
 DISTFILES += \
     day1.txt \

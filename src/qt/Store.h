@@ -35,6 +35,7 @@ public:
     void setFilename(string fname);
     void setFilenameI(string fname);
     void setFilenameIS(string fname);
+
 	//Item Functions
 	void addItem(Item *newItem);
 	int getItemCount() const;
@@ -50,6 +51,7 @@ public:
 	Date getiDate(int index) const;
 	float getiPrice(int index) const;
     void delItem(string name);
+
 	//Member Functions
     int getMemberIndex(string name) const;
 	void addMember(member *newMem);
@@ -57,8 +59,6 @@ public:
     string getMemType(int index);
     double getMemID(int index);
     Date getMemExp(int index);
-    float getMemTot(int index);
-    float getMemTotWTax(int index);
     string  PrintMember(int index) const;
 	int getMemCount() const;
 	void readInMembers();
