@@ -346,19 +346,20 @@ void MainWindow::on_pushButton_2_clicked()
     {
         if(iname.empty() == false){
           ui->listWidget->clear();
+
             for(int i = 0; i < bulkClub.getItemCount();i++){
                 if(bulkClub.getiName(i) == iname){
                     t += bulkClub.getTotwTax(i);
                     q += bulkClub.getiQuan(i);
                 }
             }
-            ui->listWidget->addItem(QString::fromStdString(iname));
+            ui->listWidget->addItem("Information on item: " +QString::fromStdString(iname));
             ui->listWidget->addItem("Quantity   : " + QString::number(q));
             ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(t, 'f', 2));
         }
         else{
-            ui->listWidget->clear();
-            QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
+
+            QMessageBox::information(this,tr("Error"),"Item not found or specified.");
 
         }
         bulkClub.sortingItems(NAME);
