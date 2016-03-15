@@ -126,13 +126,24 @@ void MainWindow::on_pushButton_11_clicked()
 // ADD A NEW MEMBER
 void MainWindow::on_addmem_clicked()
 {
+    int index;
 
     newMem.exec();
 
     member *addPtr = newMem.GetNewMem();
     if(addPtr != NULL)
     {
-        bulkClub.addMember(addPtr);
+
+        index = bulkClub.searchMem(addPtr->getId());
+        if(index < bulkClub.getMemCount())
+        {
+            QMessageBox::information(this,tr("Error!"),"Duplicate id number found, please enter another.");
+        }
+        else
+        {
+            bulkClub.addMember(addPtr);
+        }
+
     }
     else
     {
@@ -156,7 +167,7 @@ void MainWindow::on_pushButton_12_clicked()
     }
 }
 
-// DELETE A MEMBER
+// number 6DELETE A MEMBER
 void MainWindow::on_pushButton_7_clicked()
 {
 
@@ -214,7 +225,7 @@ void MainWindow::on_pushButton_13_clicked()
          QMessageBox::information(this,tr("Error!"),"No Items to save.");
     }
 }
-//number 7
+//number 8 get info for a certain item
 void MainWindow::on_pushButton_6_clicked()
 {
    if(bulkClub.getMemCount() !=0)
@@ -286,7 +297,7 @@ void MainWindow::on_pushButton_6_clicked()
          QMessageBox::information(this,tr("Error!"),"Member database empty");
    }
 }
-
+//number 7 add items
 void MainWindow::on_pushButton_15_clicked()
 {
 
@@ -310,7 +321,7 @@ void MainWindow::on_pushButton_15_clicked()
     }
 }
 
-
+//number 7 delete items
 void MainWindow::on_pushButton_16_clicked()
 {
     string name;
@@ -334,7 +345,7 @@ void MainWindow::on_pushButton_16_clicked()
             QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
         }
 }
-
+//number 8
 void MainWindow::on_pushButton_2_clicked()
 {
     int q = 0;
@@ -369,6 +380,7 @@ void MainWindow::on_pushButton_2_clicked()
         QMessageBox::information(this,tr("No Members!"),"Please add members to the database first.");
     }
 }
+//number 4 print executive rebates
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->listWidget->clear();
@@ -382,6 +394,7 @@ void MainWindow::on_pushButton_5_clicked()
     bulkClub.sortingMems(ID);
 }
 
+//number 3 total quantity and cost of each item
 void MainWindow::on_pushButton_3_clicked()
 {
     int totalRevenue = 0;
@@ -454,6 +467,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 
 }
+//number 1: sales report
 void MainWindow::on_pushButton_clicked()
 {
     Date d;
@@ -480,7 +494,7 @@ void MainWindow::on_pushButton_clicked()
             ui->listWidget->addItem(QString::fromStdString(bulkClub.getiName(i)));
             ui->listWidget->addItem("Quantity: " + QString::number(bulkClub.getiQuan(i)));
             if(names.empty() == false){
-                for(int z = 0; z < names.size(); z++){
+                for(unsigned int z = 0; z < names.size(); z++){
                     if(names.at(z) == memName){
                         nameDup++;
                     }
@@ -498,7 +512,7 @@ void MainWindow::on_pushButton_clicked()
 
         }
     }
-    for(int i = 0; i < names.size(); i++){
+    for(unsigned int i = 0; i < names.size(); i++){
         if(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))) == "Executive"){
             ui->listWidget->addItem(QString::fromStdString(names.at(i))+ "\nType: Executive");
             exec++;
