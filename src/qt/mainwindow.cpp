@@ -78,10 +78,8 @@ void MainWindow::on_pushButton_8_clicked() {
             totW = totW + bulkClub.getTotwTax(i);
         }
 
-        ui->listWidget->addItem(
-                "Total Cost(Pre-tax)   : $" + QString::number(tot, 'f', 2));
-        ui->listWidget->addItem(
-                "Total Cost(Post-tax) : $" + QString::number(totW, 'f', 2));
+        ui->listWidget->addItem("Total Cost(Pre-tax)   : $" + QString::number(tot, 'f', 2));
+        ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(totW, 'f', 2));
 
     }
 }
@@ -141,6 +139,7 @@ void MainWindow::on_pushButton_12_clicked() {
 void MainWindow::on_pushButton_7_clicked() {
 
     if (bulkClub.getMemCount() != 0) {
+        bulkClub.sortingItems(NAME);
         deleteMember.exec();
         string nameDel = deleteMember.getDeleteMemberName();
         if (nameDel == "None") {
@@ -153,9 +152,18 @@ void MainWindow::on_pushButton_7_clicked() {
                 QMessageBox::information(this, tr("Done."),
                         "Member has been removed");
                 double did = bulkClub.getMemID(deleteIndex);
+
                 for(int i = 0; i < bulkClub.getItemCount();i++){
                     if (bulkClub.getiID(i) == did){
-                        bulkClub.delItem(bulkClub.getiName(i));
+                        bulkClub.removeItem(i);
+                    }
+                }
+
+                //double did = bulkClub.getMemID(deleteIndex);
+
+                for(int i = 0; i < bulkClub.getItemCount();i++){
+                    if (bulkClub.getiID(i) == did){
+                        bulkClub.removeItem(i);
                     }
                 }
                 bulkClub.removeMember(deleteIndex);

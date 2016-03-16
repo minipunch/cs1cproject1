@@ -358,3 +358,10 @@ void Store::delItem(string name){
         }
     }
 }
+
+void Store::removeItem(int index)
+{
+     deque<Item*>::iterator iter = items.begin() + index;
+     items.erase(iter);
+
+}

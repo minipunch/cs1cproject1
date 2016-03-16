@@ -51,7 +51,7 @@ public:
 	Date getiDate(int index) const;
 	float getiPrice(int index) const;
     void delItem(string name);
-
+     void removeItem(int index);
 	//Member Functions
     int getMemberIndex(string name) const;
 	void addMember(member *newMem);
