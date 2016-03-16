@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     additem.cpp \
     deleteitem.cpp \
     itemname.cpp \
-    report.cpp
+    report.cpp \
+    expire.cpp
     report.cpp
 
 HEADERS  += mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS  += mainwindow.h \
     additem.h \
     deleteitem.h \
     itemname.h \
-    report.h
+    report.h \
+    expire.h
     report.h
 
 FORMS    += mainwindow.ui \
@@ -52,7 +54,8 @@ FORMS    += mainwindow.ui \
     additem.ui \
     deleteitem.ui \
     itemname.ui \
-    report.ui
+    report.ui \
+    expire.ui
     report.ui
 
 DISTFILES += \
@@ -61,4 +64,5 @@ DISTFILES += \
     day3.txt \
     day4.txt \
     day5.txt \
-    members.txt
+    members.txt \
+    Extras

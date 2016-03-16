@@ -12,6 +12,7 @@
 #include "deleteitem.h"
 #include "report.h"
 #include "itemname.h"
+#include "expire.h"
 namespace Ui {
 class MainWindow;
 }
@@ -57,6 +58,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_14_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
@@ -70,6 +73,7 @@ private:
     deleteitem itemDel;
     ItemName item;
     Report rep;
+    expire exp;
 };
 
 #endif // MAINWINDOW_H

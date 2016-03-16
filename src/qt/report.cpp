@@ -36,3 +36,12 @@ void Report::on_buttonBox_rejected()
 {
     this->close();
 }
+
+void Report::on_checkBox_clicked()
+{
+    cheq = true;
+}
+
+bool Report::getCheq(){
+    return this->cheq;
+}

@@ -1,0 +1,48 @@
+Expiration
+//        else {
+//            QString month2 = QString::fromStdString(mon);
+//            month2 = month2.toLower();
+//            mon = month2.toStdString();
+//            if (mon == "january") {
+//                month = 1;
+//            } else if ("february" == mon) {
+//                month = 2;
+//            } else if ("march" == mon) {
+//                month = 3;
+//            } else if ("april" == mon) {
+//                month = 4;
+//            } else if ("may" == mon) {
+//                month = 5;
+//            } else if ("june" == mon) {
+//                month = 6;
+//            } else if ("july" == mon) {
+//                month = 7;
+//            } else if ("august" == mon) {
+//                month = 8;
+//            } else if ("september" == mon) {
+//                month = 9;
+//            } else if ("october" == mon) {
+//                month = 10;
+//            } else if ("november" == mon) {
+//                month = 11;
+//            } else if ("december" == mon) {
+//                month = 12;
+//            }
+//        }
+//            for (int i = 0; i < bulkClub.getMemCount(); i++) {
+//                if (bulkClub.getMemExp(i).GetMonth() == month) {
+//                    ui->listWidget->addItem(
+//                            QString::fromStdString(bulkClub.PrintMember(i)));
+//                    cheq ++;
+//                    if (bulkClub.getMemType(i) == "Executive") {
+//                        ui->listWidget->addItem(
+//                                "Annual Membership Fee Cost: $125\n");
+//                    } else {
+//                        ui->listWidget->addItem(
+//                                "Annual Membership Fee Cost: $45\n");
+//                    }
+//                }
+//            }
+//            if(cheq == 0){
+//                ui->listWidget->addItem("No ones membership expires during that month.\n");
+//            }
