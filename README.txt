@@ -1,4 +1,5 @@
-** DOWNLOAD THE QT APPLICATION FROM THE '/DIST' FOLDER **
+Team Five Gui's 
+Nick Sidaris, Josh Yolles, Dustin Vuong, Dallas Wendt, Christopher Bassar.
 
 Hello group,
 
