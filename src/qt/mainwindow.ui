@@ -6,166 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>920</width>
-    <height>645</height>
+    <width>915</width>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Five Gui's Club Manager</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(221, 221, 221);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>70</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>SALES REPORT</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>510</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>FIND AN ITEM</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>390</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>PRODUCT INFO</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="addmem">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>190</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>ADD MEMBER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>270</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>SHOW REBATES</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>150</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>FIND A MEMBER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_7">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>230</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>DELETE MEMBER</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>350</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>PURCHASE LIST</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_9">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>110</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>MEMBER LIST</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>270</x>
       <y>0</y>
       <width>311</width>
       <height>71</height>
@@ -189,163 +47,69 @@ background-color: rgb(221, 221, 221);</string>
      <rect>
       <x>20</x>
       <y>70</y>
-      <width>721</width>
-      <height>481</height>
+      <width>861</width>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>560</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>Member List:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>560</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>Purchase File:</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>580</y>
-      <width>351</width>
-      <height>25</height>
+      <x>150</x>
+      <y>550</y>
+      <width>601</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QPushButton" name="pushButton">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Browse</string>
+        <string>SALES REPORT</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_11">
+      <widget class="QPushButton" name="pushButton_8">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Browse</string>
+        <string>PURCHASE LIST</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_13">
+      <widget class="QPushButton" name="pushButton_9">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Save Purchases</string>
+        <string>MEMBER LIST</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_12">
+      <widget class="QPushButton" name="pushButton_3">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Save Members</string>
+        <string>PRODUCT INFO</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_14">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>310</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>SEE EXPIRATIONS</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_15">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>430</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>ADD ITEM</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_16">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>470</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>DELETE  ITEM</string>
-    </property>
-   </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>listWidget</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>addmem</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
-   <zorder>pushButton_8</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>pushButton_14</zorder>
-   <zorder>pushButton_15</zorder>
-   <zorder>pushButton_16</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -353,11 +117,132 @@ background-color: rgb(221, 221, 221);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>920</width>
+     <width>915</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionMember_File_Import"/>
+     <addaction name="actionPurchase_File_Import"/>
+    </widget>
+    <widget class="QMenu" name="menuSave">
+     <property name="title">
+      <string>Save</string>
+     </property>
+     <addaction name="actionMember_File_Save"/>
+     <addaction name="actionPurchase_File_Save"/>
+    </widget>
+    <addaction name="menuImport"/>
+    <addaction name="menuSave"/>
+    <addaction name="actionSave_All"/>
+   </widget>
+   <widget class="QMenu" name="menuMembers">
+    <property name="title">
+     <string>Members</string>
+    </property>
+    <addaction name="actionSearch_Member_List"/>
+    <addaction name="actionAdd_A_Member"/>
+    <addaction name="actionDelete_a_member"/>
+    <addaction name="actionRebate"/>
+    <addaction name="actionExpirations"/>
+   </widget>
+   <widget class="QMenu" name="menuManage_Products">
+    <property name="title">
+     <string>Products</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionSearch_2"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuMembers"/>
+   <addaction name="menuManage_Products"/>
   </widget>
+  <action name="actionMember_File_Import">
+   <property name="text">
+    <string>Member File</string>
+   </property>
+  </action>
+  <action name="actionPurchase_File_Import">
+   <property name="text">
+    <string>Purchase File</string>
+   </property>
+  </action>
+  <action name="actionSave_All">
+   <property name="text">
+    <string>Save All</string>
+   </property>
+  </action>
+  <action name="actionMember_File_Save">
+   <property name="text">
+    <string>Member File</string>
+   </property>
+  </action>
+  <action name="actionPurchase_File_Save">
+   <property name="text">
+    <string>Purchase File</string>
+   </property>
+  </action>
+  <action name="actionPrint_member_list">
+   <property name="text">
+    <string>Show All</string>
+   </property>
+  </action>
+  <action name="actionSearch_Member_List">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionAdd_A_Member">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionDelete_a_member">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionRebate">
+   <property name="text">
+    <string>Rebates</string>
+   </property>
+  </action>
+  <action name="actionExpirations">
+   <property name="text">
+    <string>Expirations</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionSearch_2">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
