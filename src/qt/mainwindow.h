@@ -24,7 +24,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void setDate();
     void displayMembers(member mem);
     Store getStore();
     string getFilename() const;

@@ -156,6 +156,7 @@ public:
         menuBar->setGeometry(QRect(0, 0, 915, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuFile->setAutoFillBackground(false);
         menuImport = new QMenu(menuFile);
         menuImport->setObjectName(QStringLiteral("menuImport"));
         menuSave = new QMenu(menuFile);
@@ -176,7 +177,6 @@ public:
         menuImport->addAction(actionPurchase_File_Import);
         menuSave->addAction(actionMember_File_Save);
         menuSave->addAction(actionPurchase_File_Save);
-        menuMembers->addAction(actionPrint_member_list);
         menuMembers->addAction(actionSearch_Member_List);
         menuMembers->addAction(actionAdd_A_Member);
         menuMembers->addAction(actionDelete_a_member);

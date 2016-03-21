@@ -195,7 +195,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 20: _t->on_actionSave_All_triggered(); break;
         case 21: _t->on_actionMember_File_Import_triggered(); break;
         case 22: _t->on_actionPurchase_File_Import_triggered(); break;
-        case 23: _t->on_actionPrint_member_list_triggered(); break;
         case 24: _t->on_actionAdd_A_Member_triggered(); break;
         case 25: _t->on_actionDelete_a_member_triggered(); break;
         case 26: _t->on_actionRebate_triggered(); break;

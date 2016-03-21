@@ -122,6 +122,9 @@
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
@@ -147,7 +150,6 @@
     <property name="title">
      <string>Members</string>
     </property>
-    <addaction name="actionPrint_member_list"/>
     <addaction name="actionSearch_Member_List"/>
     <addaction name="actionAdd_A_Member"/>
     <addaction name="actionDelete_a_member"/>

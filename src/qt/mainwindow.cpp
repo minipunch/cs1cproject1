@@ -33,11 +33,6 @@ void MainWindow::on_pushButton_9_clicked() {
                 "You must first import a member file before printing it.");
     }
 }
-void MainWindow::setDate() {
-    //    Date today;
-    //    ui->label_2->setText(QString::fromStdString("Date: " + today.DisplayDate()));
-    //
-}
 
 Store MainWindow::getStore() {
     return this->bulkClub;
@@ -657,24 +652,6 @@ void MainWindow::on_actionPurchase_File_Import_triggered()
     } else {
         QMessageBox::information(this, tr("Error!"),
                 "Member database empty, please import a member list first.");
-    }
-}
-
-// display all members
-void MainWindow::on_actionPrint_member_list_triggered()
-{
-    ui->listWidget->clear();
-
-    if (bulkClub.getMemCount() != 0) {
-        for (int i = 0; i < bulkClub.getMemCount(); i++) {
-            ui->listWidget->addItem(
-                    QString::fromStdString(bulkClub.PrintMember(i)));
-        }
-
-    } else {
-
-        QMessageBox::information(this, tr("Error!"),
-                "You must first import a member file before printing it.");
     }
 }
 
