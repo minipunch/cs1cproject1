@@ -91,6 +91,8 @@ private slots:
 
     void on_actionSearch_2_triggered();
 
+    void on_actionSearch_Member_List_triggered();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
