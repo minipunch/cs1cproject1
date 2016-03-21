@@ -55,7 +55,7 @@
      <string notr="true">color: rgb(0, 0, 0);</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -117,13 +117,9 @@
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>listWidget</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_8</zorder>
-   <zorder>pushButton_9</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -238,7 +234,7 @@
   </action>
   <action name="actionSearch">
    <property name="text">
-    <string>Search</string>
+    <string>Info</string>
    </property>
   </action>
   <action name="actionNew">
