@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     this->filename = "Empty";
+    this->ui->menuFile->setStyleSheet("background-color: orange;");
 
 }
 
@@ -16,6 +17,7 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+// show all members
 void MainWindow::on_pushButton_9_clicked() {
     ui->listWidget->clear();
 
@@ -83,7 +85,7 @@ void MainWindow::on_pushButton_8_clicked() {
 
     }
 }
-// SELECT AND IMPORT ITEM FILE
+// IMPORT ITEM FILE
 void MainWindow::on_pushButton_11_clicked() {
     if (bulkClub.getMemCount() != 0) {
         QString filenameQ = QFileDialog::getOpenFileName(this,
@@ -135,7 +137,7 @@ void MainWindow::on_pushButton_12_clicked() {
     }
 }
 
-// number 6DELETE A MEMBER
+// number 6 - DELETE A MEMBER
 void MainWindow::on_pushButton_7_clicked() {
 
     if (bulkClub.getMemCount() != 0) {
@@ -558,3 +560,406 @@ void MainWindow::on_pushButton_14_clicked() {
 
 }
 
+// save member file
+void MainWindow::on_actionMember_File_Save_triggered()
+{
+    if (bulkClub.getMemCount() != 0) {
+        bulkClub.saveMembers();
+        QMessageBox::information(this, tr("List Saved!"),
+                "Your members list has been saved.");
+    } else {
+        QMessageBox::information(this, tr("Error!"),
+                "Member database empty. Please import a member list first.");
+    }
+}
+
+// save purchase/item file
+void MainWindow::on_actionPurchase_File_Save_triggered()
+{
+
+    if (bulkClub.getItemCount() != 0) {
+        QString filenameQ = QFileDialog::getOpenFileName(this,
+                tr("Import a purchase file"), "C://", "Text File (*.txt)");
+        this->filenameIS = filenameQ.toStdString();
+        this->bulkClub.setFilenameIS(filenameQ.toStdString());
+        this->bulkClub.saveItems();
+    } else {
+        QMessageBox::information(this, tr("Error!"), "No Items to save.");
+    }
+}
+
+// save member file and purchase/item file
+void MainWindow::on_actionSave_All_triggered()
+{
+    // ... first save members
+    if (bulkClub.getMemCount() != 0) {
+        bulkClub.saveMembers();
+        QMessageBox::information(this, tr("List Saved!"),
+                "Your members list has been saved.");
+    } else {
+        QMessageBox::information(this, tr("Error!"),
+                "Member database empty. Please import a member list first.");
+    }
+
+    // ... then save items
+    if (bulkClub.getItemCount() != 0) {
+        QString filenameQ = QFileDialog::getOpenFileName(this,
+                tr("Import a purchase file"), "C://", "Text File (*.txt)");
+        this->filenameIS = filenameQ.toStdString();
+        this->bulkClub.setFilenameIS(filenameQ.toStdString());
+        this->bulkClub.saveItems();
+    } else {
+        QMessageBox::information(this, tr("Error!"), "No Items to save.");
+    }
+}
+
+// import member file
+void MainWindow::on_actionMember_File_Import_triggered()
+{
+    QString filenameQ = QFileDialog::getOpenFileName(this, tr("Import members"),
+            "C://", "Text File (*.txt)");
+    this->filename = filenameQ.toStdString();
+    this->bulkClub.setFilename(filenameQ.toStdString());
+
+    this->bulkClub.readInMembers();
+}
+
+// import purchase/item file
+void MainWindow::on_actionPurchase_File_Import_triggered()
+{
+    if (bulkClub.getMemCount() != 0) {
+        QString filenameQ = QFileDialog::getOpenFileName(this,
+                tr("Import a purchase file"), "C://", "Text File (*.txt)");
+        this->filenameI = filenameQ.toStdString();
+        this->bulkClub.setFilenameI(filenameQ.toStdString());
+
+        this->bulkClub.readItems();
+    } else {
+        QMessageBox::information(this, tr("Error!"),
+                "Member database empty, please import a member list first.");
+    }
+}
+
+// display all members
+void MainWindow::on_actionPrint_member_list_triggered()
+{
+    ui->listWidget->clear();
+
+    if (bulkClub.getMemCount() != 0) {
+        for (int i = 0; i < bulkClub.getMemCount(); i++) {
+            ui->listWidget->addItem(
+                    QString::fromStdString(bulkClub.PrintMember(i)));
+        }
+
+    } else {
+
+        QMessageBox::information(this, tr("Error!"),
+                "You must first import a member file before printing it.");
+    }
+}
+
+// add a new member
+void MainWindow::on_actionAdd_A_Member_triggered()
+{
+    int index;
+
+    newMem.exec();
+
+    member *addPtr = newMem.GetNewMem();
+    if (addPtr != NULL) {
+
+        index = bulkClub.searchMem(addPtr->getId());
+        if (index < bulkClub.getMemCount()) {
+            QMessageBox::information(this, tr("Error!"),
+                    "Duplicate id number found, please enter another.");
+        } else {
+            bulkClub.addMember(addPtr);
+        }
+
+    } else {
+        QMessageBox::information(this, tr("Action Cancelled!"),
+                "No Members added.");
+    }
+    bulkClub.sortingMems(NAME);
+}
+
+// delete a member
+void MainWindow::on_actionDelete_a_member_triggered()
+{
+    if (bulkClub.getMemCount() != 0) {
+        bulkClub.sortingItems(NAME);
+        deleteMember.exec();
+        string nameDel = deleteMember.getDeleteMemberName();
+        if (nameDel == "None") {
+            QMessageBox::information(this, tr("Error!"), "Delete Cancelled");
+        } else {
+            // grab proper index location to delete from the <deque> of member pointers.
+            int deleteIndex = bulkClub.getMemberIndex(nameDel);
+
+            if (deleteIndex < bulkClub.getMemCount()) {
+                QMessageBox::information(this, tr("Done."),
+                        "Member has been removed");
+                double did = bulkClub.getMemID(deleteIndex);
+
+                for(int i = 0; i < bulkClub.getItemCount();i++){
+                    if (bulkClub.getiID(i) == did){
+                        bulkClub.removeItem(i);
+                    }
+                }
+
+                //double did = bulkClub.getMemID(deleteIndex);
+
+                for(int i = 0; i < bulkClub.getItemCount();i++){
+                    if (bulkClub.getiID(i) == did){
+                        bulkClub.removeItem(i);
+                    }
+                }
+                bulkClub.removeMember(deleteIndex);
+
+
+            } else {
+                QMessageBox::information(this, tr("Error!"),
+                        "Member not found within the database");
+            }
+
+        }
+    } else {
+        QMessageBox::information(this, tr("Error!"),
+                "Member database empty. No members to Delete.");
+    }
+}
+
+// show rebates
+void MainWindow::on_actionRebate_triggered()
+{
+    ui->listWidget->clear();
+    for (int count = 0; count < bulkClub.getMemCount(); count++) {
+        if (bulkClub.getMemType(count) == "Executive") {
+            ui->listWidget->addItem(
+                    QString::fromStdString(bulkClub.getMemName(count)));
+            ui->listWidget->addItem(
+                    "Rebate: "
+                            + QString::fromStdString(
+                                    bulkClub.getRebate(count)));
+        }
+    }
+    bulkClub.sortingMems(ID);
+}
+
+// see membership expirations
+void MainWindow::on_actionExpirations_triggered()
+{
+    exp.exec();
+    string mon = exp.getMonth();
+    ui->listWidget->clear();
+    int month;
+    int cheq = 0;
+    bool m0n;
+
+    if (mon == "None") {
+        QMessageBox::information(this, tr("Error!"), "Action Cancelled");
+    } else {
+        QString tem = QString::fromStdString(mon);
+        month = tem.toInt(&m0n);
+        if (!m0n) {
+            QString month2 = QString::fromStdString(mon);
+            month2 = month2.toLower();
+            mon = month2.toStdString();
+            if (mon == "january") {
+                month = 1;
+            } else if ("february" == mon) {
+                month = 2;
+            } else if ("march" == mon) {
+                month = 3;
+            } else if ("april" == mon) {
+                month = 4;
+            } else if ("may" == mon) {
+                month = 5;
+            } else if ("june" == mon) {
+                month = 6;
+            } else if ("july" == mon) {
+                month = 7;
+            } else if ("august" == mon) {
+                month = 8;
+            } else if ("september" == mon) {
+                month = 9;
+            } else if ("october" == mon) {
+                month = 10;
+            } else if ("november" == mon) {
+                month = 11;
+            } else if ("december" == mon) {
+                month = 12;
+            }
+        }
+
+    }
+    for (int i = 0; i < bulkClub.getMemCount(); i++) {
+        if (bulkClub.getMemExp(i).GetMonth() == month) {
+            ui->listWidget->addItem(
+                    QString::fromStdString(bulkClub.PrintMember(i)));
+                    cheq++;
+            if (bulkClub.getMemType(i) == "Executive") {
+                ui->listWidget->addItem("Annual Membership Fee Cost: $125\n");
+            } else {
+                ui->listWidget->addItem("Annual Membership Fee Cost: $45\n");
+            }
+        }
+    }
+    if(cheq == 0){
+        ui->listWidget->addItem("No ones membership expires during that month.\n");
+    }
+}
+
+// product info
+void MainWindow::on_actionSearch_triggered()
+{
+    int totalRevenue = 0;
+    int totalQuantity = 0;
+    bool theSame = true;
+
+    ui->listWidget->clear();
+    bulkClub.sortingItems(NAME);
+
+    if (bulkClub.getItemCount() != 0)
+    // ... make sure user has input a purchase file before scanning through list
+            {
+        for (int x = 0; x < bulkClub.getItemCount() - 1; ++x) {
+            // for each item
+            totalRevenue = 0;
+            totalQuantity = 0;
+            theSame = true;
+
+            // print item name
+            ui->listWidget->addItem(
+                    "Information on item: "
+                            + QString::fromStdString(bulkClub.getiName(x)));
+
+            if (x < bulkClub.getItemCount() - 1)
+            // ... if not at the last item in the list ...
+                    {
+                while ((bulkClub.getiName(x) == bulkClub.getiName(x + 1))
+                        && theSame == true)
+                // ... for each item WITH THE SAME NAME (duplicates)
+                {
+
+                    if (bulkClub.getiName(x) != bulkClub.getiName(x + 1)) {
+                        theSame = false;
+                    }
+
+                    totalQuantity += bulkClub.getiQuan(x);
+                    totalRevenue += bulkClub.getTotwTax(x);
+
+                    x++;
+
+                }
+                totalQuantity += bulkClub.getiQuan(x);
+                totalRevenue += bulkClub.getTotwTax(x);
+            }
+            // Quantity for each item
+            ui->listWidget->addItem(
+                    "Quantity: " + QString::number(totalQuantity));
+            // Total revenue for each item
+            ui->listWidget->addItem(
+                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+        }
+
+        // ghetto solution to the diet coke problem
+        totalQuantity = 0;
+        totalRevenue = 0;
+
+        totalQuantity += bulkClub.getiQuan(bulkClub.getItemCount() - 1);
+        totalRevenue += bulkClub.getTotwTax(bulkClub.getItemCount() - 1);
+
+        // print item name
+        ui->listWidget->addItem(
+                "Information on item: "
+                        + QString::fromStdString(
+                                bulkClub.getiName(
+                                        bulkClub.getItemCount() - 1)));
+        // Quantity for each item
+        ui->listWidget->addItem("Quantity: " + QString::number(totalQuantity));
+        // Total revenue for each item
+        ui->listWidget->addItem(
+                "Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+        ui->listWidget->addItem(" ");
+    } else {
+        QMessageBox::information(this, tr("No purchase file seleceted!"),
+                "Please import one or more purchase files in order to continue.");
+    }
+}
+
+// new product
+void MainWindow::on_actionNew_triggered()
+{
+    if (bulkClub.getMemCount() != 0) {
+        itemAdd.exec();
+        Item *addPtr = itemAdd.GetItem();
+        if (addPtr != NULL) {
+            bulkClub.addItem(addPtr);
+        } else {
+            QMessageBox::information(this, tr("Action Cancelled!"),
+                    "No Items added.");
+        }
+        bulkClub.sortingItems(NAME);
+    } else {
+        QMessageBox::information(this, tr("No purchase/item list found!"),
+                "Please import a purchase/item file before continuing.");
+    }
+}
+
+// delete product
+void MainWindow::on_actionDelete_triggered()
+{
+    string name;
+
+    if (bulkClub.getMemCount() != 0) {
+        itemDel.exec();
+        name = itemDel.delItem();
+        if (name != "NONE") {
+            bulkClub.delItem(name);
+        } else {
+            QMessageBox::information(this, tr("Action Cancelled!"),
+                    "Item name not found/not specified.");
+        }
+        bulkClub.sortingItems(NAME);
+    } else {
+        QMessageBox::information(this, tr("No purchase/item list found!"),
+                "Please import a purchase/item file before continuing.");
+    }
+}
+
+// search for product
+void MainWindow::on_actionSearch_2_triggered()
+{
+    int q = 0;
+    float t = 0;
+    item.exec();
+    string iname;
+    iname = item.getItem();
+    if (bulkClub.getMemCount() != 0) {
+        if (iname.empty() == false) {
+            ui->listWidget->clear();
+
+            for (int i = 0; i < bulkClub.getItemCount(); i++) {
+                if (bulkClub.getiName(i) == iname) {
+                    t += bulkClub.getTotwTax(i);
+                    q += bulkClub.getiQuan(i);
+                }
+            }
+            ui->listWidget->addItem(
+                    "Information on item: " + QString::fromStdString(iname));
+            ui->listWidget->addItem("Quantity   : " + QString::number(q));
+            ui->listWidget->addItem(
+                    "Total Cost(Post-tax) : $" + QString::number(t, 'f', 2));
+        } else {
+
+            QMessageBox::information(this, tr("Error"),
+                    "Item not found or specified.");
+
+        }
+        bulkClub.sortingItems(NAME);
+    } else {
+        QMessageBox::information(this, tr("No purchase/item list found!"),
+                "Please import a purchase/item file before continuing.");
+    }
+}

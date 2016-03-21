@@ -60,6 +60,38 @@ private slots:
 
     void on_pushButton_14_clicked();
 
+    void on_actionMember_File_triggered();
+
+    void on_actionPurchase_File_triggered();
+
+    void on_actionMember_File_Save_triggered();
+
+    void on_actionPurchase_File_Save_triggered();
+
+    void on_actionSave_All_triggered();
+
+    void on_actionMember_File_Import_triggered();
+
+    void on_actionPurchase_File_Import_triggered();
+
+    void on_actionPrint_member_list_triggered();
+
+    void on_actionAdd_A_Member_triggered();
+
+    void on_actionDelete_a_member_triggered();
+
+    void on_actionRebate_triggered();
+
+    void on_actionExpirations_triggered();
+
+    void on_actionSearch_triggered();
+
+    void on_actionNew_triggered();
+
+    void on_actionDelete_triggered();
+
+    void on_actionSearch_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;

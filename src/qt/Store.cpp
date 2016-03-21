@@ -279,6 +279,9 @@ string Store::getRebate(int index){
     if(members.at(index)->getType() == "Executive"){
         return members.at(index)->printRebate();
      }
+    else {
+        return "Invalid membership type";
+    }
 }
 
 
