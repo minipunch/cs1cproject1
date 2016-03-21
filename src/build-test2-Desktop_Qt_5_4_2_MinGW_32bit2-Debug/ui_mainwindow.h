@@ -148,7 +148,6 @@ public:
         layoutWidget->raise();
         label->raise();
         listWidget->raise();
-        pushButton_3->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -194,7 +193,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Five Gui's Club Manager", 0));
         actionMember_File_Import->setText(QApplication::translate("MainWindow", "Member File", 0));
         actionPurchase_File_Import->setText(QApplication::translate("MainWindow", "Purchase File", 0));
         actionSave_All->setText(QApplication::translate("MainWindow", "Save All", 0));

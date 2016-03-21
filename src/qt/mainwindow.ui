@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Five Gui's Club Manager</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -110,7 +110,6 @@
    <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>listWidget</zorder>
-   <zorder>pushButton_3</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
