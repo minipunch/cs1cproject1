@@ -47,13 +47,12 @@ public:
     QWidget *centralWidget;
     QLabel *label;
     QListWidget *listWidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
     QPushButton *pushButton_3;
-    QPushButton *pushButton_2;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
     QMenu *menuFile;
@@ -103,7 +102,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(290, 0, 311, 71));
+        label->setGeometry(QRect(270, 0, 311, 71));
         QFont font;
         font.setFamily(QStringLiteral("Tempus Sans ITC"));
         font.setPointSize(36);
@@ -113,52 +112,43 @@ public:
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(20, 70, 861, 471));
         listWidget->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(60, 550, 721, 41));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(150, 550, 601, 41));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
 
         horizontalLayout->addWidget(pushButton);
 
-        pushButton_8 = new QPushButton(widget);
+        pushButton_8 = new QPushButton(layoutWidget);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
 
         horizontalLayout->addWidget(pushButton_8);
 
-        pushButton_9 = new QPushButton(widget);
+        pushButton_9 = new QPushButton(layoutWidget);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
 
         horizontalLayout->addWidget(pushButton_9);
 
-        pushButton_3 = new QPushButton(widget);
+        pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
 
         horizontalLayout->addWidget(pushButton_3);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
-
-        horizontalLayout->addWidget(pushButton_2);
-
         MainWindow->setCentralWidget(centralWidget);
+        layoutWidget->raise();
         label->raise();
         listWidget->raise();
-        pushButton->raise();
-        pushButton_2->raise();
         pushButton_3->raise();
-        pushButton_8->raise();
-        pushButton_9->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -193,7 +183,6 @@ public:
         menuMembers->addAction(actionDelete_a_member);
         menuMembers->addAction(actionRebate);
         menuMembers->addAction(actionExpirations);
-        menuManage_Products->addAction(actionSearch);
         menuManage_Products->addAction(actionNew);
         menuManage_Products->addAction(actionDelete);
         menuManage_Products->addAction(actionSearch_2);
@@ -217,7 +206,7 @@ public:
         actionDelete_a_member->setText(QApplication::translate("MainWindow", "Delete", 0));
         actionRebate->setText(QApplication::translate("MainWindow", "Rebates", 0));
         actionExpirations->setText(QApplication::translate("MainWindow", "Expirations", 0));
-        actionSearch->setText(QApplication::translate("MainWindow", "Search", 0));
+        actionSearch->setText(QApplication::translate("MainWindow", "Info", 0));
         actionNew->setText(QApplication::translate("MainWindow", "New", 0));
         actionDelete->setText(QApplication::translate("MainWindow", "Delete", 0));
         actionSearch_2->setText(QApplication::translate("MainWindow", "Search", 0));
@@ -226,7 +215,6 @@ public:
         pushButton_8->setText(QApplication::translate("MainWindow", "PURCHASE LIST", 0));
         pushButton_9->setText(QApplication::translate("MainWindow", "MEMBER LIST", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "PRODUCT INFO", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "FIND AN ITEM", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuImport->setTitle(QApplication::translate("MainWindow", "Import", 0));
         menuSave->setTitle(QApplication::translate("MainWindow", "Save", 0));

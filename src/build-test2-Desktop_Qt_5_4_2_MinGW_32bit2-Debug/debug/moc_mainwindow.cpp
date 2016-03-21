@@ -188,20 +188,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
         case 1: _t->on_pushButton_9_clicked(); break;
-        case 2: _t->on_pushButton_10_clicked(); break;
         case 3: _t->on_pushButton_8_clicked(); break;
-        case 4: _t->on_pushButton_11_clicked(); break;
-        case 5: _t->on_addmem_clicked(); break;
-        case 6: _t->on_pushButton_12_clicked(); break;
-        case 7: _t->on_pushButton_7_clicked(); break;
-        case 8: _t->on_pushButton_13_clicked(); break;
-        case 9: _t->on_pushButton_6_clicked(); break;
-        case 10: _t->on_pushButton_15_clicked(); break;
-        case 11: _t->on_pushButton_16_clicked(); break;
-        case 12: _t->on_pushButton_2_clicked(); break;
-        case 13: _t->on_pushButton_5_clicked(); break;
         case 14: _t->on_pushButton_3_clicked(); break;
-        case 15: _t->on_pushButton_14_clicked(); break;
         case 18: _t->on_actionMember_File_Save_triggered(); break;
         case 19: _t->on_actionPurchase_File_Save_triggered(); break;
         case 20: _t->on_actionSave_All_triggered(); break;
