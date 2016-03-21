@@ -1019,3 +1019,8 @@ void MainWindow::on_actionSearch_Member_List_triggered()
           QMessageBox::information(this, tr("Error!"), "Member database empty");
       }
 }
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::information(this, tr("Team Five GUI's"), "Team Five GUI's:\nChris Bassar\nDallas Wendt\nDustin Vuong\nJosh Yolles\nNick Sidaris\n\nAll rights reserved. Plagerizers will be prosecuted.");
+}

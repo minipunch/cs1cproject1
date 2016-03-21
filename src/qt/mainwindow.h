@@ -31,37 +31,10 @@ public:
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_9_clicked();
-    void on_pushButton_10_clicked();
 
     void on_pushButton_8_clicked();
 
-    void on_pushButton_11_clicked();
-
-    void on_addmem_clicked();
-
-    void on_pushButton_12_clicked();
-
-    void on_pushButton_7_clicked();
-
-    void on_pushButton_13_clicked();
-
-    void on_pushButton_6_clicked();
-
-    void on_pushButton_15_clicked();
-
-    void on_pushButton_16_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_5_clicked();
-
     void on_pushButton_3_clicked();
-
-    void on_pushButton_14_clicked();
-
-    void on_actionMember_File_triggered();
-
-    void on_actionPurchase_File_triggered();
 
     void on_actionMember_File_Save_triggered();
 
@@ -72,8 +45,6 @@ private slots:
     void on_actionMember_File_Import_triggered();
 
     void on_actionPurchase_File_Import_triggered();
-
-    void on_actionPrint_member_list_triggered();
 
     void on_actionAdd_A_Member_triggered();
 
@@ -92,6 +63,8 @@ private slots:
     void on_actionSearch_2_triggered();
 
     void on_actionSearch_Member_List_triggered();
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;

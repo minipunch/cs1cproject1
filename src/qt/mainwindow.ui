@@ -164,9 +164,16 @@
     <addaction name="actionDelete"/>
     <addaction name="actionSearch_2"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuMembers"/>
    <addaction name="menuManage_Products"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionMember_File_Import">
    <property name="text">
@@ -241,6 +248,11 @@
   <action name="actionSearch_2">
    <property name="text">
     <string>Search</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
