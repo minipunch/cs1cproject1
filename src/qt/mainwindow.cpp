@@ -1042,3 +1042,8 @@ void MainWindow::on_actionAbout_triggered()
 {
     QMessageBox::information(this, tr("Team Five GUI's"), "Team Five GUI's:\nChris Bassar\nDallas Wendt\nDustin Vuong\nJosh Yolles\nNick Sidaris\n\nAll rights reserved. Plagerizers will be prosecuted.");
 }
+
+void MainWindow::on_actionInstructions_triggered()
+{
+    QMessageBox::information(this, tr("Team Five GUI's Bulk Club Manager"), "How to use\n\nStep 1: Import a valid list of shoppers\nStep 2: Import a purchase file\nStep 3: Run any Commands you wish\nStep 4(optional): Save your member and/or purchase list.");
+}
