@@ -430,77 +430,95 @@ void MainWindow::on_pushButton_3_clicked() {
 void MainWindow::on_pushButton_clicked() {
     Date d;
     Date d2;
-    rep.exec();
 
-    ui->listWidget->clear();
-//    deque <Item*> stuff;
-    d = rep.getDate();
-    ui->listWidget->addItem(QString::fromStdString(d.DisplayDate()));
+    if(bulkClub.getItemCount() !=0)
+    {
+        rep.exec();
+        d = rep.getDate();
+        if(d.GetYear() != 1900)
+        {
+            ui->listWidget->clear();
+            ui->listWidget->addItem(QString::fromStdString(d.DisplayDate()));
 
-    deque < string > names;
-    int nameDup = 0;
-    int exec = 0;
-    int reg = 0;
-    for (int i = 0; i < bulkClub.getItemCount(); i++) {
-        d2 = bulkClub.getiDate(i);
-        if (d2 == d) {
-            double memID = bulkClub.getiID(i);
-            string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
-            ui->listWidget->addItem(
-                    QString::fromStdString(bulkClub.getiName(i)));
-            ui->listWidget->addItem(
-                    "Quantity: " + QString::number(bulkClub.getiQuan(i)));
-            if (names.empty() == false) {
-                for (unsigned int z = 0; z < names.size(); z++) {
-                    if (names.at(z) == memName) {
-                        nameDup++;
+            deque < string > names;
+            int nameDup = 0;
+            int exec = 0;
+            int reg = 0;
+            for (int i = 0; i < bulkClub.getItemCount(); i++) {
+                d2 = bulkClub.getiDate(i);
+                if (d2 == d) {
+                    double memID = bulkClub.getiID(i);
+                    string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
+                    ui->listWidget->addItem(
+                            QString::fromStdString(bulkClub.getiName(i)));
+                    ui->listWidget->addItem(
+                            "Quantity: " + QString::number(bulkClub.getiQuan(i)));
+                    if (names.empty() == false) {
+                        for (unsigned int z = 0; z < names.size(); z++) {
+                            if (names.at(z) == memName) {
+                                nameDup++;
+                            }
+                        }
+                        if (nameDup == 0) {
+                            names.push_back(memName);
+                        } else {
+                            nameDup = 0;
+                        }
+                    } else {
+                        names.push_back(memName);
+                    }
+
+                }
+            }
+            if(rep.getCheq() != true){
+                for (unsigned int i = 0; i < names.size(); i++) {
+                    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+                            == "Executive") {
+                        ui->listWidget->addItem(
+                                QString::fromStdString(names.at(i)) + "\nType: Executive");
+                        exec++;
+                    } else {
+                        ui->listWidget->addItem(
+                                QString::fromStdString(names.at(i)) + "\nType: Regular");
+                        reg++;
                     }
                 }
-                if (nameDup == 0) {
-                    names.push_back(memName);
-                } else {
-                    nameDup = 0;
-                }
-            } else {
-                names.push_back(memName);
             }
+            else{
+                for (unsigned int i = 0; i < names.size(); i++) {
+                    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+                            == "Executive") {
+                        ui->listWidget->addItem(
+                                QString::fromStdString(names.at(i)) + "\nType: Executive");
+                        exec++;
+                    }
+                }
+                for (unsigned int i = 0; i < names.size(); i++) {
+                    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+                            == "Regular") {
+                        ui->listWidget->addItem(
+                                QString::fromStdString(names.at(i)) + "\nType: Regular");
+                        reg++;
+                    }
+                }
+            }
+            ui->listWidget->addItem("Executive: " + QString::number(exec));
+            ui->listWidget->addItem("Regular: " + QString::number(reg));
 
         }
-    }
-    if(rep.getCheq() != true){
-        for (unsigned int i = 0; i < names.size(); i++) {
-            if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
-                    == "Executive") {
-                ui->listWidget->addItem(
-                        QString::fromStdString(names.at(i)) + "\nType: Executive");
-                exec++;
-            } else {
-                ui->listWidget->addItem(
-                        QString::fromStdString(names.at(i)) + "\nType: Regular");
-                reg++;
-            }
+        else
+        {
+            QMessageBox::information(this, tr("Cancelled!"),
+                    "Action Cancelled");
         }
+
     }
-    else{
-        for (unsigned int i = 0; i < names.size(); i++) {
-            if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
-                    == "Executive") {
-                ui->listWidget->addItem(
-                        QString::fromStdString(names.at(i)) + "\nType: Executive");
-                exec++;
-            }
-        }
-        for (unsigned int i = 0; i < names.size(); i++) {
-            if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
-                    == "Regular") {
-                ui->listWidget->addItem(
-                        QString::fromStdString(names.at(i)) + "\nType: Regular");
-                reg++;
-            }
-        }
+    else
+    {
+        QMessageBox::information(this, tr("Error!"), "No purchases in the database, please import purchase file(s).");
     }
-    ui->listWidget->addItem("Executive: " + QString::number(exec));
-    ui->listWidget->addItem("Regular: " + QString::number(reg));
+
+
 
 }
 

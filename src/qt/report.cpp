@@ -6,6 +6,7 @@ Report::Report(QWidget *parent) :
     ui(new Ui::Report)
 {
     ui->setupUi(this);
+    date.SetDate(1, 1, 1900);
 }
 
 Report::~Report()
