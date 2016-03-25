@@ -283,6 +283,9 @@ string Store::getRebate(int index){
         return "Invalid membership type";
     }
 }
+double Store::getMTotCost (int index){
+    return members.at(index)->getTotal();
+}
 
 
 //ITEM FUNCTIONS

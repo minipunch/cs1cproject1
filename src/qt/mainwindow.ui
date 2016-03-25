@@ -155,6 +155,7 @@
     <addaction name="actionDelete_a_member"/>
     <addaction name="actionRebate"/>
     <addaction name="actionExpirations"/>
+    <addaction name="actionRecommendation"/>
    </widget>
    <widget class="QMenu" name="menuManage_Products">
     <property name="title">
@@ -259,6 +260,11 @@
   <action name="actionInstructions">
    <property name="text">
     <string>Instructions</string>
+   </property>
+  </action>
+  <action name="actionRecommendation">
+   <property name="text">
+    <string>Recommendation</string>
    </property>
   </action>
  </widget>

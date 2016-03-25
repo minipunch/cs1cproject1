@@ -1047,3 +1047,33 @@ void MainWindow::on_actionInstructions_triggered()
 {
     QMessageBox::information(this, tr("Team Five GUI's Bulk Club Manager"), "How to use\n\nStep 1: Import a valid list of shoppers\nStep 2: Import a purchase file\nStep 3: Run any Commands you wish\nStep 4(optional): Save your member and/or purchase list.");
 }
+
+void MainWindow::on_actionRecommendation_triggered()
+{
+    ui->listWidget->clear();
+    double compare;
+    bulkClub.sortingMems(ID);
+    for(int i = 0; i < bulkClub.getMemCount();i++){
+        compare = bulkClub.getMTotCost(i) * .035;
+        if(bulkClub.getMemType(i) == "Regular"){
+            if(compare > 80){
+                ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
+                ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
+                ui->listWidget->addItem("Upgrade Recommended\n");
+                ui->listWidget->addItem("Amount Saved: $" + QString::number((45 - (125- compare)),'f',2) + "\n");
+            }
+        }
+    }
+    for(int i = 0; i < bulkClub.getMemCount();i++){
+        compare = bulkClub.getMTotCost(i) * .035;
+        if(bulkClub.getMemType(i) == "Regular"){
+            if(compare < 80){
+                ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
+                ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
+                ui->listWidget->addItem("Downgrade Recommended\n");
+
+                ui->listWidget->addItem("Amount Saved: $" + QString::number(((125-compare) - 45),'f',2) + "\n");
+            }
+        }
+    }
+}

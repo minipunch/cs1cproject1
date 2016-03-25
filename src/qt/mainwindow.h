@@ -68,6 +68,8 @@ private slots:
 
     void on_actionInstructions_triggered();
 
+    void on_actionRecommendation_triggered();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;

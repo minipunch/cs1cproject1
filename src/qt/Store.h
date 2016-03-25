@@ -52,6 +52,7 @@ public:
 	float getiPrice(int index) const;
     void delItem(string name);
      void removeItem(int index);
+
 	//Member Functions
     int getMemberIndex(string name) const;
 	void addMember(member *newMem);
@@ -63,6 +64,7 @@ public:
 	int getMemCount() const;
 	void readInMembers();
     void saveMembers();
+    double getMTotCost (int index);
 	void removeMember(int index);
     void sortingMems(int property);
     string getRebate(int index);

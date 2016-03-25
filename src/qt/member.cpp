@@ -93,6 +93,7 @@ string member::printMember() const {
 	return output.str();
 }
 
+
 string member::saveMember() const
 {
     stringstream output;
