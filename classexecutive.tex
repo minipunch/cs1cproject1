@@ -1,0 +1,192 @@
+\hypertarget{classexecutive}{}\section{executive Class Reference}
+\label{classexecutive}\index{executive@{executive}}
+
+
+{\ttfamily \#include $<$executive.\+h$>$}
+
+Inheritance diagram for executive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexecutive}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexecutive_af89b69f24d47db479a8fc99c1905ddda}{executive} ()
+\item 
+virtual \hyperlink{classexecutive_a0d6dc7441c758d7c1fa3a375720e6952}{$\sim$executive} ()
+\item 
+\hyperlink{classexecutive_a563a87fd522a77800a9105f318250fc7}{executive} (float new\+Rebate)
+\item 
+void \hyperlink{classexecutive_a74668e419f25f3e4fdb010de2250b6ff}{set\+Rebate\+Amount} (float num)
+\item 
+void \hyperlink{classexecutive_a0ab0c926285aac0744ecd2c264ba69c8}{set\+All} (string name, string type, double id, \hyperlink{class_date}{Date} expr\+Date, float rebate)
+\item 
+float \hyperlink{classexecutive_aace302595496f393e25c49c085ef9bf1}{get\+Rebate\+Amount} () const 
+\item 
+float \hyperlink{classexecutive_a48b4388f63f755e4d523533f9e51c9fa}{calculate\+Rebate} () const 
+\item 
+void \hyperlink{classexecutive_a278ca61f0c26ecddc5bf2a7c85265c03}{print\+Executive} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file executive.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{executive@{executive}!executive@{executive}}
+\index{executive@{executive}!executive@{executive}}
+\subsubsection[{\texorpdfstring{executive()}{executive()}}]{\setlength{\rightskip}{0pt plus 5cm}executive\+::executive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classexecutive_af89b69f24d47db479a8fc99c1905ddda}{}\label{classexecutive_af89b69f24d47db479a8fc99c1905ddda}
+
+
+Definition at line 3 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+3                     : rebateAmount(0)
+4 \{
+5 \}
+\end{DoxyCode}
+\index{executive@{executive}!````~executive@{$\sim$executive}}
+\index{````~executive@{$\sim$executive}!executive@{executive}}
+\subsubsection[{\texorpdfstring{$\sim$executive()}{~executive()}}]{\setlength{\rightskip}{0pt plus 5cm}executive\+::$\sim$executive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classexecutive_a0d6dc7441c758d7c1fa3a375720e6952}{}\label{classexecutive_a0d6dc7441c758d7c1fa3a375720e6952}
+
+
+Definition at line 7 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+7 \{\}
+\end{DoxyCode}
+\index{executive@{executive}!executive@{executive}}
+\index{executive@{executive}!executive@{executive}}
+\subsubsection[{\texorpdfstring{executive(float new\+Rebate)}{executive(float newRebate)}}]{\setlength{\rightskip}{0pt plus 5cm}executive\+::executive (
+\begin{DoxyParamCaption}
+\item[{float}]{new\+Rebate}
+\end{DoxyParamCaption}
+)}\hypertarget{classexecutive_a563a87fd522a77800a9105f318250fc7}{}\label{classexecutive_a563a87fd522a77800a9105f318250fc7}
+
+
+Definition at line 9 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+9                                  : rebateAmount(newNum)
+10 \{
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{executive@{executive}!calculate\+Rebate@{calculate\+Rebate}}
+\index{calculate\+Rebate@{calculate\+Rebate}!executive@{executive}}
+\subsubsection[{\texorpdfstring{calculate\+Rebate() const }{calculateRebate() const }}]{\setlength{\rightskip}{0pt plus 5cm}float executive\+::calculate\+Rebate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classexecutive_a48b4388f63f755e4d523533f9e51c9fa}{}\label{classexecutive_a48b4388f63f755e4d523533f9e51c9fa}
+
+
+Definition at line 28 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{
+30     \textcolor{comment}{//this will change}
+31     \textcolor{keywordflow}{return} (this->\hyperlink{classmember_a2aebb843786f51ee65432e9d57f49651}{getTotal}() * 3.5);
+32 \}
+\end{DoxyCode}
+\index{executive@{executive}!get\+Rebate\+Amount@{get\+Rebate\+Amount}}
+\index{get\+Rebate\+Amount@{get\+Rebate\+Amount}!executive@{executive}}
+\subsubsection[{\texorpdfstring{get\+Rebate\+Amount() const }{getRebateAmount() const }}]{\setlength{\rightskip}{0pt plus 5cm}float executive\+::get\+Rebate\+Amount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classexecutive_aace302595496f393e25c49c085ef9bf1}{}\label{classexecutive_aace302595496f393e25c49c085ef9bf1}
+
+
+Definition at line 23 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return} this->rebateAmount;
+26 \}
+\end{DoxyCode}
+\index{executive@{executive}!print\+Executive@{print\+Executive}}
+\index{print\+Executive@{print\+Executive}!executive@{executive}}
+\subsubsection[{\texorpdfstring{print\+Executive()}{printExecutive()}}]{\setlength{\rightskip}{0pt plus 5cm}void executive\+::print\+Executive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classexecutive_a278ca61f0c26ecddc5bf2a7c85265c03}{}\label{classexecutive_a278ca61f0c26ecddc5bf2a7c85265c03}
+
+
+Definition at line 34 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+34                               \{
+35     \hyperlink{classmember_a5a59485fe82f153c1091aedbade0a444}{member::printMember}();
+36     cout << \textcolor{stringliteral}{"Rebate Amount: "} << this->rebateAmount;
+37 \}
+\end{DoxyCode}
+\index{executive@{executive}!set\+All@{set\+All}}
+\index{set\+All@{set\+All}!executive@{executive}}
+\subsubsection[{\texorpdfstring{set\+All(string name, string type, double id, Date expr\+Date, float rebate)}{setAll(string name, string type, double id, Date exprDate, float rebate)}}]{\setlength{\rightskip}{0pt plus 5cm}void executive\+::set\+All (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{type, }
+\item[{double}]{id, }
+\item[{{\bf Date}}]{expr\+Date, }
+\item[{float}]{rebate}
+\end{DoxyParamCaption}
+)}\hypertarget{classexecutive_a0ab0c926285aac0744ecd2c264ba69c8}{}\label{classexecutive_a0ab0c926285aac0744ecd2c264ba69c8}
+
+
+Definition at line 13 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{classmember_a157a14ed52141008eb752c81439b076f}{member::setAll}(name, type, \textcolor{keywordtype}{id}, exprDate);
+16     this->rebateAmount = rebate;
+17 \}
+\end{DoxyCode}
+\index{executive@{executive}!set\+Rebate\+Amount@{set\+Rebate\+Amount}}
+\index{set\+Rebate\+Amount@{set\+Rebate\+Amount}!executive@{executive}}
+\subsubsection[{\texorpdfstring{set\+Rebate\+Amount(float num)}{setRebateAmount(float num)}}]{\setlength{\rightskip}{0pt plus 5cm}void executive\+::set\+Rebate\+Amount (
+\begin{DoxyParamCaption}
+\item[{float}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{classexecutive_a74668e419f25f3e4fdb010de2250b6ff}{}\label{classexecutive_a74668e419f25f3e4fdb010de2250b6ff}
+
+
+Definition at line 18 of file executive.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{
+20     this->rebateAmount = newRebate;
+21 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{executive_8h}{executive.\+h}\item 
+\hyperlink{executive_8cpp}{executive.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}executive.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Store.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+item = new \hyperlink{class_item}{Item}; 
+
+Definition at line 10 of file main.\+cpp.
+
+
+\begin{DoxyCode}
+10            \{
+11 
+12     \hyperlink{class_store}{Store} test;
+13     \hyperlink{class_date}{Date} random;
+14 
+15     \textcolor{comment}{//Item * item;}
+17 \textcolor{comment}{}    \textcolor{comment}{//item->SetAll("MIlk", 6.09, 88, random, 89076);}
+18     \textcolor{comment}{//cout << item->printItem();}
+19 
+20 
+24 \textcolor{comment}{//   i =  6.46 + 33.70 + 19.55 + 199.59 + 50.80 ;}
+25 \textcolor{comment}{//   cout << i << endl;}
+26 \textcolor{comment}{//  i =  i + (i * .0825);}
+27 \textcolor{comment}{//   cout << i << endl;}
+28 \textcolor{comment}{//   i = i - (i * .0825);}
+29 \textcolor{comment}{//   cout << i << endl;}
+30 
+31     test.\hyperlink{class_store_ae8c37df9579bd4bd6683acd22ef190cb}{readInMembers}();
+32     test.\hyperlink{class_store_a948e593d6045fa92d1fa62b5263e57fe}{readItems}();
+33     \textcolor{comment}{//test.sortingItems(PRICE);}
+34     \textcolor{comment}{//cout << test.getItemCount();}
+35     \textcolor{comment}{//cin.ignore(1000, '\(\backslash\)n');}
+36 
+37 \textcolor{comment}{//  cout <<
+       "****************************************************************************************************" << endl;}
+38 \textcolor{comment}{//  cout << "|              Name            | ID Number | Membership | Expiration Date |   Total   | Total
+       + Tax|" << endl;}
+39 \textcolor{comment}{//  cout <<
+       "****************************************************************************************************" << endl;}
+40 \textcolor{comment}{//}
+41 \textcolor{comment}{//  for(int i= 0; i < test.getMemCount(); i++ )}
+42 \textcolor{comment}{//  \{}
+43 \textcolor{comment}{//      cout << test.PrintMember(i) << endl;}
+44 \textcolor{comment}{//  \}}
+45 \textcolor{comment}{//}
+46 \textcolor{comment}{//  cout <<
+       "****************************************************************************************************" << endl;}
+47 
+48     cout << \textcolor{stringliteral}{"
+      ****************************************************************************************************************\(\backslash\)n"};
+49     cout << \textcolor{stringliteral}{"|           Item            |  Price   | ID Number | Number Purchased |  Total   | Total + Tax
+       | Purchase Date |\(\backslash\)n"};
+50     cout << \textcolor{stringliteral}{"
+      ****************************************************************************************************************\(\backslash\)n"};
+51     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i= 0; i < test.\hyperlink{class_store_a3dd4da9b6b856f00543bae3a19e9aed5}{getMemCount}(); i++ )
+52     \{
+53         cout << test.\hyperlink{class_store_a72125823862d9877ab60e9126438cf56}{PrintItem}(i);
+54     \}
+55     cout << \textcolor{stringliteral}{"
+      ****************************************************************************************************************"};
+56 
+57 
+58 
+59 \textcolor{comment}{//store.readIn();}
+60 
+61 
+62 
+63 
+64 
+65     \textcolor{keywordflow}{return} 0;
+66 \}
+\end{DoxyCode}

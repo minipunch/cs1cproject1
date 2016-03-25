@@ -1,0 +1,405 @@
+\hypertarget{class_item}{}\section{Item Class Reference}
+\label{class_item}\index{Item@{Item}}
+
+
+{\ttfamily \#include $<$Item.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item} ()
+\item 
+\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{$\sim$\+Item} ()
+\item 
+void \hyperlink{class_item_a37cea294b2195e0008e21ed6c14698d3}{Set\+All} (string name, float price, int quantity, \hyperlink{class_date}{Date} date, double id)
+\item 
+void \hyperlink{class_item_a9d869e03314452db6373e898fc4ac8a2}{Set\+Id} (double id)
+\item 
+void \hyperlink{class_item_a32e6b9bf96fff36e0ee75be2a63bc7c0}{Set\+Price} (float price)
+\item 
+void \hyperlink{class_item_a1cd4e7afe0c7d610f40947b28b215b78}{Set\+Name} (string name)
+\item 
+void \hyperlink{class_item_a79173714d6f0701fe901958cee6d0960}{Set\+Date} (\hyperlink{class_date}{Date} date)
+\item 
+double \hyperlink{class_item_a5c7d2087d0615f10c00b0c0735f64063}{Get\+Id} () const 
+\item 
+float \hyperlink{class_item_a8a7d6ee1ceca4775726313b5fa7274a8}{Get\+Price} () const 
+\item 
+string \hyperlink{class_item_a73aaf0a2a84114ada4063f06512c757a}{Get\+Name} () const 
+\item 
+\hyperlink{class_date}{Date} \hyperlink{class_item_a0b77690919ca7dbabdc3bb331f1a3e0c}{Get\+Date} () const 
+\item 
+int \hyperlink{class_item_a2652bf6ff3402e3628dd41cfbb8bd648}{Get\+Qty} () const 
+\item 
+string \hyperlink{class_item_af613974101951c2633f238d9950ae4fd}{print\+Item} ()
+\item 
+float \hyperlink{class_item_a8d1d7ad78a7b716eb6c9a617acd579ab}{get\+Totw\+Tax} () const 
+\item 
+float \hyperlink{class_item_a81a90fef83d31217f0ff99a8cac0a16e}{get\+Tot\+Cost} () const 
+\item 
+string \hyperlink{class_item_ac9ef5955314e651edb5dfa4a7b66453a}{float\+To\+String} (float num)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_item_a625dbafaa50d7a587c0f8591e6ba5ba5}{Calc\+Tot\+Cost} ()
+\item 
+void \hyperlink{class_item_a40cad9af93de0a32b827989a35f8bedd}{Calc\+Totw\+Tax} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Item.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Item()}{Item()}}]{\setlength{\rightskip}{0pt plus 5cm}Item\+::\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a297720c02984eab37332ae795d22189d}{}\label{class_item_a297720c02984eab37332ae795d22189d}
+
+
+Definition at line 10 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+10            \{
+11     name.clear();
+12     this->\textcolor{keywordtype}{id} = 0;
+13     this->quantity = 0;
+14     this->price = 0;
+15     this->totCost = 0;
+16     this->totwTax = 0;
+17 
+18 \}
+\end{DoxyCode}
+\index{Item@{Item}!````~Item@{$\sim$\+Item}}
+\index{````~Item@{$\sim$\+Item}!Item@{Item}}
+\subsubsection[{\texorpdfstring{$\sim$\+Item()}{~Item()}}]{\setlength{\rightskip}{0pt plus 5cm}Item\+::$\sim$\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{}\label{class_item_a11663c84075b78c3ae5e30fdfcd7c458}
+
+
+Definition at line 20 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+20             \{
+21     \textcolor{comment}{// TODO Auto-generated destructor stub}
+22 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Item@{Item}!Calc\+Tot\+Cost@{Calc\+Tot\+Cost}}
+\index{Calc\+Tot\+Cost@{Calc\+Tot\+Cost}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Calc\+Tot\+Cost()}{CalcTotCost()}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Calc\+Tot\+Cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_item_a625dbafaa50d7a587c0f8591e6ba5ba5}{}\label{class_item_a625dbafaa50d7a587c0f8591e6ba5ba5}
+
+
+Definition at line 76 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+77 \{
+78 this->totCost = this->price * this->quantity;
+79 \}
+\end{DoxyCode}
+\index{Item@{Item}!Calc\+Totw\+Tax@{Calc\+Totw\+Tax}}
+\index{Calc\+Totw\+Tax@{Calc\+Totw\+Tax}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Calc\+Totw\+Tax()}{CalcTotwTax()}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Calc\+Totw\+Tax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_item_a40cad9af93de0a32b827989a35f8bedd}{}\label{class_item_a40cad9af93de0a32b827989a35f8bedd}
+
+
+Definition at line 81 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+82 \{
+83     this->totwTax = this->totCost +(this->totCost * .0825);
+84 \}
+\end{DoxyCode}
+\index{Item@{Item}!float\+To\+String@{float\+To\+String}}
+\index{float\+To\+String@{float\+To\+String}!Item@{Item}}
+\subsubsection[{\texorpdfstring{float\+To\+String(float num)}{floatToString(float num)}}]{\setlength{\rightskip}{0pt plus 5cm}string Item\+::float\+To\+String (
+\begin{DoxyParamCaption}
+\item[{float}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_ac9ef5955314e651edb5dfa4a7b66453a}{}\label{class_item_ac9ef5955314e651edb5dfa4a7b66453a}
+
+
+Definition at line 111 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+112 \{
+113     stringstream numString;
+114 
+115     numString << \textcolor{stringliteral}{"$"} <<  fixed << setprecision(2) << num;
+116     \textcolor{keywordflow}{return} numString.str();
+117 \}
+\end{DoxyCode}
+\index{Item@{Item}!Get\+Date@{Get\+Date}}
+\index{Get\+Date@{Get\+Date}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Get\+Date() const }{GetDate() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Date} Item\+::\+Get\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a0b77690919ca7dbabdc3bb331f1a3e0c}{}\label{class_item_a0b77690919ca7dbabdc3bb331f1a3e0c}
+
+
+Definition at line 66 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} \textcolor{keyword}{this} ->purchDate;
+69 \}
+\end{DoxyCode}
+\index{Item@{Item}!Get\+Id@{Get\+Id}}
+\index{Get\+Id@{Get\+Id}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Get\+Id() const }{GetId() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Item\+::\+Get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a5c7d2087d0615f10c00b0c0735f64063}{}\label{class_item_a5c7d2087d0615f10c00b0c0735f64063}
+
+
+Definition at line 53 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} this->id;
+56 \}
+\end{DoxyCode}
+\index{Item@{Item}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Get\+Name() const }{GetName() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Item\+::\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a73aaf0a2a84114ada4063f06512c757a}{}\label{class_item_a73aaf0a2a84114ada4063f06512c757a}
+
+
+Definition at line 61 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{
+63     \textcolor{keywordflow}{return} this->name;
+64 \}
+\end{DoxyCode}
+\index{Item@{Item}!Get\+Price@{Get\+Price}}
+\index{Get\+Price@{Get\+Price}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Get\+Price() const }{GetPrice() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Item\+::\+Get\+Price (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a8a7d6ee1ceca4775726313b5fa7274a8}{}\label{class_item_a8a7d6ee1ceca4775726313b5fa7274a8}
+
+
+Definition at line 57 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+58 \{
+59     \textcolor{keywordflow}{return} this->price;
+60 \}
+\end{DoxyCode}
+\index{Item@{Item}!Get\+Qty@{Get\+Qty}}
+\index{Get\+Qty@{Get\+Qty}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Get\+Qty() const }{GetQty() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Item\+::\+Get\+Qty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a2652bf6ff3402e3628dd41cfbb8bd648}{}\label{class_item_a2652bf6ff3402e3628dd41cfbb8bd648}
+
+
+Definition at line 71 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{
+73     \textcolor{keywordflow}{return} this->quantity;
+74 \}
+\end{DoxyCode}
+\index{Item@{Item}!get\+Tot\+Cost@{get\+Tot\+Cost}}
+\index{get\+Tot\+Cost@{get\+Tot\+Cost}!Item@{Item}}
+\subsubsection[{\texorpdfstring{get\+Tot\+Cost() const }{getTotCost() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Item\+::get\+Tot\+Cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a81a90fef83d31217f0ff99a8cac0a16e}{}\label{class_item_a81a90fef83d31217f0ff99a8cac0a16e}
+
+
+Definition at line 89 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+89                            \{
+90     \textcolor{keywordflow}{return} this->totCost;
+91 \}
+\end{DoxyCode}
+\index{Item@{Item}!get\+Totw\+Tax@{get\+Totw\+Tax}}
+\index{get\+Totw\+Tax@{get\+Totw\+Tax}!Item@{Item}}
+\subsubsection[{\texorpdfstring{get\+Totw\+Tax() const }{getTotwTax() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Item\+::get\+Totw\+Tax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_item_a8d1d7ad78a7b716eb6c9a617acd579ab}{}\label{class_item_a8d1d7ad78a7b716eb6c9a617acd579ab}
+
+
+Definition at line 86 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+86                            \{
+87     \textcolor{keywordflow}{return} this->totwTax;
+88 \}
+\end{DoxyCode}
+\index{Item@{Item}!print\+Item@{print\+Item}}
+\index{print\+Item@{print\+Item}!Item@{Item}}
+\subsubsection[{\texorpdfstring{print\+Item()}{printItem()}}]{\setlength{\rightskip}{0pt plus 5cm}string Item\+::print\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_af613974101951c2633f238d9950ae4fd}{}\label{class_item_af613974101951c2633f238d9950ae4fd}
+
+
+Definition at line 93 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+94 \{
+95     stringstream output;
+96     \textcolor{keywordtype}{string} formattedNum;
+97 
+98     output << \textcolor{stringliteral}{"| "} << left << setw(26) << this->name;
+99     formattedNum = \hyperlink{class_item_ac9ef5955314e651edb5dfa4a7b66453a}{floatToString}(price);
+100     output << \textcolor{stringliteral}{"|"} << right << setw(9) << formattedNum;
+101     output << \textcolor{stringliteral}{" |   "} << fixed << setprecision(0) <<this->id;
+102     output << \textcolor{stringliteral}{"   |"} << setw(10) << this->quantity;
+103     formattedNum = \hyperlink{class_item_ac9ef5955314e651edb5dfa4a7b66453a}{floatToString}(totCost);
+104     output << \textcolor{stringliteral}{"        |"} << setw(9) << fixed << setprecision(2) << formattedNum;
+105     formattedNum = \hyperlink{class_item_ac9ef5955314e651edb5dfa4a7b66453a}{floatToString}(totwTax);
+106     output << \textcolor{stringliteral}{" |"} << setw(12) << fixed << setprecision(2) << formattedNum;
+107     output << \textcolor{stringliteral}{" |  "} << this->purchDate.\hyperlink{class_date_aec64adfc88126b561b691b83edebc955}{DisplayDate}() << \textcolor{stringliteral}{"   |"} << endl;
+108     \textcolor{keywordflow}{return} output.str();
+109 \}
+\end{DoxyCode}
+\index{Item@{Item}!Set\+All@{Set\+All}}
+\index{Set\+All@{Set\+All}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Set\+All(string name, float price, int quantity, Date date, double id)}{SetAll(string name, float price, int quantity, Date date, double id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Set\+All (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{float}]{price, }
+\item[{int}]{quantity, }
+\item[{{\bf Date}}]{date, }
+\item[{double}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a37cea294b2195e0008e21ed6c14698d3}{}\label{class_item_a37cea294b2195e0008e21ed6c14698d3}
+
+
+Definition at line 24 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+25 \{
+26     this->name = name;
+27     this->price = price;
+28     this->quantity = quantity;
+29     this->purchDate = date;
+30     this->\textcolor{keywordtype}{id} = id;
+31     \hyperlink{class_item_a625dbafaa50d7a587c0f8591e6ba5ba5}{Item::CalcTotCost}();
+32     \hyperlink{class_item_a40cad9af93de0a32b827989a35f8bedd}{Item::CalcTotwTax}();
+33 \}
+\end{DoxyCode}
+\index{Item@{Item}!Set\+Date@{Set\+Date}}
+\index{Set\+Date@{Set\+Date}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Set\+Date(\+Date date)}{SetDate(Date date)}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Set\+Date (
+\begin{DoxyParamCaption}
+\item[{{\bf Date}}]{date}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a79173714d6f0701fe901958cee6d0960}{}\label{class_item_a79173714d6f0701fe901958cee6d0960}
+
+
+Definition at line 49 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+50 \{
+51     this->purchDate = date;
+52 \}
+\end{DoxyCode}
+\index{Item@{Item}!Set\+Id@{Set\+Id}}
+\index{Set\+Id@{Set\+Id}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Set\+Id(double id)}{SetId(double id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Set\+Id (
+\begin{DoxyParamCaption}
+\item[{double}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a9d869e03314452db6373e898fc4ac8a2}{}\label{class_item_a9d869e03314452db6373e898fc4ac8a2}
+
+
+Definition at line 35 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+36 \{
+37     this->\textcolor{keywordtype}{id} = id;
+38 \}
+\end{DoxyCode}
+\index{Item@{Item}!Set\+Name@{Set\+Name}}
+\index{Set\+Name@{Set\+Name}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Set\+Name(string name)}{SetName(string name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Set\+Name (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a1cd4e7afe0c7d610f40947b28b215b78}{}\label{class_item_a1cd4e7afe0c7d610f40947b28b215b78}
+
+
+Definition at line 45 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     this->name = name;
+48 \}
+\end{DoxyCode}
+\index{Item@{Item}!Set\+Price@{Set\+Price}}
+\index{Set\+Price@{Set\+Price}!Item@{Item}}
+\subsubsection[{\texorpdfstring{Set\+Price(float price)}{SetPrice(float price)}}]{\setlength{\rightskip}{0pt plus 5cm}void Item\+::\+Set\+Price (
+\begin{DoxyParamCaption}
+\item[{float}]{price}
+\end{DoxyParamCaption}
+)}\hypertarget{class_item_a32e6b9bf96fff36e0ee75be2a63bc7c0}{}\label{class_item_a32e6b9bf96fff36e0ee75be2a63bc7c0}
+
+
+Definition at line 40 of file Item.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     this->price = price;
+43 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_item_8h}{Item.\+h}\item 
+\hyperlink{_item_8cpp}{Item.\+cpp}\end{DoxyCompactItemize}

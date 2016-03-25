@@ -1,0 +1,282 @@
+\hypertarget{class_date}{}\section{Date Class Reference}
+\label{class_date}\index{Date@{Date}}
+
+
+{\ttfamily \#include $<$date.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date} ()
+\item 
+\hyperlink{class_date_a36cdbafbeae8fbb6c9f348b99f8dd4b6}{Date} (unsigned short month, unsigned short day, unsigned short year)
+\item 
+\hyperlink{class_date_ade4b469433b7966cc034cbcc6799233b}{$\sim$\+Date} ()
+\item 
+void \hyperlink{class_date_a164b847fe22bd8dec6a4a7bf8dcfe7f3}{Set\+Date} (unsigned short month, unsigned short day, unsigned short year)
+\item 
+void \hyperlink{class_date_af559828abe832d63aa18d30032a570b4}{Get\+Date} (unsigned short \&month, unsigned short \&day, unsigned short \&year) const 
+\item 
+unsigned short \hyperlink{class_date_ac3208f8bc962156453470f7910760f51}{Get\+Year} () const 
+\item 
+unsigned short \hyperlink{class_date_abaa22858da0eddafd4d6bf801ff5857e}{Get\+Month} () const 
+\item 
+unsigned short \hyperlink{class_date_abc6a31fd1857241489506c4fd0f369dd}{Get\+Day} () const 
+\item 
+string \hyperlink{class_date_aec64adfc88126b561b691b83edebc955}{Display\+Date} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_date_aa932959bdd56052bc683d29b8748898f}{operator==} (\hyperlink{class_date}{Date} \&d1, \hyperlink{class_date}{Date} \&d2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file date.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Date()}{Date()}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+::\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{}\label{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}
+
+
+Definition at line 20 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22     time\_t now;
+23     tm *currentTime;
+24 
+25     now = time(NULL);
+26     currentTime = localtime(&now);
+27 
+28 
+29     dateMonth = currentTime->tm\_mon + 1;
+30     dateDay =  currentTime->tm\_mday;
+31     dateYear = 1900 + currentTime->tm\_year;
+32 \}
+\end{DoxyCode}
+\index{Date@{Date}!Date@{Date}}
+\index{Date@{Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Date(unsigned short month, unsigned short day, unsigned short year)}{Date(unsigned short month, unsigned short day, unsigned short year)}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+::\+Date (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{month, }
+\item[{unsigned short}]{day, }
+\item[{unsigned short}]{year}
+\end{DoxyParamCaption}
+)}\hypertarget{class_date_a36cdbafbeae8fbb6c9f348b99f8dd4b6}{}\label{class_date_a36cdbafbeae8fbb6c9f348b99f8dd4b6}
+
+
+Definition at line 43 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47 
+48     \textcolor{keywordflow}{if}(ValidateDate(month, day, year))
+49     \{
+50         dateMonth = month;
+51         dateDay = day;
+52         dateYear = year;
+53     \}
+54     \textcolor{keywordflow}{else}
+55     \{
+56         cout << \textcolor{stringliteral}{"\(\backslash\)nDate is invalid"} << endl;
+57     \}
+58 \}
+\end{DoxyCode}
+\index{Date@{Date}!````~Date@{$\sim$\+Date}}
+\index{````~Date@{$\sim$\+Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{$\sim$\+Date()}{~Date()}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+::$\sim$\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_date_ade4b469433b7966cc034cbcc6799233b}{}\label{class_date_ade4b469433b7966cc034cbcc6799233b}
+
+
+Definition at line 66 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Date@{Date}!Display\+Date@{Display\+Date}}
+\index{Display\+Date@{Display\+Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Display\+Date() const }{DisplayDate() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Date\+::\+Display\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_date_aec64adfc88126b561b691b83edebc955}{}\label{class_date_aec64adfc88126b561b691b83edebc955}
+
+
+Definition at line 160 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+161 \{
+162     ostringstream output;
+163     \textcolor{keywordflow}{if}(dateMonth < 10)
+164     \{
+165         output << 0;
+166     \}
+167     output << dateMonth << \textcolor{stringliteral}{"/"};
+168     \textcolor{keywordflow}{if}(dateDay < 10)
+169     \{
+170         output << 0;
+171     \}
+172     output << dateDay << \textcolor{stringliteral}{"/"} << dateYear;
+173     \textcolor{keywordflow}{return} output.str();
+174 
+175 
+176 \}
+\end{DoxyCode}
+\index{Date@{Date}!Get\+Date@{Get\+Date}}
+\index{Get\+Date@{Get\+Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Get\+Date(unsigned short \&month, unsigned short \&day, unsigned short \&year) const }{GetDate(unsigned short &month, unsigned short &day, unsigned short &year) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Date\+::\+Get\+Date (
+\begin{DoxyParamCaption}
+\item[{unsigned short \&}]{month, }
+\item[{unsigned short \&}]{day, }
+\item[{unsigned short \&}]{year}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_date_af559828abe832d63aa18d30032a570b4}{}\label{class_date_af559828abe832d63aa18d30032a570b4}
+
+
+Definition at line 112 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+115 \{
+116     month = dateMonth;
+117     day = dateDay;
+118     year = dateYear;
+119 \}
+\end{DoxyCode}
+\index{Date@{Date}!Get\+Day@{Get\+Day}}
+\index{Get\+Day@{Get\+Day}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Get\+Day() const }{GetDay() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Date\+::\+Get\+Day (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_date_abc6a31fd1857241489506c4fd0f369dd}{}\label{class_date_abc6a31fd1857241489506c4fd0f369dd}
+
+
+Definition at line 149 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+150 \{
+151     \textcolor{keywordflow}{return} dateDay;
+152 \}
+\end{DoxyCode}
+\index{Date@{Date}!Get\+Month@{Get\+Month}}
+\index{Get\+Month@{Get\+Month}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Get\+Month() const }{GetMonth() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Date\+::\+Get\+Month (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_date_abaa22858da0eddafd4d6bf801ff5857e}{}\label{class_date_abaa22858da0eddafd4d6bf801ff5857e}
+
+
+Definition at line 138 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+139 \{
+140     \textcolor{keywordflow}{return} dateMonth;
+141 \}
+\end{DoxyCode}
+\index{Date@{Date}!Get\+Year@{Get\+Year}}
+\index{Get\+Year@{Get\+Year}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Get\+Year() const }{GetYear() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Date\+::\+Get\+Year (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_date_ac3208f8bc962156453470f7910760f51}{}\label{class_date_ac3208f8bc962156453470f7910760f51}
+
+
+Definition at line 127 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+128 \{
+129     \textcolor{keywordflow}{return} dateYear;
+130 \}
+\end{DoxyCode}
+\index{Date@{Date}!Set\+Date@{Set\+Date}}
+\index{Set\+Date@{Set\+Date}!Date@{Date}}
+\subsubsection[{\texorpdfstring{Set\+Date(unsigned short month, unsigned short day, unsigned short year)}{SetDate(unsigned short month, unsigned short day, unsigned short year)}}]{\setlength{\rightskip}{0pt plus 5cm}void Date\+::\+Set\+Date (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{month, }
+\item[{unsigned short}]{day, }
+\item[{unsigned short}]{year}
+\end{DoxyParamCaption}
+)}\hypertarget{class_date_a164b847fe22bd8dec6a4a7bf8dcfe7f3}{}\label{class_date_a164b847fe22bd8dec6a4a7bf8dcfe7f3}
+
+
+Definition at line 82 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordflow}{if}(ValidateDate(month, day, year))
+87     \{
+88         dateMonth = month;
+89         dateDay = day;
+90         dateYear = year;
+91     \}
+92     \textcolor{keywordflow}{else}
+93     \{
+94         cout << \textcolor{stringliteral}{"\(\backslash\)nThat date is invalid"} << endl;
+95     \}
+96 
+97 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Date} \&}]{d1, }
+\item[{{\bf Date} \&}]{d2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_date_aa932959bdd56052bc683d29b8748898f}{}\label{class_date_aa932959bdd56052bc683d29b8748898f}
+
+
+Definition at line 355 of file date.\+cpp.
+
+
+\begin{DoxyCode}
+356 \{
+357     \textcolor{keywordtype}{bool} isEqual = \textcolor{keyword}{false};
+358 
+359     \textcolor{keywordflow}{if}(d1.dateDay == d2.dateDay &&
+360             d1.dateMonth == d2.dateMonth &&
+361             d1.dateYear == d2.dateYear)
+362     \{
+363         isEqual = \textcolor{keyword}{true};
+364     \}
+365 
+366     \textcolor{keywordflow}{return} isEqual;
+367 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{date_8h}{date.\+h}\item 
+\hyperlink{date_8cpp}{date.\+cpp}\end{DoxyCompactItemize}

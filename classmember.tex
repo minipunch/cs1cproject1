@@ -1,0 +1,426 @@
+\hypertarget{classmember}{}\section{member Class Reference}
+\label{classmember}\index{member@{member}}
+
+
+{\ttfamily \#include $<$member.\+h$>$}
+
+Inheritance diagram for member\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmember}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmember_a4153f13605eac8adf8dde89ee7d18c02}{member} ()
+\item 
+virtual \hyperlink{classmember_a50adc47b77a0d94f733fb10c86aea68e}{$\sim$member} ()
+\item 
+\hyperlink{classmember_a794180d2d6fa271481272236548d6386}{member} (string name, double id)
+\item 
+\hyperlink{classmember_a634696f2f13c490f15a808d6fc7b8760}{member} (string name, string type, double id, double total, \hyperlink{class_date}{Date} expr\+Date)
+\item 
+void \hyperlink{classmember_a157a14ed52141008eb752c81439b076f}{set\+All} (string name, string type, double id, \hyperlink{class_date}{Date} expr\+Date)
+\item 
+void \hyperlink{classmember_aacf730a181e4297f591d091904f3bff0}{set\+Name} (string name)
+\item 
+void \hyperlink{classmember_a653f57c729f193880ac5b9de0a20f00f}{set\+Type} (string type)
+\item 
+void \hyperlink{classmember_a4f4408ae1e3eab368421e4a14acb4862}{set\+Id} (double id)
+\item 
+void \hyperlink{classmember_a5139dca4fca69e8d30c1f0288d4f3621}{set\+Total} (double total)
+\item 
+void \hyperlink{classmember_ab1e537d3045c7edd5c41ede5b642f650}{set\+Expr\+Date} (\hyperlink{class_date}{Date} expr\+Date)
+\item 
+string \hyperlink{classmember_a770923ee1577e502e81a1bdd67adc160}{get\+Name} () const 
+\item 
+string \hyperlink{classmember_ad65689d73a5fda2056812f28f3f3964a}{get\+Type} () const 
+\item 
+double \hyperlink{classmember_a8480c82a63ed03776f0c78b835333f06}{get\+Id} () const 
+\item 
+double \hyperlink{classmember_a2aebb843786f51ee65432e9d57f49651}{get\+Total} () const 
+\item 
+\hyperlink{class_date}{Date} \hyperlink{classmember_ada678a9b2a2eee0013c5799f1f188c98}{get\+Expr\+Date} () const 
+\item 
+string \hyperlink{classmember_a5a59485fe82f153c1091aedbade0a444}{print\+Member} ()
+\item 
+void \hyperlink{classmember_a579defee4357502e7dcd3e3750d114dc}{add\+TT} (float a)
+\item 
+void \hyperlink{classmember_ab6926f5ba8577dd1d6531cf423437948}{add\+T\+TW} (float a)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classmember_a3c208b64bd4e24ea41a2e1f8b7bd41e9}{double\+To\+String} (double num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file member.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{member@{member}!member@{member}}
+\index{member@{member}!member@{member}}
+\subsubsection[{\texorpdfstring{member()}{member()}}]{\setlength{\rightskip}{0pt plus 5cm}member\+::member (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a4153f13605eac8adf8dde89ee7d18c02}{}\label{classmember_a4153f13605eac8adf8dde89ee7d18c02}
+
+
+Definition at line 3 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+3                : name(\textcolor{stringliteral}{"Default Name"}), type(\textcolor{stringliteral}{"Member"}), id(-200), total(-200), totalwTax(-200)
+4 \{
+5 \}
+\end{DoxyCode}
+\index{member@{member}!````~member@{$\sim$member}}
+\index{````~member@{$\sim$member}!member@{member}}
+\subsubsection[{\texorpdfstring{$\sim$member()}{~member()}}]{\setlength{\rightskip}{0pt plus 5cm}member\+::$\sim$member (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classmember_a50adc47b77a0d94f733fb10c86aea68e}{}\label{classmember_a50adc47b77a0d94f733fb10c86aea68e}
+
+
+Definition at line 6 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+6 \{\}
+\end{DoxyCode}
+\index{member@{member}!member@{member}}
+\index{member@{member}!member@{member}}
+\subsubsection[{\texorpdfstring{member(string name, double id)}{member(string name, double id)}}]{\setlength{\rightskip}{0pt plus 5cm}member\+::member (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{double}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a794180d2d6fa271481272236548d6386}{}\label{classmember_a794180d2d6fa271481272236548d6386}
+
+
+Definition at line 7 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+7                                            : name(newName), type(\textcolor{stringliteral}{"Member"}), id(newId), total(0), totalwTax(
+      0)
+8 \{
+9 \}
+\end{DoxyCode}
+\index{member@{member}!member@{member}}
+\index{member@{member}!member@{member}}
+\subsubsection[{\texorpdfstring{member(string name, string type, double id, double total, Date expr\+Date)}{member(string name, string type, double id, double total, Date exprDate)}}]{\setlength{\rightskip}{0pt plus 5cm}member\+::member (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{type, }
+\item[{double}]{id, }
+\item[{double}]{total, }
+\item[{{\bf Date}}]{expr\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a634696f2f13c490f15a808d6fc7b8760}{}\label{classmember_a634696f2f13c490f15a808d6fc7b8760}
+
+
+Definition at line 11 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+12 \{
+13     this->\textcolor{keywordtype}{id} = newId;
+14     this->type = newType;
+15     this->name = newName;
+16     this->total = newTotal;
+17     totalwTax = 0; \textcolor{comment}{// place holder}
+18     this->exprDate = newExprDate;
+19 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{member@{member}!add\+TT@{add\+TT}}
+\index{add\+TT@{add\+TT}!member@{member}}
+\subsubsection[{\texorpdfstring{add\+T\+T(float a)}{addTT(float a)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::add\+TT (
+\begin{DoxyParamCaption}
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a579defee4357502e7dcd3e3750d114dc}{}\label{classmember_a579defee4357502e7dcd3e3750d114dc}
+
+
+Definition at line 92 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+92                          \{
+93     this->total += a;
+94 \}
+\end{DoxyCode}
+\index{member@{member}!add\+T\+TW@{add\+T\+TW}}
+\index{add\+T\+TW@{add\+T\+TW}!member@{member}}
+\subsubsection[{\texorpdfstring{add\+T\+T\+W(float a)}{addTTW(float a)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::add\+T\+TW (
+\begin{DoxyParamCaption}
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_ab6926f5ba8577dd1d6531cf423437948}{}\label{classmember_ab6926f5ba8577dd1d6531cf423437948}
+
+
+Definition at line 95 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+95                           \{
+96     this->totalwTax += a;
+97 \}
+\end{DoxyCode}
+\index{member@{member}!double\+To\+String@{double\+To\+String}}
+\index{double\+To\+String@{double\+To\+String}!member@{member}}
+\subsubsection[{\texorpdfstring{double\+To\+String(double num)}{doubleToString(double num)}}]{\setlength{\rightskip}{0pt plus 5cm}string member\+::double\+To\+String (
+\begin{DoxyParamCaption}
+\item[{double}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classmember_a3c208b64bd4e24ea41a2e1f8b7bd41e9}{}\label{classmember_a3c208b64bd4e24ea41a2e1f8b7bd41e9}
+
+
+Definition at line 99 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+99                                        \{
+100     stringstream numString;
+101     numString << \textcolor{stringliteral}{"$"} << fixed << setprecision(2) << num;
+102     \textcolor{keywordflow}{return} numString.str();
+103 \}
+\end{DoxyCode}
+\index{member@{member}!get\+Expr\+Date@{get\+Expr\+Date}}
+\index{get\+Expr\+Date@{get\+Expr\+Date}!member@{member}}
+\subsubsection[{\texorpdfstring{get\+Expr\+Date() const }{getExprDate() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Date} member\+::get\+Expr\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classmember_ada678a9b2a2eee0013c5799f1f188c98}{}\label{classmember_ada678a9b2a2eee0013c5799f1f188c98}
+
+
+Definition at line 75 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+76 \{
+77     \textcolor{keywordflow}{return} this->exprDate;
+78 \}
+\end{DoxyCode}
+\index{member@{member}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!member@{member}}
+\subsubsection[{\texorpdfstring{get\+Id() const }{getId() const }}]{\setlength{\rightskip}{0pt plus 5cm}double member\+::get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classmember_a8480c82a63ed03776f0c78b835333f06}{}\label{classmember_a8480c82a63ed03776f0c78b835333f06}
+
+
+Definition at line 65 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{keywordflow}{return} this->id;
+68 \}
+\end{DoxyCode}
+\index{member@{member}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!member@{member}}
+\subsubsection[{\texorpdfstring{get\+Name() const }{getName() const }}]{\setlength{\rightskip}{0pt plus 5cm}string member\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classmember_a770923ee1577e502e81a1bdd67adc160}{}\label{classmember_a770923ee1577e502e81a1bdd67adc160}
+
+
+Definition at line 55 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{
+57     \textcolor{keywordflow}{return} this->name;
+58 \}
+\end{DoxyCode}
+\index{member@{member}!get\+Total@{get\+Total}}
+\index{get\+Total@{get\+Total}!member@{member}}
+\subsubsection[{\texorpdfstring{get\+Total() const }{getTotal() const }}]{\setlength{\rightskip}{0pt plus 5cm}double member\+::get\+Total (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classmember_a2aebb843786f51ee65432e9d57f49651}{}\label{classmember_a2aebb843786f51ee65432e9d57f49651}
+
+
+Definition at line 70 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+71 \{
+72     \textcolor{keywordflow}{return} this->total;
+73 \}
+\end{DoxyCode}
+\index{member@{member}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!member@{member}}
+\subsubsection[{\texorpdfstring{get\+Type() const }{getType() const }}]{\setlength{\rightskip}{0pt plus 5cm}string member\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classmember_ad65689d73a5fda2056812f28f3f3964a}{}\label{classmember_ad65689d73a5fda2056812f28f3f3964a}
+
+
+Definition at line 60 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{
+62     \textcolor{keywordflow}{return} this->type;
+63 \}
+\end{DoxyCode}
+\index{member@{member}!print\+Member@{print\+Member}}
+\index{print\+Member@{print\+Member}!member@{member}}
+\subsubsection[{\texorpdfstring{print\+Member()}{printMember()}}]{\setlength{\rightskip}{0pt plus 5cm}string member\+::print\+Member (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a5a59485fe82f153c1091aedbade0a444}{}\label{classmember_a5a59485fe82f153c1091aedbade0a444}
+
+
+Definition at line 80 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+80                           \{
+81 
+82     stringstream output;
+83     output << left << \textcolor{stringliteral}{"|"} << setw(30) << this->name << \textcolor{stringliteral}{"|   "};
+84     output << setw(8) << fixed << setprecision(0) << this->\textcolor{keywordtype}{id} << \textcolor{stringliteral}{"|  "};
+85     output << setw(10) << this->type << \textcolor{stringliteral}{"|   "};
+86     output << setw(14) << exprDate.\hyperlink{class_date_aec64adfc88126b561b691b83edebc955}{DisplayDate}() << \textcolor{stringliteral}{"| "};
+87     output << right << setw(10) << \textcolor{comment}{/*doubleToString(this->total)*/} \textcolor{stringliteral}{"12345.67"} << \textcolor{stringliteral}{"|"};
+88     output << right << setw(12) << \hyperlink{classmember_a3c208b64bd4e24ea41a2e1f8b7bd41e9}{doubleToString}(this->totalwTax) << \textcolor{stringliteral}{"|"};
+89     \textcolor{keywordflow}{return} output.str();
+90 \}
+\end{DoxyCode}
+\index{member@{member}!set\+All@{set\+All}}
+\index{set\+All@{set\+All}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+All(string name, string type, double id, Date expr\+Date)}{setAll(string name, string type, double id, Date exprDate)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+All (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{type, }
+\item[{double}]{id, }
+\item[{{\bf Date}}]{expr\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a157a14ed52141008eb752c81439b076f}{}\label{classmember_a157a14ed52141008eb752c81439b076f}
+
+
+Definition at line 20 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{
+22     this->\textcolor{keywordtype}{id} = id;
+23     this->type = type;
+24     this->name = name;
+25     this->exprDate = exprDate;
+26 
+27     total = 0;
+28     totalwTax = 0;
+29 \}
+\end{DoxyCode}
+\index{member@{member}!set\+Expr\+Date@{set\+Expr\+Date}}
+\index{set\+Expr\+Date@{set\+Expr\+Date}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+Expr\+Date(\+Date expr\+Date)}{setExprDate(Date exprDate)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+Expr\+Date (
+\begin{DoxyParamCaption}
+\item[{{\bf Date}}]{expr\+Date}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_ab1e537d3045c7edd5c41ede5b642f650}{}\label{classmember_ab1e537d3045c7edd5c41ede5b642f650}
+
+
+Definition at line 50 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+51 \{
+52     this->exprDate = exprDate;
+53 \}
+\end{DoxyCode}
+\index{member@{member}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+Id(double id)}{setId(double id)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+Id (
+\begin{DoxyParamCaption}
+\item[{double}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a4f4408ae1e3eab368421e4a14acb4862}{}\label{classmember_a4f4408ae1e3eab368421e4a14acb4862}
+
+
+Definition at line 40 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+41 \{
+42     this->\textcolor{keywordtype}{id} = newId;
+43 \}
+\end{DoxyCode}
+\index{member@{member}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+Name(string name)}{setName(string name)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+Name (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_aacf730a181e4297f591d091904f3bff0}{}\label{classmember_aacf730a181e4297f591d091904f3bff0}
+
+
+Definition at line 30 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+31 \{
+32     this->name = newName;
+33 \}
+\end{DoxyCode}
+\index{member@{member}!set\+Total@{set\+Total}}
+\index{set\+Total@{set\+Total}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+Total(double total)}{setTotal(double total)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+Total (
+\begin{DoxyParamCaption}
+\item[{double}]{total}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a5139dca4fca69e8d30c1f0288d4f3621}{}\label{classmember_a5139dca4fca69e8d30c1f0288d4f3621}
+
+
+Definition at line 45 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     this->total = newTotal;
+48 \}
+\end{DoxyCode}
+\index{member@{member}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!member@{member}}
+\subsubsection[{\texorpdfstring{set\+Type(string type)}{setType(string type)}}]{\setlength{\rightskip}{0pt plus 5cm}void member\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{string}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{classmember_a653f57c729f193880ac5b9de0a20f00f}{}\label{classmember_a653f57c729f193880ac5b9de0a20f00f}
+
+
+Definition at line 35 of file member.\+cpp.
+
+
+\begin{DoxyCode}
+36 \{
+37     this->type = newType;
+38 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{member_8h}{member.\+h}\item 
+\hyperlink{member_8cpp}{member.\+cpp}\end{DoxyCompactItemize}
