@@ -1,5 +1,6 @@
 #include "deleteitem.h"
 #include "ui_deleteitem.h"
+#include <QMessageBox>
 /*!
  * \file deleteitem.cpp
  * \brief Source file for deleteitem class methods
@@ -10,6 +11,7 @@ deleteitem::deleteitem(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::deleteitem)
 {
+    dName = "NONE";
     ui->setupUi(this);
 }
 
@@ -22,9 +24,18 @@ void deleteitem::on_buttonBox_accepted()
 {
     // grab text from the line edit field
     QString nameQ = this->ui->name->text();
-    // convert to STD string
-    string name = nameQ.toStdString();
-    dName = name;
+    if(nameQ.isEmpty())
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                   "Please verify input before submitting");
+    }
+    else
+    {
+        // convert to STD string
+        string name = nameQ.toStdString();
+        dName = name;
+
+    }
 
 }
 string deleteitem::delItem(){

@@ -1,5 +1,6 @@
 #include "additem.h"
 #include "ui_AddItem.h"
+#include <QMessageBox>
 /*!
  * \file additem.cpp
  * \brief Source file for additem class methods
@@ -11,6 +12,7 @@ AddItem::AddItem(QWidget *parent) :
     ui(new Ui::AddItem)
 {
     ui->setupUi(this);
+    dItem = NULL;
 }
 
 AddItem::~AddItem()
@@ -29,18 +31,28 @@ void AddItem::on_buttonBox_accepted()
     QString dayTemp = ui->DayEdit->text();
     QString yearTemp = ui->YearEdit->text();
 
-    dItem = new Item;
-    string nameStr = name.toStdString();
-    float p = price.toFloat();
-    double ID = id.toDouble();
-    int q = quantity.toInt();
+    if(name.isEmpty() || price.isEmpty() || id.isEmpty() || quantity.isEmpty() || quantity.isEmpty() || monthTemp.isEmpty() || dayTemp.isEmpty() || yearTemp.isEmpty())
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                "Please verify input before submitting");
+    }
+    else
+    {
+        dItem = new Item;
+        string nameStr = name.toStdString();
+        float p = price.toFloat();
+        double ID = id.toDouble();
+        int q = quantity.toInt();
 
-    int month = monthTemp.toInt();
-    int day = dayTemp.toInt();
-    int year = yearTemp.toInt();
-    date.SetDate(month, day, year);
+        int month = monthTemp.toInt();
+        int day = dayTemp.toInt();
+        int year = yearTemp.toInt();
+        date.SetDate(month, day, year);
 
-    dItem->SetAll(nameStr,p,q,date,ID);
+
+        dItem->SetAll(nameStr,p,q,date,ID);
+    }
+
 }
 
 void AddItem::on_buttonBox_rejected()

@@ -1,5 +1,6 @@
 #include "expire.h"
 #include "ui_expire.h"
+#include <QMessageBox>
 /*!
  * \file expire.cpp
  * \brief Source file for expire class methods
@@ -10,6 +11,7 @@ expire::expire(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::expire)
 {
+    month = "None";
     ui->setupUi(this);
 }
 
@@ -21,8 +23,18 @@ expire::~expire()
 void expire::on_buttonBox_accepted()
 {
     QString monthTemp = ui->MonthEdit->text();
-    string month2 = monthTemp.toStdString();
-    month = month2;
+    if(monthTemp.isEmpty())
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                   "Please verify input before submitting");
+
+    }
+    else
+    {
+        string month2 = monthTemp.toStdString();
+        month = month2;
+    }
+
 }
 
 string expire::getMonth(){

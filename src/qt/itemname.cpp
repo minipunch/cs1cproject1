@@ -1,6 +1,7 @@
 #include "itemname.h"
 #include "ui_itemname.h"
 #include "Store.h"
+#include <QMessageBox>
 /*!
  * \file itemname.cpp
  * \brief Source file for itemname class methods
@@ -12,6 +13,7 @@ ItemName::ItemName(QWidget *parent) :
     ui(new Ui::ItemName)
 {
     ui->setupUi(this);
+    name = "None";
 }
 
 ItemName::~ItemName()
@@ -23,9 +25,18 @@ void ItemName::on_buttonBox_accepted()
 {
     // grab text from the line edit field
     QString nameQ = this->ui->name->text();
-    // convert to STD string
-    string name1 = nameQ.toStdString();
-    name = name1;
+    if(nameQ.isEmpty() !=0)
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                      "Please verify input before submitting");
+    }
+    else
+    {
+        // convert to STD string
+        string name1 = nameQ.toStdString();
+        name = name1;
+    }
+
 }
 string ItemName::getItem(){
     return name;

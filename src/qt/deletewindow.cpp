@@ -1,5 +1,6 @@
 #include "deletewindow.h"
 #include "ui_deletewindow.h"
+#include <QMessageBox>
 /*!
  * \file deletewindow.cpp
  * \brief Source file for deletewindow class methods
@@ -23,10 +24,19 @@ void DeleteWindow::on_buttonBox_accepted()
 {
     // grab text from the line edit field
     QString nameQ = this->ui->lineEdit->text();
-    // convert to STD string
-    string name = nameQ.toStdString();
-    // set private date member for DeleteWindow class. For use in the MainWindow button.
-    this->deleteMemberName = name;
+    if(nameQ.isEmpty())
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                   "Please verify input before submitting");
+    }
+    else
+    {
+        // convert to STD string
+        string name = nameQ.toStdString();
+        // set private date member for DeleteWindow class. For use in the MainWindow button.
+        this->deleteMemberName = name;
+    }
+
 
 }
 

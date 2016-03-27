@@ -53,19 +53,14 @@ string MainWindow::getFilename() const {
 
 // Shows all items bought at the store
 void MainWindow::on_pushButton_8_clicked() {
-    ui->listWidget->clear();
-    double tot = 0;
-    double totW = 0;
-    bulkClub.sortingItems(ID);
 
-    if (this->filenameI == "Empty") {
-        QMessageBox::information(this, tr("Error!"),
-                "You must first import a purchase file before printing it.");
-    } else if (this->filenameI == "") {
-        QMessageBox::information(this, tr("Error!"),
-                "You must first import a purchase file before printing it.");
-    } else {
 
+    if(bulkClub.getItemCount() !=0)
+    {
+        ui->listWidget->clear();
+        double tot = 0;
+        double totW = 0;
+        bulkClub.sortingItems(ID);
         for (int i = 0; i < bulkClub.getItemCount(); i++) {
             ui->listWidget->addItem(
                     QString::fromStdString(bulkClub.PrintItem(i)));
@@ -75,8 +70,28 @@ void MainWindow::on_pushButton_8_clicked() {
 
         ui->listWidget->addItem("Total Cost(Pre-tax)   : $" + QString::number(tot, 'f', 2));
         ui->listWidget->addItem("Total Cost(Post-tax) : $" + QString::number(totW, 'f', 2));
-
     }
+    else
+    {
+        QMessageBox::information(this, tr("Error!"),
+                "You must add items before printing them.");
+    }
+
+
+
+
+
+//    if (this->filenameI == "Empty") {
+//        QMessageBox::information(this, tr("Error!"),
+//                "You must first import a purchase file before printing it.");
+//    } else if (this->filenameI == "") {
+//        QMessageBox::information(this, tr("Error!"),
+//                "You must first import a purchase file before printing it.");
+//    } else {
+
+
+
+//    }
 }
 
 //number 3 total quantity and cost of each item
@@ -527,8 +542,8 @@ void MainWindow::on_actionNew_triggered()
         }
         bulkClub.sortingItems(NAME);
     } else {
-        QMessageBox::information(this, tr("No purchase/item list found!"),
-                "Please import a purchase/item file before continuing.");
+        QMessageBox::information(this, tr("No Members!"),
+                "Please add members before continuing.");
     }
 }
 
@@ -564,7 +579,7 @@ void MainWindow::on_actionSearch_2_triggered()
         item.exec();
         string iname;
         iname = item.getItem();
-        if (iname.empty() == false) {
+        if (iname != "None") {
             ui->listWidget->clear();
 
             for (int i = 0; i < bulkClub.getItemCount(); i++) {

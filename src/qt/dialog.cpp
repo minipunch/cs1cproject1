@@ -1,6 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include<QString>
+#include <QMessageBox>
 /*!
  * \file dialog.cpp
  * \brief Source file for Dialog class methods
@@ -29,28 +30,37 @@ void Dialog::on_buttonBox_accepted()
     QString monthTemp = ui->MonthEdit->text();
     QString dayTemp = ui->DayEdit->text();
     QString yearTemp = ui->YearEdit->text();
-
-    string nameStr = name.toStdString();
-    double id = idTemp.toDouble();
-    int month = monthTemp.toInt();
-    int day = dayTemp.toInt();
-    int year = yearTemp.toInt();
-    date.SetDate(month, day, year);
-
-    executive *newEx;
-
-    if(isExec)
+    if(name.isEmpty() || idTemp.isEmpty() || monthTemp.isEmpty() || dayTemp.isEmpty() || yearTemp.isEmpty())
     {
-        newEx = new executive;
-        newEx->setAll(nameStr,"Executive", id, date, .035);
-        newMem = newEx;
-
+        QMessageBox::information(this, tr("Invalid input"),
+                   "Please verify input before submitting");
     }
     else
     {
-        newMem = new member;
-          newMem->setAll(nameStr,"Regular", id, date);
+        string nameStr = name.toStdString();
+        double id = idTemp.toDouble();
+        int month = monthTemp.toInt();
+        int day = dayTemp.toInt();
+        int year = yearTemp.toInt();
+        date.SetDate(month, day, year);
+
+        executive *newEx;
+
+        if(isExec)
+        {
+            newEx = new executive;
+            newEx->setAll(nameStr,"Executive", id, date, .035);
+            newMem = newEx;
+
+        }
+        else
+        {
+            newMem = new member;
+              newMem->setAll(nameStr,"Regular", id, date);
+        }
+
     }
+
 
 
 }

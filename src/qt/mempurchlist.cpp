@@ -1,5 +1,6 @@
 #include "mempurchlist.h"
 #include "ui_mempurchlist.h"
+#include <QMessageBox>
 /*!
  * \file mempurchlist.cpp
  * \brief Source file for mempurchlist class methods
@@ -10,7 +11,7 @@ mempurchList::mempurchList(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::mempurchList)
 {
-    toReturn = "12345";
+    toReturn = "None";
     ui->setupUi(this);
 }
 
@@ -26,6 +27,13 @@ QString mempurchList::getString() const
 void mempurchList::on_buttonBox_accepted()
 {
     toReturn = this->ui->lineEdit->text();
+
+    if(toReturn.isEmpty())
+    {
+        QMessageBox::information(this, tr("Invalid input"),
+                   "Please verify input before submitting");
+        toReturn = "None";
+    }
 }
 
 void mempurchList::on_buttonBox_rejected()
