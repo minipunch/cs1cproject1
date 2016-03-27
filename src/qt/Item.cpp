@@ -6,7 +6,12 @@
  */
 
 #include "Item.h"
-
+/*!
+ * \file Item.cpp
+ * \brief Source file forItem class methods
+ *
+ * This file contains all of the definitions for the Item class
+ */
 Item::Item() {
 	name.clear();
 	this->id = 0;

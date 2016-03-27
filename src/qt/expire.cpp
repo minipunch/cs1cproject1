@@ -1,6 +1,11 @@
 #include "expire.h"
 #include "ui_expire.h"
-
+/*!
+ * \file expire.cpp
+ * \brief Source file for expire class methods
+ *
+ * This file contains all of the definitions for the expire class
+ */
 expire::expire(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::expire)

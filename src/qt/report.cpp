@@ -1,6 +1,11 @@
 #include "report.h"
 #include "ui_report.h"
-
+/*!
+ * \file report.cpp
+ * \brief Source file for report class methods
+ *
+ * This file contains all of the definitions for the report class
+ */
 Report::Report(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Report)

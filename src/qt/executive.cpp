@@ -1,5 +1,10 @@
 #include "executive.h"
-
+/*!
+ * \file executive.cpp
+ * \brief Source file for executive class methods
+ *
+ * This file contains all of the definitions for the executive class
+ */
 executive::executive(): rebateAmount(0)
 {
 }

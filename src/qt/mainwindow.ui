@@ -232,11 +232,6 @@
     <string>Expirations</string>
    </property>
   </action>
-  <action name="actionSearch">
-   <property name="text">
-    <string>Info</string>
-   </property>
-  </action>
   <action name="actionNew">
    <property name="text">
     <string>New</string>

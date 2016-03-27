@@ -1,6 +1,11 @@
 #include "deleteitem.h"
 #include "ui_deleteitem.h"
-
+/*!
+ * \file deleteitem.cpp
+ * \brief Source file for deleteitem class methods
+ *
+ * This file contains all of the definitions for the deleteitem class
+ */
 deleteitem::deleteitem(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::deleteitem)

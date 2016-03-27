@@ -2,7 +2,12 @@
 /***************************************************
  * CONSTRUCTORS & DESTRUCTOR
  **************************************************/
-
+/*!
+ * \file date.cpp
+ * \brief Source file for date class methods
+ *
+ * This file contains all of the definitions for the date class
+ */
 /****************************************************************
  * date();
  * Constructor; Initialize class attributes

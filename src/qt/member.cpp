@@ -1,5 +1,10 @@
 #include  "member.h"
-
+/*!
+ * \file member.cpp
+ * \brief Source file for member class methods
+ *
+ * This file contains all of the definitions for the member class
+ */
 member::member() : name("Default Name"), type("Member"), id(-200), total(-200), totalwTax(-200)
 {
 }
@@ -92,7 +97,6 @@ string member::printMember() const {
 	output << exprDate.DisplayDate() << endl;
 	return output.str();
 }
-
 
 string member::saveMember() const
 {

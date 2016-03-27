@@ -32,7 +32,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     date.h \
     executive.h \
-    header.h \
     Item.h \
     itemnames.h \
     member.h \

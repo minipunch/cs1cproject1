@@ -16,19 +16,42 @@
 namespace Ui {
 class MainWindow;
 }
-
+/*!
+ * \brief Connects the qt UI with a store object
+ *
+ * This class connects an instance of the store class to the qt ui as well as the other ui classes.
+ * See the main page for information on the UI functions of this class
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    /*!
+     * \brief Constructor
+     * \param parent
+     */
     explicit MainWindow(QWidget *parent = 0);
+    /*!
+         * \brief destructor
+         */
     ~MainWindow();
-    void displayMembers(member mem);
+    //void displayMembers(member mem);
+    /*!
+     * \brief gets a store object
+     *
+     * This isn't being used
+     * \return stoe instance
+     */
     Store getStore();
+    /*!
+     * \brief getFilename (not used)
+     * \return filename
+     */
     string getFilename() const;
 
 private slots:
+
     void on_pushButton_clicked();
     void on_pushButton_9_clicked();
 
@@ -54,7 +77,7 @@ private slots:
 
     void on_actionExpirations_triggered();
 
-    void on_actionSearch_triggered();
+   // void on_actionSearch_triggered();
 
     void on_actionNew_triggered();
 
@@ -84,6 +107,14 @@ private:
     ItemName item;
     Report rep;
     expire exp;
+
+
+    /*!
+     * \file mainwindow.h
+     * \brief  Header for main window class
+     *
+     * This file contains all attributes and private slots for the main window class.
+     */
 };
 
 #endif // MAINWINDOW_H

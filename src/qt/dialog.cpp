@@ -1,6 +1,12 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include<QString>
+/*!
+ * \file dialog.cpp
+ * \brief Source file for Dialog class methods
+ *
+ * This file contains all of the definitions for the Dialog class
+ */
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)

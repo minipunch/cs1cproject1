@@ -1,6 +1,11 @@
 #include "additem.h"
 #include "ui_AddItem.h"
-
+/*!
+ * \file additem.cpp
+ * \brief Source file for additem class methods
+ *
+ * This file contains all of the definitions for the additem class
+ */
 AddItem::AddItem(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddItem)

@@ -3,6 +3,7 @@
 
 Our somewhat-epic store management program built with C++ and QT creator for our CS1C course.
 
+Here you will find basic information on the program and documentation on what each UI element does.
 
 The Five Gui's:
 - Chris Bassar
@@ -10,6 +11,37 @@ The Five Gui's:
 - Dustin Vuong
 - Josh Yolles
 - Nick Sidaris
+
+Buttons and Actions available:
+- Buttons
+	- "Sales Report" : Input a date and see a sales report for that day.
+	- "Purchase List" : Shows all items bought at the store.
+	- "Member List" : Shows all registered members.
+	- "Product Info" : Gives the total quantity and revenue for each item bought. 
+	
+- Actions in the top bar
+	- "File"
+		- "Import"
+			- "Member file"  : browse and select a member file and the members will be added to the member list.
+			- "Purchase file": browse and select a purchase file and the items will be added to the item list and their prices will be applied to the right members.
+		- "Save"
+			- "Member file"  : Saves the member list in its current state to the original file.
+			- "Purchase file" : browse and select a file to save to and the purchase list will be saved there.
+		- "Save All" : Save both files at once
+	- "Members"
+		- "Search" : Input a member name or id and get information about that member.
+		- "New"  : Add a new member to the store.
+		- "Delete" : Remove a member from the store.
+		- "Rebates" : Show the rebates of all executive members
+		- "Expirations" : Input a month and get all memberships that expire that month and their renewal cost
+		- "Recommendations" : Show which members would save money by changing their membership type.
+	- "Products"
+		- "New" : Input info. and add a new item.
+		- "Delete" : Input an item name and all items of that name will be removed and those who bought it refunded.
+		- "Search" : Input and item name and see its total revenue and quantity sold.
+	- "Help"
+		- "About"  : Displays basic info about the project.
+		- "Instructions" : Displays basic Instructions on using the program.
 
 © 2016 Team Five Gui's. All Rights Reserved.
 */

@@ -1,7 +1,12 @@
 #include "itemname.h"
 #include "ui_itemname.h"
 #include "Store.h"
-
+/*!
+ * \file itemname.cpp
+ * \brief Source file for itemname class methods
+ *
+ * This file contains all of the definitions for the itemname class
+ */
 ItemName::ItemName(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ItemName)

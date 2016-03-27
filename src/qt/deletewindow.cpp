@@ -1,6 +1,11 @@
 #include "deletewindow.h"
 #include "ui_deletewindow.h"
-
+/*!
+ * \file deletewindow.cpp
+ * \brief Source file for deletewindow class methods
+ *
+ * This file contains all of the definitions for the deletewindow class
+ */
 DeleteWindow::DeleteWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DeleteWindow)

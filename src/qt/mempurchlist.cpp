@@ -1,6 +1,11 @@
 #include "mempurchlist.h"
 #include "ui_mempurchlist.h"
-
+/*!
+ * \file mempurchlist.cpp
+ * \brief Source file for mempurchlist class methods
+ *
+ * This file contains all of the definitions for the mempurchlist class
+ */
 mempurchList::mempurchList(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::mempurchList)

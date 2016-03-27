@@ -12,6 +12,12 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include<QByteArray>
+/*!
+ * \file Store.cpp
+ * \brief Source file for Store class methods
+ *
+ * This file contains all of the definitions for the Store class
+ */
 Store::Store() {
 
 
@@ -283,10 +289,10 @@ string Store::getRebate(int index){
         return "Invalid membership type";
     }
 }
+
 double Store::getMTotCost (int index){
     return members.at(index)->getTotal();
 }
-
 
 //ITEM FUNCTIONS
 string Store::getiName(int index) const{
