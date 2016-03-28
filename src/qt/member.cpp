@@ -87,15 +87,29 @@ Date member::getExprDate() const
 	return this->exprDate;
 }
 
-string member::printMember() const {
-
-	stringstream output;
-	output << this->name << endl;
-	output << this->type << endl;
-	output << fixed << setprecision(0) << this->id << endl;
-	output <<  fixed << setprecision(2) <<this->totalwTax << endl;
-	output << exprDate.DisplayDate() << endl;
-	return output.str();
+QString member::printMember() const {
+	ui->ListWidget->clear();
+    QString s;
+    QTextStream ss(&s);
+    string name2;
+    ss.AlignLeft;
+//	stringstream output;
+    name2 = name;
+    if(name.size() > 20){
+        name2 = name.substr(0, 20);
+    }
+    ss << qSetFieldWidth(30) << QString::fromStdString(name2 + "\t\t");
+    ss << qSetFieldWidth(15) << QString::fromStdString(this->type + "\t\t");
+    ss << qSetFieldWidth(10) << QString::number(this->id) + "\t";
+    ss << qSetFieldWidth(8) << QString::number(this->totalwTax, 'f', 2);
+    ss << qSetFieldWidth(8) << QString::fromStdString("\t" + this->exprDate.DisplayDate());
+//	output << this->name << endl;
+//	output << this->type << endl;
+//	output << fixed << setprecision(0) << this->id << endl;
+//	output <<  fixed << setprecision(2) <<this->totalwTax << endl;
+//	output << exprDate.DisplayDate() << endl;
+//	return output.str();
+    return s;
 }
 
 string member::saveMember() const

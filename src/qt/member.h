@@ -13,6 +13,8 @@
 #include <deque>
 #include<algorithm>
 #include <sstream>
+#include <QTextStream>
+#include <QString>
 using namespace std;
 /*!
  * \brief Represents a regular member
@@ -139,7 +141,7 @@ public:
      * Used to print a member
      * \return  stringstream of a printout
      */
-	string printMember() const;
+    QString printMember() const;
     /*!
      * \brief Alternate print member
      *

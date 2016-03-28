@@ -27,11 +27,20 @@ MainWindow::~MainWindow() {
 // Shows all registered members
 void MainWindow::on_pushButton_9_clicked() {
     ui->listWidget->clear();
+    QString s;
+    QTextStream ss(&s);
+    ss << qSetFieldWidth(30) << "Member Name\t\t";
+    ss << qSetFieldWidth(15) << "Member Type\t\t";
+    ss << qSetFieldWidth(10) << "Member ID\t";
+    ss << qSetFieldWidth(8)  << "Total with Tax\t";
+    ss << qSetFieldWidth(8) << "Exp Date\n";
+    ss << "______________________________________________________________________________________________________________________________";
 
+    ui->listWidget->addItem(s);
     if (bulkClub.getMemCount() != 0) {
         for (int i = 0; i < bulkClub.getMemCount(); i++) {
             ui->listWidget->addItem(
-                    QString::fromStdString(bulkClub.PrintMember(i)));
+                    bulkClub.PrintMember(i));
         }
 
     } else {
@@ -506,7 +515,7 @@ void MainWindow::on_actionExpirations_triggered()
         for (int i = 0; i < bulkClub.getMemCount(); i++) {
             if (bulkClub.getMemExp(i).GetMonth() == month) {
                 ui->listWidget->addItem(
-                        QString::fromStdString(bulkClub.PrintMember(i)));
+                        bulkClub.PrintMember(i));
                         cheq++;
                 if (bulkClub.getMemType(i) == "Executive") {
                     ui->listWidget->addItem("Annual Membership Fee Cost: $125\n");

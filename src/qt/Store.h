@@ -209,7 +209,7 @@ public:
      * \param index location in list
      * \return stringstream of the output
      */
-    string  PrintMember(int index) const;
+    QString  PrintMember(int index) const;
     /*!
      * \brief returns the number of members in the list
      * \return number of members

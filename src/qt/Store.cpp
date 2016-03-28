@@ -209,12 +209,12 @@ int Store::getMemCount() const
 {
 	return members.size();
 }
-string Store::PrintMember(int index) const
+QString Store::PrintMember(int index) const
 {
 	stringstream output;
-
-		output << members.at(index)->printMember();
-		return output.str();
+    QString hurp;
+        hurp = members.at(index)->printMember();
+        return hurp;
 
 	//output << member.at
 }
