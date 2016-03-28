@@ -63,10 +63,12 @@ string MainWindow::getFilename() const {
 // Shows all items bought at the store
 void MainWindow::on_pushButton_8_clicked() {
 
-
     if(bulkClub.getItemCount() !=0)
     {
         ui->listWidget->clear();
+        ui->listWidget->addItem("---------------------");
+        ui->listWidget->addItem("All Items Purchased");
+        ui->listWidget->addItem("---------------------");
         double tot = 0;
         double totW = 0;
         bulkClub.sortingItems(ID);
@@ -156,7 +158,7 @@ void MainWindow::on_pushButton_3_clicked() {
                     "Quantity: " + QString::number(totalQuantity));
             // Total revenue for each item
             ui->listWidget->addItem(
-                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2) + "\n");
         }
 
         // ghetto solution to the diet coke problem
@@ -198,6 +200,9 @@ void MainWindow::on_pushButton_clicked() {
         {
             ui->listWidget->clear();
             ui->listWidget->addItem(QString::fromStdString(d.DisplayDate()));
+            ui->listWidget->addItem("-------------------------------\n");
+            ui->listWidget->addItem("Items Purchased On This Day:");
+            ui->listWidget->addItem("-------------------------------\n");
 
             deque < string > names;
             int nameDup = 0;
@@ -211,7 +216,7 @@ void MainWindow::on_pushButton_clicked() {
                     ui->listWidget->addItem(
                             QString::fromStdString(bulkClub.getiName(i)));
                     ui->listWidget->addItem(
-                            "Quantity: " + QString::number(bulkClub.getiQuan(i)));
+                            "Quantity: " + QString::number(bulkClub.getiQuan(i)) + "\n");
                     if (names.empty() == false) {
                         for (unsigned int z = 0; z < names.size(); z++) {
                             if (names.at(z) == memName) {
@@ -230,15 +235,18 @@ void MainWindow::on_pushButton_clicked() {
                 }
             }
             if(rep.getCheq() != true){
+                ui->listWidget->addItem("------------------------------------\n");
+                ui->listWidget->addItem("Shoppers Who Shopped On This Day:");
+                ui->listWidget->addItem("------------------------------------\n");
                 for (unsigned int i = 0; i < names.size(); i++) {
                     if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
                             == "Executive") {
                         ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Executive");
+                                QString::fromStdString(names.at(i)) + "\nType: Executive\n");
                         exec++;
                     } else {
                         ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Regular");
+                                QString::fromStdString(names.at(i)) + "\nType: Regular\n");
                         reg++;
                     }
                 }
