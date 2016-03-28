@@ -67,6 +67,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="pushButton">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Roboto,sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;Input a date and see a sales report for that day.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
@@ -77,6 +80,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_8">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Roboto,sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;Shows all items in the loaded item file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
@@ -87,6 +93,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_9">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Roboto,sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;Show all members currently loaded from the member file(s).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
@@ -97,6 +106,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_3">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Roboto,sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;Gives the total quantity and revenue for each item bought.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);</string>
        </property>
@@ -121,9 +133,15 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QMenu" name="menuFile">
     <property name="autoFillBackground">
      <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);</string>
     </property>
     <property name="title">
      <string>File</string>
@@ -147,6 +165,12 @@
     <addaction name="actionSave_All"/>
    </widget>
    <widget class="QMenu" name="menuMembers">
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);</string>
+    </property>
     <property name="title">
      <string>Members</string>
     </property>
@@ -158,6 +182,9 @@
     <addaction name="actionRecommendation"/>
    </widget>
    <widget class="QMenu" name="menuManage_Products">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);</string>
+    </property>
     <property name="title">
      <string>Products</string>
     </property>
@@ -166,6 +193,9 @@
     <addaction name="actionSearch_2"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);</string>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>
