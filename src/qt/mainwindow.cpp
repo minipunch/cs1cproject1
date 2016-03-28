@@ -340,7 +340,7 @@ void MainWindow::on_actionSave_All_triggered()
 void MainWindow::on_actionMember_File_Import_triggered()
 {
     QString filenameQ = QFileDialog::getOpenFileName(this, tr("Import members"),
-            "C://", "Text File (*.txt)");
+            "../Input Files", "Text File (*.txt)");
     this->filename = filenameQ.toStdString();
     this->bulkClub.setFilename(filenameQ.toStdString());
 
@@ -353,7 +353,7 @@ void MainWindow::on_actionPurchase_File_Import_triggered()
 {
     if (bulkClub.getMemCount() != 0) {
         QString filenameQ = QFileDialog::getOpenFileName(this,
-                tr("Import a purchase file"), "C://", "Text File (*.txt)");
+                tr("Import a purchase file"), "../Input Files", "Text File (*.txt)");
         this->filenameI = filenameQ.toStdString();
         this->bulkClub.setFilenameI(filenameQ.toStdString());
 

@@ -88,7 +88,6 @@ Date member::getExprDate() const
 }
 
 QString member::printMember() const {
-	ui->ListWidget->clear();
     QString s;
     QTextStream ss(&s);
     string name2;
