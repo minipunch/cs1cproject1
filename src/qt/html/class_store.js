@@ -23,7 +23,7 @@ var class_store =
     [ "getTotCost", "class_store.html#a6b2fa4a0cfed36942a9ac31226539315", null ],
     [ "getTotwTax", "class_store.html#a45c0d80073a08f8198e707390020ea94", null ],
     [ "PrintItem", "class_store.html#a72125823862d9877ab60e9126438cf56", null ],
-    [ "PrintMember", "class_store.html#ace497ab836b1b7af6d27b67bf447ae24", null ],
+    [ "PrintMember", "class_store.html#a585179697e3b74b8b335b5ab219f011a", null ],
     [ "readInMembers", "class_store.html#ae8c37df9579bd4bd6683acd22ef190cb", null ],
     [ "readItems", "class_store.html#a948e593d6045fa92d1fa62b5263e57fe", null ],
     [ "removeItem", "class_store.html#a5ab3fa6703dedb1d0f69453f96a229b9", null ],

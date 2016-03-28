@@ -97,14 +97,36 @@ float Item::getTotCost()const{
 
 string Item::printItem() const
 {
-	stringstream output;
-	output << this->name << endl;
-	output << fixed << setprecision(2) <<this->price << endl;
-	output << fixed << setprecision(0) <<this->id << endl;
-	output << this->quantity << endl;
-	output << fixed << setprecision(2) << this->totCost << endl;
-	output << fixed << setprecision(2) << this->totwTax << endl;
-	output << this->purchDate.DisplayDate() << endl;
+    stringstream output;
+    string name2;
+    name2 = this->name;
+    if(name2.size() > 25){
+        string a = "...";
+        name2 = name2.substr(0,25);
+        name2.append(a);
+    }
+    output << left;
+    output << setw(30) << name2 << "\t\t";
+    output << fixed << setprecision(2)<< setw(10) <<this->price << "\t";
+    output << fixed << setprecision(0) << setw(10) <<this->id;
+    if(this->quantity > 999){
+        output << setw(16) << this->quantity;
+    }
+    else if (this->quantity > 9){
+        output << setw(18) << this->quantity;
+    }
+    else{
+        output << setw(19) << this->quantity;
+    }
+    if(this->totCost > 10000){
+        output << fixed << setprecision(2) << setw(10) << this->totCost;
+        output << fixed << setprecision(2) << setw(7) << this->totwTax<< "\t";
+    }
+    else{
+        output << fixed << setprecision(2) << setw(12) << this->totCost<< "\t";
+        output << fixed << setprecision(2) << setw(9) << this->totwTax<< "\t";
+    }
+    output << setw(10) << this->purchDate.DisplayDate() << endl;
 	return output.str();
 }
 

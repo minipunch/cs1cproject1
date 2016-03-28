@@ -139,7 +139,7 @@ public:
      * \brief Prints a member
      *
      * Used to print a member
-     * \return  stringstream of a printout
+     * \return  QStringstream of a printout
      */
     QString printMember() const;
     /*!
