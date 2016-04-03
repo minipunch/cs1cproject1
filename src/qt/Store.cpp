@@ -6,8 +6,8 @@
  */
 
 #include "Store.h"
-#include "member.cpp"
-#include "executive.cpp"
+#include "member.h"
+#include "executive.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>

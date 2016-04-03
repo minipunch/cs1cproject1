@@ -95,7 +95,7 @@ QString member::printMember() const {
 //	stringstream output;
     name2 = name;
     if(name.size() > 20){
-        name2 = name.substr(0, 20);
+        name2 = name.substr(0, 20) + "...";
     }
     ss << qSetFieldWidth(30) << QString::fromStdString(name2 + "\t\t");
     ss << qSetFieldWidth(15) << QString::fromStdString(this->type + "\t\t");
