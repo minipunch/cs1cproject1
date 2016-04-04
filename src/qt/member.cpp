@@ -91,7 +91,7 @@ QString member::printMember() const {
     QString s;
     QTextStream ss(&s);
     string name2;
-    ss.AlignLeft;
+    //ss.AlignLeft;
 //	stringstream output;
     name2 = name;
     if(name.size() > 20){
@@ -100,7 +100,7 @@ QString member::printMember() const {
     ss << qSetFieldWidth(30) << QString::fromStdString(name2 + "\t\t");
     ss << qSetFieldWidth(15) << QString::fromStdString(this->type + "\t\t");
     ss << qSetFieldWidth(10) << QString::number(this->id) + "\t";
-    ss << qSetFieldWidth(8) << QString::number(this->totalwTax, 'f', 2);
+    ss << qSetFieldWidth(8) << ("$" + QString::number(this->totalwTax, 'f', 2));
     ss << qSetFieldWidth(8) << QString::fromStdString("\t" + this->exprDate.DisplayDate());
 //	output << this->name << endl;
 //	output << this->type << endl;

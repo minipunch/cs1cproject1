@@ -107,7 +107,7 @@ string Item::printItem() const
     }
     output << left;
     output << setw(30) << name2 << "\t\t";
-    output << fixed << setprecision(2)<< setw(10) <<this->price << "\t";
+    output << fixed << setprecision(2)<< setw(10) << this->price << "\t";
     output << fixed << setprecision(0) << setw(10) <<this->id;
     if(this->quantity > 999){
         output << setw(16) << this->quantity;
@@ -120,11 +120,11 @@ string Item::printItem() const
     }
     if(this->totCost > 10000){
         output << fixed << setprecision(2) << setw(10) << this->totCost;
-        output << fixed << setprecision(2) << setw(7) << this->totwTax<< "\t";
+        output << fixed << setprecision(2) << setw(7) << this->totwTax << "\t";
     }
     else{
-        output << fixed << setprecision(2) << setw(12) << this->totCost<< "\t";
-        output << fixed << setprecision(2) << setw(9) << this->totwTax<< "\t";
+        output << fixed << setprecision(2) << setw(12) << this->totCost << "\t";
+        output << fixed << setprecision(2) << setw(9) << this->totwTax << "\t";
     }
     output << setw(10) << this->purchDate.DisplayDate() << endl;
 	return output.str();

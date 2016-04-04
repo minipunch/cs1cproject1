@@ -97,20 +97,6 @@ void MainWindow::on_pushButton_8_clicked() {
     }
 
 
-
-
-
-//    if (this->filenameI == "Empty") {
-//        QMessageBox::information(this, tr("Error!"),
-//                "You must first import a purchase file before printing it.");
-//    } else if (this->filenameI == "") {
-//        QMessageBox::information(this, tr("Error!"),
-//                "You must first import a purchase file before printing it.");
-//    } else {
-
-
-
-//    }
 }
 
 //number 3 total quantity and cost of each item
@@ -119,6 +105,8 @@ void MainWindow::on_pushButton_3_clicked() {
     int totalRevenue = 0;
     int totalQuantity = 0;
     bool theSame = true;
+    QString s;
+    QTextStream ss(&s) ;
 
 
     if (bulkClub.getItemCount() != 0)
@@ -127,19 +115,62 @@ void MainWindow::on_pushButton_3_clicked() {
     // ... make sure user has input a purchase file before scanning through list
             {
         ui->listWidget->clear();
+        ss.setFieldAlignment(ss.AlignCenter);
+        ss << QString::fromStdString("Product Info");
+        ss << "\n______________________________________________________________________________________________________________________________\n";
+        ss.setFieldAlignment(ss.AlignRight);
+        ss << qSetFieldWidth(50) << QString::fromStdString("Product\t");
+        ss << qSetFieldWidth(8) << QString::fromStdString("Quantity");
+        ss << qSetFieldWidth(15) << QString::fromStdString("Revenue\n");
+        ui->listWidget->addItem(s);
+        ss << qSetFieldWidth(0) << QString::fromStdString("\n");
+        s.clear();
+        ss.flush();
+
         bulkClub.sortingItems(NAME);
 
         for (int x = 0; x < bulkClub.getItemCount() - 1; ++x) {
+            ss.setFieldAlignment(QTextStream::AlignRight);
             // for each item
             totalRevenue = 0;
             totalQuantity = 0;
             theSame = true;
 
             // print item name
-            ui->listWidget->addItem(
-                    "Information on item: "
-                            + QString::fromStdString(bulkClub.getiName(x)));
+//            ui->listWidget->addItem(
+//                    "Information on item: "
+//                            + QString::fromStdString(bulkClub.getiName(x)));
+            string name2 = bulkClub.getiName(x);
+            if(bulkClub.getiName(x).size() > 25){
+                string temp = "...";
+                QString lol;
+                name2 = name2.substr(0,19);
+                name2 = name2.append(temp);
+                ss << qSetFieldWidth(25) << QString::fromStdString("\t" + name2 + "\t");
+            }
+            else if (bulkClub.getiName(x) == "Sprite"){
+                ss << qSetFieldWidth(50) << QString::fromStdString( name2 + "\t\t");
+            }
+            else{
+                ss << qSetFieldWidth(50) << QString::fromStdString(name2 + "\t");
+            }
 
+//            else if (bulkClub.getiName(x).size() < 40 && bulkClub.getiName(x).size() > 30){
+//                ss << qSetFieldWidth(35) << (QString::fromStdString(name2) + "\t");
+//            }
+//            else if (bulkClub.getiName(x).size() < 10){
+//                ss << qSetFieldWidth(20) << (QString::fromStdString(name2) + "\t\t");
+//            }
+//            else if (bulkClub.getiName(x).size() > 10 && bulkClub.getiName(x).size() < 15)
+//            {
+//                ss << qSetFieldWidth(20) << (QString::fromStdString(name2) + "\t\t");
+//            }
+//            else if (bulkClub.getiName(x).size() >= 15 && bulkClub.getiName(x).size() < 20){
+//                ss << qSetFieldWidth(30) << (QString::fromStdString(name2));
+//            }
+//            else{
+//                ss << qSetFieldWidth(30) << (QString::fromStdString(name2));
+//            }
             if (x < bulkClub.getItemCount() - 1)
             // ... if not at the last item in the list ...
                     {
@@ -162,13 +193,18 @@ void MainWindow::on_pushButton_3_clicked() {
                 totalRevenue += bulkClub.getTotwTax(x);
             }
             // Quantity for each item
-            ui->listWidget->addItem(
-                    "Quantity: " + QString::number(totalQuantity));
-            // Total revenue for each item
-            ui->listWidget->addItem(
-                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2) + "\n");
-        }
+//            ui->listWidget->addItem(
+//                    "Quantity: " + QString::number(totalQuantity));
+            ss << qSetFieldWidth(10) << QString::number(totalQuantity);
+//            // Total revenue for each item
+//            ui->listWidget->addItem(
+//                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2) + "\n");
+            ss << qSetFieldWidth(15) << ("$" + QString::number(totalRevenue, 'f', 2)) << qSetFieldWidth(0) << QString::fromStdString("\n");
 
+            ui->listWidget->addItem(s);
+            ss.flush();
+            s.clear();
+        }
         // ghetto solution to the diet coke problem
         totalQuantity = 0;
         totalRevenue = 0;
@@ -177,17 +213,22 @@ void MainWindow::on_pushButton_3_clicked() {
         totalRevenue += bulkClub.getTotwTax(bulkClub.getItemCount() - 1);
 
         // print item name
-        ui->listWidget->addItem(
-                "Information on item: "
-                        + QString::fromStdString(
-                                bulkClub.getiName(
-                                        bulkClub.getItemCount() - 1)));
+//        ui->listWidget->addItem(
+//                "Information on item: "
+//                        + QString::fromStdString(
+//                                bulkClub.getiName(
+//                                        bulkClub.getItemCount() - 1)));
+        ss << qSetFieldWidth(50) << QString::fromStdString(bulkClub.getiName(bulkClub.getItemCount() - 1));
+        ss << qSetFieldWidth(20) << QString::fromStdString(" ");
         // Quantity for each item
-        ui->listWidget->addItem("Quantity: " + QString::number(totalQuantity));
+//        ui->listWidget->addItem("Quantity: " + QString::number(totalQuantity));
+        ss << qSetFieldWidth(10) << totalQuantity;
         // Total revenue for each item
-        ui->listWidget->addItem(
-                "Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
-        ui->listWidget->addItem(" ");
+//        ui->listWidget->addItem(
+//                "Total Revenue: $" + QString::number(totalRevenue, 'f', 2));
+//        ui->listWidget->addItem(" ");
+        ss << qSetFieldWidth(15) << ("$" + QString::number(totalRevenue, 'f', 2)) << qSetFieldWidth(0) << endl;
+        ui->listWidget->addItem(s);
     } else {
         QMessageBox::information(this, tr("No purchase file seleceted!"),
                 "Please import one or more purchase files in order to continue.");
@@ -199,6 +240,8 @@ void MainWindow::on_pushButton_3_clicked() {
 void MainWindow::on_pushButton_clicked() {
     Date d;
     Date d2;
+    QString s;
+    QTextStream ss(&s);
 
     if(bulkClub.getItemCount() !=0)
     {
@@ -207,9 +250,17 @@ void MainWindow::on_pushButton_clicked() {
         if(d.GetYear() != 1900)
         {
             ui->listWidget->clear();
-            ui->listWidget->addItem("-------------------------------\n");
+            ui->listWidget->addItem("-------------------------------------------------------------------\n");
             ui->listWidget->addItem("Items Purchased On " + QString::fromStdString(d.DisplayDate()));
-            ui->listWidget->addItem("-------------------------------\n");
+            ui->listWidget->addItem("-------------------------------------------------------------------\n");
+            ss.setFieldAlignment(ss.AlignRight);
+            ss << qSetFieldWidth(50) << QString::fromStdString("Product") << qSetFieldWidth(10) << QString::fromStdString("\t") << QString::fromStdString("Quantity");
+            ss << qSetFieldWidth(0) << QString::fromStdString("\n");
+            ui->listWidget->addItem(s);
+            ui->listWidget->addItem("-------------------------------------------------------------------\n");
+            ss.flush();
+            s.clear();
+
 
             deque < string > names;
             int nameDup = 0;
@@ -220,10 +271,29 @@ void MainWindow::on_pushButton_clicked() {
                 if (d2 == d) {
                     double memID = bulkClub.getiID(i);
                     string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
-                    ui->listWidget->addItem(
-                            QString::fromStdString(bulkClub.getiName(i)));
-                    ui->listWidget->addItem(
-                            "Quantity: " + QString::number(bulkClub.getiQuan(i)) + "\n");
+//                    ui->listWidget->addItem(
+//                            QString::fromStdString(bulkClub.getiName(i)));
+                    string name2 = bulkClub.getiName(i);
+                    if(bulkClub.getiName(i).size() > 25){
+                        string temp = "...";
+                        QString lol;
+                        name2 = name2.substr(0,19);
+                        name2 = name2.append(temp);
+                        ss << qSetFieldWidth(25) << QString::fromStdString("\t" + name2 + "\t");
+                    }
+                    else if (bulkClub.getiName(i) == "Sprite"){
+                        ss << qSetFieldWidth(50) << QString::fromStdString( name2 + "\t\t");
+                    }
+                    else{
+                        ss << qSetFieldWidth(50) << QString::fromStdString(name2 + "\t");
+                    }
+//                    ui->listWidget->addItem(
+//                            "Quantity: " + QString::number(bulkClub.getiQuan(i)) + "\n");
+                    ss << qSetFieldWidth(10) << QString::number(bulkClub.getiQuan(i));
+                    ss << qSetFieldWidth(0) << QString::fromStdString("\n");
+                    ui->listWidget->addItem(s);
+                    s.clear();
+                    ss.flush();
                     if (names.empty() == false) {
                         for (unsigned int z = 0; z < names.size(); z++) {
                             if (names.at(z) == memName) {
@@ -241,19 +311,40 @@ void MainWindow::on_pushButton_clicked() {
 
                 }
             }
+            ui->listWidget->addItem("------------------------------------------------------------------------\n");
+            ui->listWidget->addItem("Shoppers Who Shopped On This Day:");
+            ui->listWidget->addItem("------------------------------------------------------------------------\n");
+            ss << qSetFieldWidth(33) << QString::fromStdString("Member Name") << qSetFieldWidth(50) << QString::fromStdString("Member Type");
+            ss << qSetFieldWidth(0) << QString::fromStdString("\n");
+            ui->listWidget->addItem(s);
+            ui->listWidget->addItem("------------------------------------------------------------------------\n");
+            s.clear();
+            ss.flush();
             if(rep.getCheq() != true){
-                ui->listWidget->addItem("------------------------------------\n");
-                ui->listWidget->addItem("Shoppers Who Shopped On This Day:");
-                ui->listWidget->addItem("------------------------------------\n");
                 for (unsigned int i = 0; i < names.size(); i++) {
+                    if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() > 15){
+                        string name2 = names.at(i);
+                        string temp = "...";
+                        name2 = name2.substr(0, 12);
+                        name2 = name2.append(temp);
+                        ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t\t");
+                    }
+                    else if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() < 13){
+                        ss << qSetFieldWidth(37) << (QString::fromStdString(names.at(i) + "\t\t"));
+                    }
+                    else{
+                        ss << qSetFieldWidth(38) << (QString::fromStdString(names.at(i) + "\t\t"));
+                    }
+                    ss << qSetFieldWidth(20);
+                    ss << QString::fromStdString(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))));
+                    ui->listWidget->addItem(s);
+                    s.clear();
+                    ss.flush();
                     if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
-                            == "Executive") {
-                        ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Executive\n");
+                            == "Executive"){
                         exec++;
-                    } else {
-                        ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Regular\n");
+                    }
+                    else{
                         reg++;
                     }
                 }
@@ -262,16 +353,48 @@ void MainWindow::on_pushButton_clicked() {
                 for (unsigned int i = 0; i < names.size(); i++) {
                     if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
                             == "Executive") {
-                        ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Executive");
+                        if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() > 15){
+                            string name2 = names.at(i);
+                            string temp = "...";
+                            name2 = name2.substr(0, 12);
+                            name2 = name2.append(temp);
+                            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t\t");
+                        }
+                        else if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() < 13){
+                            ss << qSetFieldWidth(37) << (QString::fromStdString(names.at(i) + "\t\t"));
+                        }
+                        else{
+                            ss << qSetFieldWidth(38) << (QString::fromStdString(names.at(i) + "\t\t"));
+                        }
+                        ss << qSetFieldWidth(20);
+                        ss << QString::fromStdString(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))));
+                        ui->listWidget->addItem(s);
+                        s.clear();
+                        ss.flush();
                         exec++;
                     }
                 }
                 for (unsigned int i = 0; i < names.size(); i++) {
                     if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
                             == "Regular") {
-                        ui->listWidget->addItem(
-                                QString::fromStdString(names.at(i)) + "\nType: Regular");
+                        if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() > 15){
+                            string name2 = names.at(i);
+                            string temp = "...";
+                            name2 = name2.substr(0, 12);
+                            name2 = name2.append(temp);
+                            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t\t");
+                        }
+                        else if(bulkClub.getMemName(bulkClub.getMemberIndex(names.at(i))).size() < 13){
+                            ss << qSetFieldWidth(37) << (QString::fromStdString(names.at(i) + "\t\t"));
+                        }
+                        else{
+                            ss << qSetFieldWidth(38) << (QString::fromStdString(names.at(i) + "\t\t"));
+                        }
+                        ss << qSetFieldWidth(20);
+                        ss << QString::fromStdString(bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i))));
+                        ui->listWidget->addItem(s);
+                        s.clear();
+                        ss.flush();
                         reg++;
                     }
                 }
@@ -360,6 +483,7 @@ void MainWindow::on_actionMember_File_Import_triggered()
     this->bulkClub.setFilename(filenameQ.toStdString());
 
     this->bulkClub.readInMembers();
+    QMessageBox::information(this, tr("Action Complete"), "Members imported successfully.");
 }
 
 // import purchase/item file
@@ -373,6 +497,7 @@ void MainWindow::on_actionPurchase_File_Import_triggered()
         this->bulkClub.setFilenameI(filenameQ.toStdString());
 
         this->bulkClub.readItems();
+        QMessageBox::information(this, tr("Action Complete"), "Purchases imported successfully.");
     } else {
         QMessageBox::information(this, tr("Error!"),
                 "Member database empty, please import a member list first.");
@@ -464,7 +589,7 @@ void MainWindow::on_actionRebate_triggered()
                 ui->listWidget->addItem(
                         QString::fromStdString(bulkClub.getMemName(count)));
                 ui->listWidget->addItem(
-                        "Rebate: "
+                        "Rebate: $"
                                 + QString::fromStdString(
                                         bulkClub.getRebate(count)));
                 ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
@@ -668,7 +793,7 @@ void MainWindow::on_actionSearch_Member_List_triggered()
                       QTextStream ss(&s);
                       ss.setFieldAlignment(QTextStream::AlignLeft);
                       index = bulkClub.searchMem(id);
-                      ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(index)));
+                      ui->listWidget->addItem("Items for: " + QString::fromStdString(bulkClub.getMemName(index)));
                       ss << qSetFieldWidth(37) << "Item Name\t\t" << qSetFieldWidth(9) << "Price\t" << qSetFieldWidth(10) << "ID #" << qSetFieldWidth(17) << "#";
                       ss << qSetFieldWidth(10) << "Subtotal\t" << qSetFieldWidth(14) << "Revenue" << qSetFieldWidth(20) << "Date of Purchase";
                       ui->listWidget->addItem(s);
@@ -686,7 +811,7 @@ void MainWindow::on_actionSearch_Member_List_triggered()
                       QTextStream ss(&s);
                       name = temp.toStdString();
                       index = bulkClub.getMemberIndex(name);
-                      ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(index)));
+                      ui->listWidget->addItem("Items for" + QString::fromStdString(bulkClub.getMemName(index)));
                       ss.setFieldAlignment(QTextStream::AlignLeft);
                       ss << qSetFieldWidth(37) << "Item Name\t\t" << qSetFieldWidth(9) << "Price\t" << qSetFieldWidth(10) << "ID #" << qSetFieldWidth(17) << "#";
                       ss << qSetFieldWidth(10) << "Subtotal\t" << qSetFieldWidth(14) << "Revenue" << qSetFieldWidth(20) << "Date of Purchase";
@@ -732,88 +857,88 @@ void MainWindow::on_actionInstructions_triggered()
 void MainWindow::on_actionRecommendation_triggered()
 {
     if(bulkClub.getMemCount() != 0)
-        {
-            ui->listWidget->clear();
+    {
+        ui->listWidget->clear();
 
-            QString s;
-            QTextStream ss(&s);
-            ss.setFieldAlignment(ss.AlignLeft);
-            ss << qSetFieldWidth(30) << "Member Name\t" << qSetFieldWidth(20) << "Member Type" << qSetFieldWidth(37) << "Upgrade/Downgrade" << "Amount Saved";
+        QString s;
+        QTextStream ss(&s);
+        ss.setFieldAlignment(ss.AlignLeft);
+        ss << qSetFieldWidth(30) << "Member Name\t" << qSetFieldWidth(20) << "Member Type" << qSetFieldWidth(37) << "Upgrade/Downgrade" << "Amount Saved";
+        ui->listWidget->addItem(s);
+        s.clear();
+        double compare;
+         ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
+            bulkClub.sortingMems(ID);
+            ui->listWidget->addItem(QString::fromStdString("Member who should upgrade\n________________________________________________________\n"));
+            for(int i = 0; i < bulkClub.getMemCount();i++){
+                compare = bulkClub.getMTotCost(i) * .035;
+                if(bulkClub.getMemType(i) == "Regular"){
+                    if(compare > 80){
+                        if(bulkClub.getMemName(i).size() > 15){
+                            string name2 = bulkClub.getMemName(i);
+                            string temp = "...";
+                            name2 = name2.substr(0, 15);
+                            name2 = name2.append(temp);
+                            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+                        }
+                        else if(bulkClub.getMemName(i).size() < 13){
+                             ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+                        }
+                        else{
+                            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+                        }
+                        ss << qSetFieldWidth(20);
+                        ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(40) << QString::fromStdString("Upgrade Recommended");
+//                        ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(30) << QString::fromStdString("Upgrade Recommended");
+                        QString hurp = QString::number((45 - (125- compare)),'f',2);
+                        ss << qSetFieldWidth(10) << (QString::fromStdString("$") +  hurp) << qSetFieldWidth(0) << endl << qSetFieldWidth(60);
+//                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
+//                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
+//                        ui->listWidget->addItem("Upgrade Recommended\n");
+//                        ui->listWidget->addItem("Amount could have Saved: $" + QString::number((45 - (125- compare)),'f',2) + "\n");
+//                        ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
+                    }
+                }
+            }
             ui->listWidget->addItem(s);
             s.clear();
-            double compare;
-             ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
-                bulkClub.sortingMems(ID);
-                ui->listWidget->addItem(QString::fromStdString("Member who should upgrade\n________________________________________________________\n"));
-                for(int i = 0; i < bulkClub.getMemCount();i++){
-                    compare = bulkClub.getMTotCost(i) * .035;
-                    if(bulkClub.getMemType(i) == "Regular"){
-                        if(compare > 80){
-                            if(bulkClub.getMemName(i).size() > 15){
-                                string name2 = bulkClub.getMemName(i);
-                                string temp = "...";
-                                name2 = name2.substr(0, 15);
-                                name2 = name2.append(temp);
-                                ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
-                            }
-                            else if(bulkClub.getMemName(i).size() < 13){
-                                 ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
-                            }
-                            else{
-                                ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
-                            }
-                            ss << qSetFieldWidth(20);
-                            ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(40) << QString::fromStdString("Upgrade Recommended");
-    //                        ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(30) << QString::fromStdString("Upgrade Recommended");
-                            QString hurp = QString::number((45 - (125- compare)),'f',2);
-                            ss << qSetFieldWidth(10) << (QString::fromStdString("$") +  hurp) << qSetFieldWidth(0) << endl << qSetFieldWidth(60);
-    //                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
-    //                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
-    //                        ui->listWidget->addItem("Upgrade Recommended\n");
-    //                        ui->listWidget->addItem("Amount could have Saved: $" + QString::number((45 - (125- compare)),'f',2) + "\n");
-    //                        ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
+            ss.setFieldAlignment(ss.AlignLeft);
+            ui->listWidget->addItem(QString::fromStdString("Member who should downgrade\n________________________________________________________\n"));
+            for(int i = 0; i < bulkClub.getMemCount();i++){
+                compare = bulkClub.getMTotCost(i) * .035;
+                if(bulkClub.getMemType(i) == "Regular"){
+                    if(compare < 80){    
+                        if(bulkClub.getMemName(i).size() > 15){
+                            string name2 = bulkClub.getMemName(i);
+                            string temp = "...";
+                            name2 = name2.substr(0, 15);
+                            name2 = name2.append(temp);
+                            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
                         }
-                    }
-                }
-                ui->listWidget->addItem(s);
-                s.clear();
-                ss.setFieldAlignment(ss.AlignLeft);
-                ui->listWidget->addItem(QString::fromStdString("Member who should downgrade\n________________________________________________________\n"));
-                for(int i = 0; i < bulkClub.getMemCount();i++){
-                    compare = bulkClub.getMTotCost(i) * .035;
-                    if(bulkClub.getMemType(i) == "Regular"){
-                        if(compare < 80){
-                            if(bulkClub.getMemName(i).size() > 15){
-                                string name2 = bulkClub.getMemName(i);
-                                string temp = "...";
-                                name2 = name2.substr(0, 15);
-                                name2 = name2.append(temp);
-                                ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
-                            }
-                            else if(bulkClub.getMemName(i).size() < 13){
-                                 ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
-                            }
-                            else{
-                                ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
-                            }
-                            ss << qSetFieldWidth(20);
-                            ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(40) << QString::fromStdString("Downgrade Recommended");
-                            QString hurp = QString::number(((125-compare) - 45),'f',2);
-                            ss << qSetFieldWidth(10) << (QString::fromStdString("$") +  hurp) << qSetFieldWidth(0) << endl << qSetFieldWidth(60);
+                        else if(bulkClub.getMemName(i).size() < 13){
+                             ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+                        }
+                        else{
+                            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+                        }
+                        ss << qSetFieldWidth(20);
+                        ss << QString::fromStdString(bulkClub.getMemType(i)) << qSetFieldWidth(40) << QString::fromStdString("Downgrade Recommended");
+                        QString hurp = QString::number(((125-compare) - 45),'f',2);
+                        ss << qSetFieldWidth(10) << (QString::fromStdString("$") +  hurp) << qSetFieldWidth(0) << endl << qSetFieldWidth(60);
 
-    //                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
-    //                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
-    //                        ui->listWidget->addItem("Downgrade Recommended\n");
-    //                        ui->listWidget->addItem("Amount could have Saved: $" + QString::number(((125-compare) - 45),'f',2) + "\n");
-    //                        ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
-                        }
+//                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemName(i) + "\n"));
+//                        ui->listWidget->addItem(QString::fromStdString(bulkClub.getMemType(i) + "\n"));
+//                        ui->listWidget->addItem("Downgrade Recommended\n");
+//                        ui->listWidget->addItem("Amount could have Saved: $" + QString::number(((125-compare) - 45),'f',2) + "\n");
+//                        ui->listWidget->addItem(QString::fromStdString("________________________________________________________\n"));
                     }
                 }
-                ui->listWidget->addItem(s);
-        }
-        else
-        {
-             QMessageBox::information(this, tr("Error!"), "Member database empty");
-        }
+            }
+            ui->listWidget->addItem(s);
+    }
+    else
+    {
+         QMessageBox::information(this, tr("Error!"), "Member database empty");
+    }
 
 }

@@ -6,7 +6,7 @@
  */
 
 #include "Store.h"
-#include "member.h"
+//#include "member.cpp"
 #include "executive.h"
 #include <QFile>
 #include <QTextStream>
