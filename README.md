@@ -3,7 +3,7 @@
 #####  Author: Team Five Gui's
 ------
 
-Our *somewhat*-epic store management program built with C++ and QT creator for our CS1C course.
+Our *somewhat*-epic store management program built with C++ and QT creator, documented using doxygen for our CS1C course.
 
 
 The Five Gui's:
