@@ -1,0 +1,48 @@
+08/02/2015
+61616
+1 gallon milk
+6.09	5
+08/02/2015
+77777
+Wonder Bread
+0.89	6
+08/02/2015
+77777
+1.5 dozen eggs
+0.89	3
+08/02/2015
+35647
+Hamburger
+6.85	1
+08/02/2015
+31311
+The Bourne Supremacy
+19.55	1
+08/02/2015
+12121
+Toilet Paper
+11.35	1
+08/02/2015
+67899
+Ponds Lotion
+5.39	1
+08/02/2015
+61616
+VCR/DVD Player
+89.59	1
+08/02/2015
+61616
+Levi 501's
+21.10	4
+08/02/2015
+12345
+Farberware Cookware Set
+289.59	20
+08/02/2015
+61616
+Coffee Creamer
+5.35	5
+08/02/2015
+12345
+Legal Pads
+5.85	10

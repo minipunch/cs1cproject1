@@ -1,0 +1,158 @@
+Expiration
+//        else {
+//            QString month2 = QString::fromStdString(mon);
+//            month2 = month2.toLower();
+//            mon = month2.toStdString();
+//            if (mon == "january") {
+//                month = 1;
+//            } else if ("february" == mon) {
+//                month = 2;
+//            } else if ("march" == mon) {
+//                month = 3;
+//            } else if ("april" == mon) {
+//                month = 4;
+//            } else if ("may" == mon) {
+//                month = 5;
+//            } else if ("june" == mon) {
+//                month = 6;
+//            } else if ("july" == mon) {
+//                month = 7;
+//            } else if ("august" == mon) {
+//                month = 8;
+//            } else if ("september" == mon) {
+//                month = 9;
+//            } else if ("october" == mon) {
+//                month = 10;
+//            } else if ("november" == mon) {
+//                month = 11;
+//            } else if ("december" == mon) {
+//                month = 12;
+//            }
+//        }
+//            for (int i = 0; i < bulkClub.getMemCount(); i++) {
+//                if (bulkClub.getMemExp(i).GetMonth() == month) {
+//                    ui->listWidget->addItem(
+//                            QString::fromStdString(bulkClub.PrintMember(i)));
+//                    cheq ++;
+//                    if (bulkClub.getMemType(i) == "Executive") {
+//                        ui->listWidget->addItem(
+//                                "Annual Membership Fee Cost: $125\n");
+//                    } else {
+//                        ui->listWidget->addItem(
+//                                "Annual Membership Fee Cost: $45\n");
+//                    }
+//                }
+//            }
+//            if(cheq == 0){
+//                ui->listWidget->addItem("No ones membership expires during that month.\n");
+//            }
+ss << qSetFieldWidth(30) << "Member Name\t" << qSetFieldWidth(20)
+if(bulkClub.getMemName(i).size() > 15){
+string name2 = bulkClub.getMemName(i);
+string temp = "...";
+name2 = name2.substr(0, 15);
+name2 = name2.append(temp);
+ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+}
+else if(bulkClub.getMemName(i).size() < 13){
+ ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+}
+else{
+ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+}
+ss << qSetFieldWidth(20);
+ss << QString::fromStdString(bulkClub.getMemType(i))
+for (unsigned int i = 0; i < names.size(); i++) {
+    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+            == "Executive") {
+        if(bulkClub.getMemName(i).size() > 15){
+            string name2 = bulkClub.getMemName(i);
+            string temp = "...";
+            name2 = name2.substr(0, 15);
+            name2 = name2.append(temp);
+            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+        }
+        else if(bulkClub.getMemName(i).size() < 13){
+            ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        else{
+            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        ss << qSetFieldWidth(20);
+        ss << QString::fromStdString(bulkClub.getMemType(i));
+        ui->listWidget->addItem(s);
+        ss.flush();
+        s.clear();
+        exec++;
+    } else {
+        if(bulkClub.getMemName(i).size() > 15){
+            string name2 = bulkClub.getMemName(i);
+            string temp = "...";
+            name2 = name2.substr(0, 15);
+            name2 = name2.append(temp);
+            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+        }
+        else if(bulkClub.getMemName(i).size() < 13){
+            ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        else{
+            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        ss << qSetFieldWidth(20);
+        ss << QString::fromStdString(bulkClub.getMemType(i));
+        ui->listWidget->addItem(s);
+        ss.flush();
+        s.clear();
+        reg++;
+    }
+}
+}
+else{
+for (unsigned int i = 0; i < names.size(); i++) {
+    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+            == "Executive") {
+        if(bulkClub.getMemName(i).size() > 15){
+            string name2 = bulkClub.getMemName(i);
+            string temp = "...";
+            name2 = name2.substr(0, 15);
+            name2 = name2.append(temp);
+            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+        }
+        else if(bulkClub.getMemName(i).size() < 13){
+            ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        else{
+            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        ss << qSetFieldWidth(20);
+        ss << QString::fromStdString(bulkClub.getMemType(i));
+        ui->listWidget->addItem(s);
+        ss.flush();
+        s.clear();
+        exec++;
+    }
+}
+for (unsigned int i = 0; i < names.size(); i++) {
+    if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+            == "Regular") {
+        if(bulkClub.getMemName(i).size() > 15){
+            string name2 = bulkClub.getMemName(i);
+            string temp = "...";
+            name2 = name2.substr(0, 15);
+            name2 = name2.append(temp);
+            ss << qSetFieldWidth(42) << (QString::fromStdString(name2) + "\t");
+        }
+        else if(bulkClub.getMemName(i).size() < 13){
+            ss << qSetFieldWidth(37) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        else{
+            ss << qSetFieldWidth(38) << (QString::fromStdString(bulkClub.getMemName(i) + "\t\t"));
+        }
+        ss << qSetFieldWidth(20);
+        ss << QString::fromStdString(bulkClub.getMemType(i));
+        ui->listWidget->addItem(s);
+        ss.flush();
+        s.clear();
+        reg++;
+    }
+}

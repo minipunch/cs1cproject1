@@ -1,0 +1,240 @@
+08/01/2015
+12345
+1 gallon milk
+6.09    88
+03/13/2016
+12345
+1 gallon milk
+6.09    3
+08/03/2015
+12345
+1 gallon milk
+6.09    15
+08/02/2015
+61616
+1 gallon milk
+6.09    5
+08/02/2015
+77777
+1.5 dozen eggs
+0.89    3
+08/03/2015
+88888
+A Bug's Life
+9.55    1
+08/04/2015
+12345
+All Laundry Detergent
+7.59    1
+08/03/2015
+61616
+All Laundry Detergent
+7.59    22
+08/04/2015
+12345
+Assorted Muffins
+5.49    1008
+08/04/2015
+12345
+Assorted Muffins
+5.49    4
+08/03/2015
+12345
+Assorted Muffins
+5.49    1
+08/04/2015
+67899
+Bkfst Cereal Variety Pack
+6.89    4
+08/06/2015
+61616
+Brie (Made in U.S.)
+6.85    2
+08/02/2015
+61616
+Coffee Creamer
+5.35    5
+08/04/2015
+61616
+Coke
+6.39    7
+08/06/2015
+77777
+Coke
+6.39    2
+03/13/2016
+77777
+Crest Toothpaste
+7.19    6
+08/03/2015
+77777
+Disney DVD Collection
+49.55   1
+08/04/2015
+12345
+Disney DVD Collection 2
+59.59   1
+08/06/2015
+61616
+Disney DVD Collection 2
+59.59   1
+08/01/2015
+12345
+EPSON Printer
+59.59   20
+08/01/2015
+88888
+EPSON Printer Cart.
+32.1    5
+08/01/2015
+56723
+Envelops
+2.59    5
+08/02/2015
+12345
+Farberware Cookware Set
+289.59  20
+08/04/2015
+88888
+Foster Farms Whole Chicken
+10.35   1
+08/06/2015
+12345
+Fresh Mozzarella
+8.25    2
+08/06/2015
+77777
+Grosse Pointe Blank DVD
+16.59   5
+08/01/2015
+12899
+Ground Beef
+6.46    1
+08/02/2015
+35647
+Hamburger
+6.85    1
+08/03/2015
+88888
+Home On The Range
+19.58   1
+08/01/2015
+67899
+Instant Coffee
+6.35    5
+08/02/2015
+12345
+Legal Pads
+5.85    10
+08/03/2015
+12121
+Levi 501's
+21.1    10
+08/02/2015
+61616
+Levi 501's
+21.1    4
+08/01/2015
+67899
+Most Basic DVD Player
+59.59   1
+08/01/2015
+12899
+Paper Shredder
+199.59  1
+08/04/2015
+12899
+Pepsi
+6.35    8
+08/02/2015
+67899
+Ponds Lotion
+5.39    1
+08/06/2015
+61616
+Pork Tenderloin
+13.35   88
+08/01/2015
+12899
+Pork Tenderloin
+16.85   2
+08/03/2015
+35647
+Pringles
+6.59    8
+08/06/2015
+12345
+Propel Fitness Water
+12.1    3
+08/04/2015
+77777
+Rack of Lamb
+14.39   4
+08/06/2015
+77777
+Roasted Garlic Bread
+6.89    2
+08/06/2015
+12345
+Runaway Jury
+18.55   2
+08/01/2015
+67899
+Rye Bread
+5.39    90
+08/01/2015
+12345
+Seinfeld Collection
+39.55   50
+08/06/2015
+88888
+Serendipity
+16.55   4
+08/01/2015
+12899
+Shrek 2
+19.55   1
+08/04/2015
+61616
+Spiderman 2
+19.55   1
+08/06/2015
+12345
+Sprite
+6.35    20
+08/01/2015
+67899
+The Alamo
+19.55   6
+08/02/2015
+31311
+The Bourne Supremacy
+19.55   1
+08/03/2015
+77777
+The Princess Bride
+17.35   16
+08/02/2015
+12121
+Toilet Paper
+11.35   1
+08/02/2015
+61616
+VCR/DVD Player
+89.59   1
+08/06/2015
+12345
+Vine Ripe Tomatoes
+6.59    2
+08/04/2015
+61616
+While You Were Sleeping
+17.35   1
+08/02/2015
+77777
+Wonder Bread
+0.89    6
+08/03/2015
+12345
+diet Coke
+6.49    2608
