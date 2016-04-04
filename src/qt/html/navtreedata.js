@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Five Gui's Bulk Club", "index.html", [
+  [ "Five Gui's BulkClub", "index.html", [
     [ "Five Gui's Club Documentation", "index.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

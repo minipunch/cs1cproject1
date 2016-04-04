@@ -41,7 +41,7 @@ public:
      * \brief gets a store object
      *
      * This isn't being used
-     * \return stoe instance
+     * \return store instance
      */
     Store getStore();
     /*!

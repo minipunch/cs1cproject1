@@ -29,7 +29,7 @@ public:
     /*!
      * \brief sets the rebate amount
      *
-     * Utility: manually set the rebate ratefor an exectutive
+     * Utility: manually set the rebate rate for an exectutive
      * \param num
      */
 	void setRebateAmount(float num);

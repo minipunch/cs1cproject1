@@ -23,7 +23,7 @@ using namespace std;
  * - member's name
  * - id number
  * - total spent (running total)
- * - total spent w/ tax (runnign total)
+ * - total spent w/ tax (running total)
  * - membership expiration date
  */
 class member {

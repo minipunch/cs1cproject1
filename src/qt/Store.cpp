@@ -21,13 +21,13 @@
 Store::Store() {
 
 
-	// TODO Auto-generated constructor stub
+    // TODO Auto-generated constructor stub
 
 }
 
 Store::~Store() {
-	//cout << "test" << endl;
-	// TODO Auto-generated destructor stub
+    //cout << "test" << endl;
+    // TODO Auto-generated destructor stub
 }
 
 Date Store::ConvertDate(string dateIn)
@@ -39,8 +39,8 @@ Date Store::ConvertDate(string dateIn)
     unsigned int month = atoi(pt1.c_str());
     unsigned int day = atoi(pt2.c_str());
     unsigned int year = atoi(pt3.c_str());
-	temp.SetDate(month, day, year);
-	return temp;
+    temp.SetDate(month, day, year);
+    return temp;
 }
 
 
@@ -54,49 +54,49 @@ void Store::readInMembers()
         QMessageBox::information(0,"Member Read Error",file.errorString());
 
     QTextStream in(&file);
-        QString name;
-        string nameStr;
-        QString type;
-        string typeStr;
-        double idNum;
-        QString idNumStr;
-        QString dateTemp;
-        string dateStr;
-        member *memPtr = NULL;
-        executive *exPtr = NULL;
-        Date date;
+    QString name;
+    string nameStr;
+    QString type;
+    string typeStr;
+    double idNum;
+    QString idNumStr;
+    QString dateTemp;
+    string dateStr;
+    member *memPtr = NULL;
+    executive *exPtr = NULL;
+    Date date;
 
 
-        while(!in.atEnd())
+    while(!in.atEnd())
+    {
+        name = in.readLine();
+        idNumStr = in.readLine();
+        type = in.readLine();
+        dateTemp = in.readLine();
+
+        idNum = idNumStr.toDouble();
+        nameStr = name.toStdString();
+        typeStr = type.toStdString();
+        dateStr = dateTemp.toStdString();
+
+
+        date = Store::ConvertDate(dateStr);
+        if(type == "Executive")
         {
-            name = in.readLine();
-            idNumStr = in.readLine();
-            type = in.readLine();
-            dateTemp = in.readLine();
-
-            idNum = idNumStr.toDouble();
-            nameStr = name.toStdString();
-            typeStr = type.toStdString();
-            dateStr = dateTemp.toStdString();
-
-
-         date = Store::ConvertDate(dateStr);
-            if(type == "Executive")
-            {
-                exPtr = new executive;
-                exPtr->setAll(nameStr, typeStr, idNum, date, .035);
-                memPtr = exPtr;
-            }
-            else
-            {
-                memPtr = new member;
-                memPtr->setAll(nameStr, typeStr, idNum, date);
-            }
-
-            Store::addMember(memPtr);
+            exPtr = new executive;
+            exPtr->setAll(nameStr, typeStr, idNum, date, .035);
+            memPtr = exPtr;
         }
-         Store::sortingMems(NAME);
-         file.close();
+        else
+        {
+            memPtr = new member;
+            memPtr->setAll(nameStr, typeStr, idNum, date);
+        }
+
+        Store::addMember(memPtr);
+    }
+    Store::sortingMems(NAME);
+    file.close();
 }
 
 void Store::saveMembers()
@@ -119,13 +119,13 @@ void Store::saveItems()
     QString fName = QString::fromStdString(this->filenameIS);
     QFile file(fName);
     if(!file.open(QIODevice::WriteOnly| QIODevice::Text))
-            QMessageBox::information(0,"Item Write Error",file.errorString());
-        QTextStream out(&file);
-        for(unsigned int i = 0; i < items.size(); i++)
-        {
-            out.operator <<(QString::fromStdString(items.at(i)->saveItem()));
-        }
-        file.close();
+        QMessageBox::information(0,"Item Write Error",file.errorString());
+    QTextStream out(&file);
+    for(unsigned int i = 0; i < items.size(); i++)
+    {
+        out.operator <<(QString::fromStdString(items.at(i)->saveItem()));
+    }
+    file.close();
 }
 
 void Store::readItems()
@@ -135,7 +135,7 @@ void Store::readItems()
     QString fNameI = QString::fromStdString(this->filenameI);
     QFile file(fNameI);
     if(!file.open(QIODevice::ReadOnly))
-                QMessageBox::information(0,"Purchases Read Error",file.errorString());
+        QMessageBox::information(0,"Purchases Read Error",file.errorString());
 
     QString quanTemp;
     QString prTemp;
@@ -159,11 +159,11 @@ void Store::readItems()
 
 
 
-     QTextStream in(&file);
+    QTextStream in(&file);
 
-   while(!in.atEnd())
-     {
-         //read ins
+    while(!in.atEnd())
+    {
+        //read ins
         dateTemp = in.readLine();
 
         in >> idNum;
@@ -172,17 +172,17 @@ void Store::readItems()
         in >> price;
         in.skipWhiteSpace();
         in >> quantity;
-               in.skipWhiteSpace();
+        in.skipWhiteSpace();
 
         dateStr = dateTemp.toStdString();
         date = Store::ConvertDate(dateStr);
         name = nameTemp.toStdString();
-//
+        //
 
 
-    iPtr = new Item;
+        iPtr = new Item;
 
-       iPtr->SetAll(name, price, quantity, date, idNum);
+        iPtr->SetAll(name, price, quantity, date, idNum);
 
         index = Store::searchMem(idNum);
         if(index < members.size())
@@ -191,74 +191,72 @@ void Store::readItems()
             members.at(index)->addTTW(iPtr->getTotwTax());
         }
 
-        Store::addItem(iPtr);
+        items.push_back(iPtr);
 
-     }
+    }
     file.close();
 }
 
 //MEMBER FUNCTIONS
 void Store::addMember(member *newMem)
 {
-	members.push_back(newMem);
+    members.push_back(newMem);
 }
 
 void Store::removeMember(int index ){
-	deque<member*>::iterator iter = members.begin() + index;
+    deque<member*>::iterator iter = members.begin() + index;
     members.erase(iter);
 }
 int Store::getMemCount() const
 {
-	return members.size();
+    return members.size();
 }
 QString Store::PrintMember(int index) const
 {
-	stringstream output;
+    stringstream output;
     QString hurp;
-        hurp = members.at(index)->printMember();
-        return hurp;
+    hurp = members.at(index)->printMember();
+    return hurp;
 
-	//output << member.at
+    //output << member.at
 }
 void Store::sortingMems(int property)
 {
-	sort(members.begin(), members.end(), memberSort(property));
+    sort(members.begin(), members.end(), memberSort(property));
 }
 string Store::getMemName(int index){
     member tempMem = *(members.at(index));
     return tempMem.getName();
 }
 string  Store::getMemType(int index){
-	return members.at(index)->getType();
+    return members.at(index)->getType();
 }
 double  Store::getMemID(int index){
-	return members.at(index)->getId();
+    return members.at(index)->getId();
 }
 Date  Store::getMemExp(int index){
-	return members.at(index)->getExprDate();
+    return members.at(index)->getExprDate();
 }
 
 int Store::searchMem(double id)
 {
-	unsigned int index = 0;
-	bool found = false;
+    unsigned int index = 0;
+    bool found = false;
 
-while(!found && index < members.size())
-{
-	if(id == members.at(index)->getId())
-	{
-		found = true;
-	}
-	else
-	{
-		index ++;
-	}
+    while(!found && index < members.size())
+    {
+        if(id == members.at(index)->getId())
+        {
+            found = true;
+        }
+        else
+        {
+            index ++;
+        }
 
+    }
 
-
-}
-
-return index;
+    return index;
 }
 
 int Store::getMemberIndex(string name) const
@@ -286,7 +284,7 @@ int Store::getMemberIndex(string name) const
 string Store::getRebate(int index){
     if(members.at(index)->getType() == "Executive"){
         return members.at(index)->printRebate();
-     }
+    }
     else {
         return "Invalid membership type";
     }
@@ -298,42 +296,52 @@ double Store::getMTotCost (int index){
 
 //ITEM FUNCTIONS
 string Store::getiName(int index) const{
-	return items.at(index)->GetName();
+    return items.at(index)->GetName();
 }
 double Store::getiID(int index) const{
-	return items.at(index)->GetId();
+    return items.at(index)->GetId();
 }
 int Store::getiQuan(int index) const{
-	return items.at(index)->GetQty();
+    return items.at(index)->GetQty();
 }
 Date Store::getiDate(int index) const{
-	return items.at(index)->GetDate();
+    return items.at(index)->GetDate();
 }
 float Store::getiPrice(int index) const{
-	return items.at(index)->GetPrice();
+    return items.at(index)->GetPrice();
 }
 float Store::getTotCost(int index) const{
-	return items.at(index)->getTotCost();
+    return items.at(index)->getTotCost();
 }
 float Store::getTotwTax(int index) const{
-	return items.at(index)->getTotwTax();
+    return items.at(index)->getTotwTax();
 }
 void Store::sortingItems(int property)
 {
-	sort(items.begin(), items.end(), ItemSort(property));
+    sort(items.begin(), items.end(), ItemSort(property));
 }
 int Store::getItemCount() const
 {
-	return items.size();
+    return items.size();
 }
 void Store::addItem(Item *newItem){
-	items.push_back(newItem);
+    double id = newItem->GetId();
+
+    unsigned int index = Store::searchMem(id);
+    if(index < members.size())
+    {
+        members.at(index)->addTT(newItem->getTotCost());
+        members.at(index)->addTTW(newItem->getTotwTax());
+
+        items.push_back(newItem);
+    }
+
 }
 string Store::PrintItem(int index) const
 {
-	stringstream output;
-	output << items.at(index)->printItem();
-	return output.str();
+    stringstream output;
+    output << items.at(index)->printItem();
+    return output.str();
 }
 void Store::setFilename(string fname) {
     this->filename = fname;
@@ -375,7 +383,7 @@ void Store::delItem(string name){
 
 void Store::removeItem(int index)
 {
-     deque<Item*>::iterator iter = items.begin() + index;
-     items.erase(iter);
+    deque<Item*>::iterator iter = items.begin() + index;
+    items.erase(iter);
 
 }
