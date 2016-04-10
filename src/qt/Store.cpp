@@ -130,7 +130,7 @@ void Store::saveItems()
 
 void Store::readItems()
 {
-    this->items.clear();
+   this->items.clear();
 
     QString fNameI = QString::fromStdString(this->filenameI);
     QFile file(fNameI);

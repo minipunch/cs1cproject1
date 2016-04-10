@@ -64,4 +64,8 @@ DISTFILES += \
     day4.txt \
     day5.txt \
     members.txt \
-    Extras
+    Extras \
+    test.txt
+
+RESOURCES += \
+    resources.qrc

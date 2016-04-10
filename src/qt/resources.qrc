@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/InputFile">
+        <file>Assi8.txt</file>
+    </qresource>
+</RCC>

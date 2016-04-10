@@ -13,6 +13,8 @@ The Five Gui's:
 * Josh Yolles
 * Nick Sidaris
 
+Project + assignment 8 under src/qt
+Presentation version shown in class under presentation/qt
 
 Any comments or questions? Feel free to contact us at [this](mailto:josh@whaicehockey.com) email address.
 

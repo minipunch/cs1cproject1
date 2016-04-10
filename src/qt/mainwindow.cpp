@@ -4,7 +4,7 @@
 #include "member.h"
 #include <QMessageBox>
 #include <QFileDialog>
-
+#include <QFile>
 /*!
  * \file mainwindow.cpp
  * \brief Source file for mainwindow class methods
@@ -102,7 +102,7 @@ void MainWindow::on_pushButton_8_clicked() {
 //number 3 total quantity and cost of each item
 //Gives the total quantity and revenue for each item bought
 void MainWindow::on_pushButton_3_clicked() {
-    int totalRevenue = 0;
+    double totalRevenue = 0;
     int totalQuantity = 0;
     bool theSame = true;
     QString s;
@@ -242,6 +242,8 @@ void MainWindow::on_pushButton_clicked() {
     Date d2;
     QString s;
     QTextStream ss(&s);
+    double totRev = 0;
+    double totRevT = 0;
 
     if(bulkClub.getItemCount() !=0)
     {
@@ -270,6 +272,8 @@ void MainWindow::on_pushButton_clicked() {
                 d2 = bulkClub.getiDate(i);
                 if (d2 == d) {
                     double memID = bulkClub.getiID(i);
+                    totRev = totRev + bulkClub.getTotCost(i);
+                    totRevT = totRevT + bulkClub.getTotwTax(i);
                     string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
                     //                    ui->listWidget->addItem(
                     //                            QString::fromStdString(bulkClub.getiName(i)));
@@ -310,7 +314,13 @@ void MainWindow::on_pushButton_clicked() {
                     }
 
                 }
+
             }
+            ui->listWidget->addItem("Subtotal Revenue: $" + QString::number(totRev, 'f', 2) );
+            ui->listWidget->addItem("Total Revenue: $" + QString::number(totRevT, 'f', 2));
+
+
+
             ui->listWidget->addItem("------------------------------------------------------------------------\n");
             ui->listWidget->addItem("Shoppers Who Shopped On This Day:");
             ui->listWidget->addItem("------------------------------------------------------------------------\n");
@@ -703,7 +713,7 @@ void MainWindow::on_actionNew_triggered()
         Item *addPtr = itemAdd.GetItem();
         if (addPtr != NULL)
         {
-          //  id = bulkClub.get
+            //  id = bulkClub.get
             bulkClub.addItem(addPtr);
             QMessageBox::information(this, tr("Item added!"),
                                      "Item added.");
@@ -980,4 +990,171 @@ void MainWindow::on_actionRecommendation_triggered()
         QMessageBox::information(this, tr("Error!"), "Member database empty");
     }
 
+}
+
+void MainWindow::on_assi8_clicked()
+{
+
+    QFile file("E:\\Desktop\\Assi8.txt");
+    if(!file.open(QIODevice::WriteOnly| QIODevice::Text))
+
+        QMessageBox::information(0,"Member Read Error",file.errorString());
+    QTextStream out(&file);
+    QMessageBox::information(this, tr("working!"), "Executing assignment 8");
+    out <<"Assignment 8 - Five Guis\nNote: We only showed test with day1 file to keep the output short\n\n\n";
+    out << "Number 1: sales report " << endl;
+    //sales report ------------------------------------------------------------------------------------------------------------------
+    Date d(8,1,2015);
+    double totRev = 0;
+    double totRevT = 0;
+    Date d2;
+    // ui->listWidget->clear();
+    out << QString::fromStdString(d.DisplayDate());
+    out <<"\n-------------------------------\n";
+    out <<"Items Purchased On This Day:";
+    out <<"\n-------------------------------\n";
+
+    deque < string > names;
+    int nameDup = 0;
+    int exec = 0;
+    int reg = 0;
+    for (int i = 0; i < bulkClub.getItemCount(); i++) {
+        d2 = bulkClub.getiDate(i);
+        if (d2 == d) {
+            double memID = bulkClub.getiID(i);
+            totRev = totRev + bulkClub.getTotCost(i);
+            totRevT = totRevT + bulkClub.getTotwTax(i);
+            string memName = bulkClub.getMemName(bulkClub.searchMem(memID));
+            out << QString::fromStdString(bulkClub.getiName(i));
+            out << " Quantity: " + QString::number(bulkClub.getiQuan(i)) + "\n";
+            if (names.empty() == false) {
+                for (unsigned int z = 0; z < names.size(); z++) {
+                    if (names.at(z) == memName) {
+                        nameDup++;
+                    }
+                }
+                if (nameDup == 0) {
+                    names.push_back(memName);
+                } else {
+                    nameDup = 0;
+                }
+            } else {
+                names.push_back(memName);
+            }
+
+        }
+    }
+    out <<"\nSubtotal Revenue: $" + QString::number(totRev, 'f', 2) ;
+    out <<"\nTotal Revenue: $" + QString::number(totRevT, 'f', 2);
+
+    out <<"\n------------------------------------\n";
+    out <<"Shoppers Who Shopped On This Day:\n";
+    out <<"------------------------------------\n\n";
+    for (unsigned int i = 0; i < names.size(); i++) {
+        if (bulkClub.getMemType(bulkClub.getMemberIndex(names.at(i)))
+                == "Executive") {
+            out <<
+                   QString::fromStdString(names.at(i)) + "\nType: Executive\n";
+            exec++;
+        } else {
+            out <<
+                   QString::fromStdString(names.at(i)) + "\nType: Regular\n";
+            reg++;
+        }
+    }
+
+
+    out <<"Executive: " + QString::number(exec) << endl;
+    out <<"Regular: " + QString::number(reg);
+    out << "\n\n\nNumber 2: purchase list " << endl;
+
+    out <<"---------------------\n";
+    out <<"All Items Purchased\n";
+    out <<"---------------------\n";
+
+    out <<"---------------------\n";
+    double tot = 0;
+    double totW = 0;
+    bulkClub.sortingItems(ID);
+    for (int i = 0; i < bulkClub.getItemCount(); i++) {
+        out <<
+               QString::fromStdString(bulkClub.PrintItem(i)) << endl;
+        tot = tot + bulkClub.getTotCost(i);
+        totW = totW + bulkClub.getTotwTax(i);
+    }
+
+    out <<"Total Cost(Pre-tax) : $" + QString::number(tot, 'f', 2);
+    out <<"\nTotal Cost(Post-tax) : $" + QString::number(totW, 'f', 2);
+    //-------------------------------------------------------------------------------------------------------------------------
+
+
+    out << "\n\n\nNumber 3: info on each item " << endl;
+
+    double totalRevenue = 0;
+
+    int totalQuantity = 0;
+    bool theSame = true;
+    bulkClub.sortingItems(NAME);
+
+    for (int x = 0; x < bulkClub.getItemCount() - 1; ++x) {
+        // for each item
+        totalRevenue = 0;
+        totalQuantity = 0;
+        theSame = true;
+
+        // print item name
+      out <<
+                    "Information on item: "
+                    + QString::fromStdString(bulkClub.getiName(x))<< endl;
+
+        if (x < bulkClub.getItemCount() - 1)
+            // ... if not at the last item in the list ...
+        {
+            while ((bulkClub.getiName(x) == bulkClub.getiName(x + 1))
+                   && theSame == true)
+                // ... for each item WITH THE SAME NAME (duplicates)
+            {
+
+                if (bulkClub.getiName(x) != bulkClub.getiName(x + 1)) {
+                    theSame = false;
+                }
+
+                totalQuantity += bulkClub.getiQuan(x);
+                totalRevenue += bulkClub.getTotwTax(x);
+
+                x++;
+
+            }
+            totalQuantity += bulkClub.getiQuan(x);
+            totalRevenue += bulkClub.getTotwTax(x);
+        }
+        // Quantity for each item
+        out <<
+                    "Quantity: " + QString::number(totalQuantity)<<endl;
+        // Total revenue for each item
+        out <<
+                    "Total Revenue: $" + QString::number(totalRevenue, 'f', 2) + "\n" << endl;
+    }
+
+    // ghetto solution to the diet coke problem
+    totalQuantity = 0;
+    totalRevenue = 0;
+
+    totalQuantity += bulkClub.getiQuan(bulkClub.getItemCount() - 1);
+    totalRevenue += bulkClub.getTotwTax(bulkClub.getItemCount() - 1);
+
+    // print item name
+   out <<
+                "Information on item: "
+                + QString::fromStdString(
+                    bulkClub.getiName(
+                        bulkClub.getItemCount() - 1))<< endl;
+    // Quantity for each item
+   out <<"Quantity: " + QString::number(totalQuantity) << endl;
+    // Total revenue for each item
+    out <<
+                "Total Revenue: $" + QString::number(totalRevenue, 'f', 2) << endl;
+    ui->listWidget->addItem(" ");
+
+    file.close();
 }

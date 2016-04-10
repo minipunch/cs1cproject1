@@ -127,7 +127,9 @@ string Item::printItem() const
         output << fixed << setprecision(2) << setw(9) << this->totwTax << "\t";
     }
     output << setw(10) << this->purchDate.DisplayDate() << endl;
-	return output.str();
+    return output.str();
+
+
 }
 
 string Item::saveItem() const

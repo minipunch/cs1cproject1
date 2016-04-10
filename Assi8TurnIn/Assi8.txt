@@ -1,0 +1,130 @@
+Assignment 8 - Five Guis
+Note: We only showed tests with day1 file to keep the output short
+
+
+Number 1: sales report 
+08/01/2015
+-------------------------------
+Items Purchased On This Day:
+-------------------------------
+1 gallon milk Quantity: 88
+Rye Bread Quantity: 90
+Ground Beef Quantity: 1
+Pork Tenderloin Quantity: 2
+Shrek 2 Quantity: 1
+Seinfeld Collection Quantity: 50
+The Alamo Quantity: 6
+Most Basic DVD Player Quantity: 1
+EPSON Printer Quantity: 20
+EPSON Printer Cart. Quantity: 5
+Instant Coffee Quantity: 5
+Paper Shredder Quantity: 1
+Envelops Quantity: 5
+
+Subtotal Revenue: $4831.71
+Total Revenue: $5230.33
+------------------------------------
+Shoppers Who Shopped On This Day:
+------------------------------------
+
+Sally Shopper
+Type: Regular
+Sam Frugal
+Type: Executive
+Betty Buysalotnot
+Type: Executive
+Larry Largeextendedfamily
+Type: Regular
+Sue Shoparound
+Type: Executive
+Executive: 3
+Regular: 2
+
+
+Number 2: purchase list 
+---------------------
+All Items Purchased
+---------------------
+---------------------
+1 gallon milk                 		6.09      	12345     88                535.92      	580.13   	08/01/2015
+
+Seinfeld Collection           		39.55     	12345     50                1977.50     	2140.64  	08/01/2015
+
+EPSON Printer                 		59.59     	12345     20                1191.80     	1290.12  	08/01/2015
+
+Ground Beef                   		6.46      	12899     1                  6.46        	6.99     	08/01/2015
+
+Pork Tenderloin               		16.85     	12899     2                  33.70       	36.48    	08/01/2015
+
+Shrek 2                       		19.55     	12899     1                  19.55       	21.16    	08/01/2015
+
+Paper Shredder                		199.59    	12899     1                  199.59      	216.06   	08/01/2015
+
+Envelops                      		2.59      	56723     5                  12.95       	14.02    	08/01/2015
+
+Rye Bread                     		5.39      	67899     90                485.10      	525.12   	08/01/2015
+
+The Alamo                     		19.55     	67899     6                  117.30      	126.98   	08/01/2015
+
+Most Basic DVD Player         		59.59     	67899     1                  59.59       	64.51    	08/01/2015
+
+Instant Coffee                		6.35      	67899     5                  31.75       	34.37    	08/01/2015
+
+EPSON Printer Cart.           		32.10     	88888     5                  160.50      	173.74   	08/01/2015
+
+Total Cost(Pre-tax) : $4831.71
+Total Cost(Post-tax) : $5230.33
+
+
+Number 3: info on each item 
+Information on item: 1 gallon milk
+Quantity: 88
+Total Revenue: $580.13
+
+Information on item: EPSON Printer
+Quantity: 20
+Total Revenue: $1290.12
+
+Information on item: EPSON Printer Cart.
+Quantity: 5
+Total Revenue: $173.74
+
+Information on item: Envelops
+Quantity: 5
+Total Revenue: $14.02
+
+Information on item: Ground Beef
+Quantity: 1
+Total Revenue: $6.99
+
+Information on item: Instant Coffee
+Quantity: 5
+Total Revenue: $34.37
+
+Information on item: Most Basic DVD Player
+Quantity: 1
+Total Revenue: $64.51
+
+Information on item: Paper Shredder
+Quantity: 1
+Total Revenue: $216.06
+
+Information on item: Pork Tenderloin
+Quantity: 2
+Total Revenue: $36.48
+
+Information on item: Rye Bread
+Quantity: 90
+Total Revenue: $525.12
+
+Information on item: Seinfeld Collection
+Quantity: 50
+Total Revenue: $2140.64
+
+Information on item: Shrek 2
+Quantity: 1
+Total Revenue: $21.16
+
+Information on item: The Alamo
+Quantity: 6
+Total Revenue: $126.98

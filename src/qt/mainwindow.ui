@@ -23,7 +23,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>180</x>
       <y>0</y>
       <width>311</width>
       <height>71</height>
@@ -119,9 +119,23 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="assi8">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>30</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ASSIGNMENT 8</string>
+    </property>
+   </widget>
    <zorder>layoutWidget</zorder>
    <zorder>label</zorder>
    <zorder>listWidget</zorder>
+   <zorder>assi8</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">

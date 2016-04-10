@@ -93,6 +93,9 @@ private slots:
 
     void on_actionRecommendation_triggered();
 
+
+    void on_assi8_clicked();
+
 private:
     Ui::MainWindow *ui;
     Store bulkClub;
